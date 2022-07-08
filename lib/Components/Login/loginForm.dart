@@ -43,7 +43,7 @@ class _SignInFormState extends State<SignInForm> {
                     remeber = value;
                   });
                 }),
-            Text('Remember'),
+            Text('Remembering'),
             Spacer(),
             GestureDetector(
               onTap: () {},
