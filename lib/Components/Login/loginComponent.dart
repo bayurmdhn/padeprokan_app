@@ -41,13 +41,14 @@ class _SignInComponentState extends State<SignInComponent> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Row(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Login",
                         style: mTitleStyle,
                       ),
+                      Text("blablabla")
                     ],
                   ),
                 ),
