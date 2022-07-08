@@ -75,14 +75,28 @@ class _SignInFormState extends State<SignInForm> {
     return TextFormField(
       controller: txtEmail,
       keyboardType: TextInputType.text,
-      style: mTitleStyle,
+      // style: mTitleStyle,
       decoration: InputDecoration(
-          labelText: 'Email',
-          hintText: 'Your Email',
-          labelStyle: TextStyle(
-              color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg")),
+          enabledBorder: OutlineInputBorder(
+              borderSide:
+                  BorderSide(color: Color.fromARGB(255, 255, 255, 255))),
+          focusedBorder: OutlineInputBorder(
+              borderSide:
+                  BorderSide(width: 3, color: Color.fromRGBO(140, 79, 225, 1))),
+          hintText: "Email",
+          filled: true,
+          fillColor: Colors.white,
+          border: new OutlineInputBorder(
+              borderRadius: new BorderRadius.circular(6))),
+      // decoration: InputDecoration(
+      //     border:
+      //         new OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
+      //     labelText: 'Email',
+      //     hintText: 'Your Email',
+      //     labelStyle: TextStyle(
+      //         color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
+      //     floatingLabelBehavior: FloatingLabelBehavior.always,
+      //     suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg")),
     );
   }
 
@@ -90,14 +104,25 @@ class _SignInFormState extends State<SignInForm> {
     return TextFormField(
       controller: txtPassword,
       obscureText: true,
-      style: mTitleStyle,
+      // style: mTitleStyle,
       decoration: InputDecoration(
-          labelText: 'Password',
-          hintText: 'Your Password',
-          labelStyle: TextStyle(
-              color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg")),
+          enabledBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+          focusedBorder: OutlineInputBorder(
+              borderSide:
+                  BorderSide(width: 3, color: Color.fromRGBO(140, 79, 225, 1))),
+          hintText: "Password",
+          filled: true,
+          fillColor: Colors.white,
+          border: new OutlineInputBorder(
+              borderRadius: new BorderRadius.circular(6))),
+      // decoration: InputDecoration(
+      //     labelText: 'Password',
+      //     hintText: 'Your Password',
+      //     labelStyle: TextStyle(
+      //         color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
+      //     floatingLabelBehavior: FloatingLabelBehavior.always,
+      //     suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg")),
     );
   }
 }
