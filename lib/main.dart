@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 void main() async {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Belajar',
     theme: theme(),
     initialRoute: SplashScreen.routeName,
@@ -28,12 +29,12 @@ class _SplashScreenState extends State<SplashScreen> {
     return SplashScreenView(
       navigateRoute: LoginScreen(),
       duration: 3000,
-      imageSize: 90,
+      imageSize: 126,
       imageSrc: "assets/images/logo.png",
       backgroundColor: Colors.white,
-      text: "SikatGigi",
-      textStyle: TextStyle(
-          fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+      // text: "SikatGigi",
+      // textStyle: TextStyle(
+      //     fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
     );
   }
 }

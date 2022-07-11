@@ -77,17 +77,16 @@ class _SignInFormState extends State<SignInForm> {
       keyboardType: TextInputType.text,
       // style: mTitleStyle,
       decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-              borderSide:
-                  BorderSide(color: Color.fromARGB(255, 255, 255, 255))),
-          focusedBorder: OutlineInputBorder(
-              borderSide:
-                  BorderSide(width: 3, color: Color.fromRGBO(140, 79, 225, 1))),
-          hintText: "Email",
-          filled: true,
-          fillColor: Colors.white,
-          border: new OutlineInputBorder(
-              borderRadius: new BorderRadius.circular(6))),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(6)),
+            borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255))),
+        focusedBorder: OutlineInputBorder(
+            borderSide:
+                BorderSide(width: 3, color: Color.fromRGBO(140, 79, 225, 1))),
+        hintText: "Email",
+        filled: true,
+        fillColor: Colors.white,
+      ),
       // decoration: InputDecoration(
       //     border:
       //         new OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
@@ -106,16 +105,16 @@ class _SignInFormState extends State<SignInForm> {
       obscureText: true,
       // style: mTitleStyle,
       decoration: InputDecoration(
-          enabledBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-          focusedBorder: OutlineInputBorder(
-              borderSide:
-                  BorderSide(width: 3, color: Color.fromRGBO(140, 79, 225, 1))),
-          hintText: "Password",
-          filled: true,
-          fillColor: Colors.white,
-          border: new OutlineInputBorder(
-              borderRadius: new BorderRadius.circular(6))),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(6)),
+            borderSide: BorderSide(color: Colors.white)),
+        focusedBorder: OutlineInputBorder(
+            borderSide:
+                BorderSide(width: 3, color: Color.fromRGBO(140, 79, 225, 1))),
+        hintText: "Password",
+        filled: true,
+        fillColor: Colors.white,
+      ),
       // decoration: InputDecoration(
       //     labelText: 'Password',
       //     hintText: 'Your Password',

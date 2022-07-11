@@ -33,7 +33,7 @@ class _SignInComponentState extends State<SignInComponent> {
                 ),
                 SimpleShadow(
                   child: Image.asset("assets/images/logo.png",
-                      height: 150, width: 202),
+                      height: 128, width: 124),
                   opacity: 0.5,
                   color: kSecondaryColor,
                   offset: Offset(5, 5),
@@ -46,9 +46,8 @@ class _SignInComponentState extends State<SignInComponent> {
                     children: [
                       Text(
                         "Login",
-                        style: mTitleStyle,
+                        // style: mTitleStyle,
                       ),
-                      Text("blablabla")
                     ],
                   ),
                 ),
