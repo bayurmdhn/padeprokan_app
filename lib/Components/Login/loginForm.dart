@@ -1,5 +1,6 @@
 import 'package:first_app_flutter/Components/custom_surfix_icons.dart';
 import 'package:first_app_flutter/Components/default_button_custome_color.dart';
+import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:first_app_flutter/size_config.dart';
 import 'package:flutter/cupertino.dart';
@@ -54,10 +55,18 @@ class _SignInFormState extends State<SignInForm> {
             )
           ],
         ),
-        DefaultButtonCustomeColor(
-          color: kPrimaryColor,
-          text: "LOGIN",
-          press: () {},
+        GestureDetector(
+          child: Text(
+            "Login",
+            style: new TextStyle(
+              color: Color.fromRGBO(84, 66, 187, 1),
+              fontSize: 14.0,
+            ),
+          ),
+          onTap: () {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (BuildContext context) => HomePage()));
+          },
         ),
         SizedBox(height: 20),
         GestureDetector(
