@@ -1,4 +1,4 @@
-import 'package:first_app_flutter/Screens/Login/loginscreen.dart';
+import 'package:first_app_flutter/Screens/Login/loginScreen.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:first_app_flutter/routes.dart';
 import 'package:first_app_flutter/theme.dart';
