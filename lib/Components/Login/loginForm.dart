@@ -49,8 +49,12 @@ class _SignInFormState extends State<SignInForm> {
             GestureDetector(
               onTap: () {},
               child: Text(
-                "Forgot Password??",
-                style: TextStyle(decoration: TextDecoration.underline),
+                "Forgot Password?",
+                style: new TextStyle(
+                  color: Color.fromRGBO(84, 66, 187, 1),
+                  fontSize: 14.0,
+                ),
+                // style: TextStyle(decoration: TextDecoration.underline),
               ),
             )
           ],
@@ -70,11 +74,53 @@ class _SignInFormState extends State<SignInForm> {
         SizedBox(height: 20),
         GestureDetector(
           onTap: () {},
-          child: Text(
-            "Don't have account? Register here!",
-            style: TextStyle(decoration: TextDecoration.underline),
-          ),
-        )
+          child: Container(
+              padding: EdgeInsets.only(left: 75),
+              child: Row(children: <Widget>[
+                Text(
+                  "Don't have account?",
+                  style: new TextStyle(
+                    color: Color.fromRGBO(141, 126, 224, 1),
+                    fontSize: 14.0,
+                  ),
+                  // style: TextStyle(decoration: TextDecoration.underline),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Row(children: <Widget>[
+                      Text(
+                        "Register here!",
+                        style: new TextStyle(
+                          color: Color.fromRGBO(84, 66, 187, 1),
+                          fontSize: 14.0,
+                        ),
+                      )
+                    ]),
+                  ),
+                )
+              ])),
+          // child: Text(
+          //   "Don't have account?",
+          //   style: TextStyle(decoration: TextDecoration.underline),
+          // ),
+        ),
+        // SizedBox(height: 20),
+        // GestureDetector(
+        //     onTap: () {},
+        //     child: Container(
+        //       child: Row(children: <Widget>[
+        //         Text(
+        //           "Register here!",
+        //         )
+        //       ]),
+        //     )
+        //     // Text(
+        //     //   "Register here!",
+        //     //   style: TextStyle(decoration: TextDecoration.underline),
+        //     // ),
+        //     )
       ],
     ));
   }
