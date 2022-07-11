@@ -55,18 +55,17 @@ class _SignInFormState extends State<SignInForm> {
             )
           ],
         ),
-        GestureDetector(
-          child: Text(
-            "Login",
-            style: new TextStyle(
-              color: Color.fromRGBO(84, 66, 187, 1),
-              fontSize: 14.0,
-            ),
-          ),
-          onTap: () {
+        ElevatedButton(
+          onPressed: () {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => HomePage()));
           },
+          child: Text("Login"),
+          style: ElevatedButton.styleFrom(
+              primary: Color.fromRGBO(247, 183, 49, 1),
+              onPrimary: Colors.white,
+              minimumSize: Size(335, 1),
+              padding: EdgeInsets.only(top: 20, bottom: 20)),
         ),
         SizedBox(height: 20),
         GestureDetector(
