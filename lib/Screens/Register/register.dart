@@ -1,6 +1,8 @@
 import 'dart:html';
 
+import 'package:first_app_flutter/Components/Login/loginForm.dart';
 import 'package:first_app_flutter/Reverensi/login.dart';
+import 'package:first_app_flutter/Screens/Login/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -226,6 +228,24 @@ class _RegisterState extends State<Register> {
                           onPrimary: Colors.white,
                           minimumSize: Size(335, 1),
                           padding: EdgeInsets.only(top: 20, bottom: 20)),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => LoginScreen()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(left: 5),
+                        child: Column(children: <Widget>[
+                          Text(
+                            "Login here!",
+                            style: new TextStyle(
+                              color: Color.fromRGBO(84, 66, 187, 1),
+                              fontSize: 14.0,
+                            ),
+                          ),
+                        ]),
+                      ),
                     )
                   ],
                 ),
