@@ -226,7 +226,7 @@ class _RegisterState extends State<Register> {
                       style: ElevatedButton.styleFrom(
                           primary: Color.fromRGBO(247, 183, 49, 1),
                           onPrimary: Colors.white,
-                          minimumSize: Size(335, 1),
+                          minimumSize: Size(346, 40),
                           padding: EdgeInsets.only(top: 20, bottom: 20)),
                     ),
                     GestureDetector(
@@ -235,7 +235,7 @@ class _RegisterState extends State<Register> {
                             builder: (BuildContext context) => LoginScreen()));
                       },
                       child: Container(
-                        padding: EdgeInsets.only(left: 5),
+                        padding: EdgeInsets.only(left: 50),
                         child: Column(children: <Widget>[
                           Text(
                             "Login here!",

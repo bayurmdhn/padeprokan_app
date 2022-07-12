@@ -130,7 +130,6 @@ class _loginState extends State<login> {
                       style: ElevatedButton.styleFrom(
                           primary: Color.fromRGBO(247, 183, 49, 1),
                           onPrimary: Colors.white,
-                          minimumSize: Size(335, 1),
                           padding: EdgeInsets.only(top: 20, bottom: 20)),
                     )
                   ],
