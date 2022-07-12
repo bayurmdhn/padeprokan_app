@@ -1,4 +1,7 @@
+import 'dart:js';
+import 'package:path/path.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,85 +31,111 @@ class HomePage extends StatelessWidget {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 17),
-                        child: Image.asset(
-                            'assets/images/clarity_notification-solid.png'),
-                      ),
-                      Image.asset('assets/images/Akun.png'),
+                          padding: const EdgeInsets.only(right: 17),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.notifications,
+                              color: Color.fromARGB(255, 138, 138, 138),
+                            ),
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) =>
+                                    _buildPopupDialog(context),
+                              );
+                            },
+                          )),
+                      ProfilePicture(
+                        name: "Test",
+                        radius: 13.5,
+                        fontsize: 18,
+                        random: true,
+                      )
                     ],
                   ),
                 ],
               ),
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
               centerTitle: true),
-          body: Container(
-            padding: EdgeInsets.fromLTRB(0, 31, 0, 248),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Row(
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 34)),
-                  Text(
-                    "Spaces",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              new Column(
-                children: <Widget>[
-                  new Container(
-                    padding: EdgeInsets.only(left: 19, top: 20, right: 34),
-                    child: new Column(
-                      children: <Widget>[
-                        new TextField(
-                          decoration: InputDecoration(
-                              suffixIcon: IconButton(
-                                  onPressed: () {}, icon: Icon(Icons.search)),
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white)),
-                              filled: true,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0)),
-                              hintText: 'Search Spaces',
-                              hintStyle: TextStyle(fontWeight: FontWeight.bold),
-                              fillColor: Colors.white,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 140, 79, 225)),
-                              )),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+          body: ListView(
+            children: [
               Container(
-                padding: EdgeInsets.only(top: 73),
+                padding: EdgeInsets.fromLTRB(0, 31, 0, 248),
                 child: Column(
-                  children: [
-                    Image.asset('assets/images/Logo copy.png'),
-                    Container(
-                      padding: EdgeInsets.only(top: 79),
-                      child: Text(
-                        "You Have No Space Here!",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 73, 73, 73),
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold),
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Padding(padding: EdgeInsets.only(left: 34)),
+                          Text(
+                            "Spaces",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 36,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                    )
-                  ],
-                ),
+                      new Column(
+                        children: <Widget>[
+                          new Container(
+                            padding:
+                                EdgeInsets.only(left: 19, top: 20, right: 34),
+                            child: new Column(
+                              children: <Widget>[
+                                new TextField(
+                                  decoration: InputDecoration(
+                                      suffixIcon: IconButton(
+                                          onPressed: () {},
+                                          icon: Icon(Icons.search)),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.white)),
+                                      filled: true,
+                                      border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0)),
+                                      hintText: 'Search Spaces',
+                                      hintStyle: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                      fillColor: Colors.white,
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 140, 79, 225)),
+                                      )),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 73),
+                        child: Column(
+                          children: [
+                            Image.asset('assets/images/Logo copy.png'),
+                            Container(
+                              padding: EdgeInsets.only(top: 79),
+                              child: Text(
+                                "You Have No Space Here!",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 73, 73, 73),
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ]),
+                decoration: new BoxDecoration(
+                    color: Color.fromARGB(255, 219, 223, 247)),
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
               ),
-            ]),
-            decoration:
-                new BoxDecoration(color: Color.fromARGB(255, 219, 223, 247)),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            ],
           ),
           floatingActionButton: Padding(
             padding: const EdgeInsets.only(bottom: 78),
@@ -119,4 +148,26 @@ class HomePage extends StatelessWidget {
           ),
         ));
   }
+}
+
+Widget _buildPopupDialog(BuildContext context) {
+  return new AlertDialog(
+    title: const Text('Popup example'),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Hello"),
+      ],
+    ),
+    actions: <Widget>[
+      new FlatButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        textColor: Theme.of(context).primaryColor,
+        child: const Text('Close'),
+      ),
+    ],
+  );
 }
