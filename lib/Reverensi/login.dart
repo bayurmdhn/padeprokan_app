@@ -135,7 +135,7 @@ class _loginState extends State<login> {
                     )
                   ],
                 ),
-              )
+              ),
             ],
           ),
           new Row(
