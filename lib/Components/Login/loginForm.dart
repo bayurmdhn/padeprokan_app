@@ -38,13 +38,13 @@ class _SignInFormState extends State<SignInForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           Row(
             children: [
-              Checkbox(
-                  value: remeber,
-                  onChanged: (value) {
-                    setState(() {
-                      remeber = value;
-                    });
-                  }),
+              // Checkbox(
+              //     value: remeber,
+              //     onChanged: (value) {
+              //       setState(() {
+              //         remeber = value;
+              //       });
+              //     }),
               Text('Remembering'),
               Spacer(),
               GestureDetector(
@@ -72,7 +72,7 @@ class _SignInFormState extends State<SignInForm> {
                 minimumSize: Size(335, 1),
                 padding: EdgeInsets.only(top: 20, bottom: 20)),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 34),
           GestureDetector(
             onTap: () {},
             child: Container(
