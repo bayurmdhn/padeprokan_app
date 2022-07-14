@@ -1,5 +1,6 @@
 // ignore_for_file: no_logic_in_create_state
 
+import 'package:first_app_flutter/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 
@@ -48,7 +49,7 @@ class _EditProfileState extends State<EditProfilPage> {
         child: ListView(
           children: [
             Text(
-              "Edit Profil",
+              "Detail Profil",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
             SizedBox(
@@ -58,19 +59,48 @@ class _EditProfileState extends State<EditProfilPage> {
               child: Stack(
                 children: [
                   Container(
-                      width: 130,
-                      height: 130,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 4,
-                              color: Theme.of(context).scaffoldBackgroundColor),
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage("Profile"),
-                          )))
+                    width: 130,
+                    height: 130,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 4,
+                            color: Theme.of(context).scaffoldBackgroundColor),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(""),
+                        )),
+                  ),
+                  Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                                width: 4,
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor),
+                            color: Colors.white),
+                        child: Icon(
+                          Icons.edit,
+                          color: Colors.white,
+                        ),
+                      ))
                 ],
               ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  labelText: "full Name",
+                  hintText: "",
+                  hintStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  )),
             )
           ],
         ),
