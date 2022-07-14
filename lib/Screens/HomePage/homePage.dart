@@ -38,10 +38,26 @@ class HomePage extends StatelessWidget {
                               color: Color.fromARGB(255, 138, 138, 138),
                             ),
                             onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) =>
-                                    _buildPopupDialog(context),
+                              PopupMenuButton(
+                                child: Text("Show Popup Menu"),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(15.0))),
+                                itemBuilder: (context) => [
+                                  PopupMenuItem(
+                                    child: Text("pub.dev"),
+                                  ),
+                                  PopupMenuItem(
+                                    child: Text("Flutter"),
+                                  ),
+                                  PopupMenuItem(
+                                    child: Text("Google.com"),
+                                  ),
+                                  PopupMenuItem(
+                                    child: Text(
+                                        "https://blogdeveloperspot.blogspot.com"),
+                                  ),
+                                ],
                               );
                             },
                           )),
@@ -151,23 +167,34 @@ class HomePage extends StatelessWidget {
 }
 
 Widget _buildPopupDialog(BuildContext context) {
-  return new AlertDialog(
-    title: const Text('Popup example'),
-    content: new Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text("Hello"),
-      ],
-    ),
-    actions: <Widget>[
-      new FlatButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        textColor: Theme.of(context).primaryColor,
-        child: const Text('Close'),
+  return Padding(
+    padding: const EdgeInsets.fromLTRB(59, 10, 0, 430),
+    child: Container(
+      decoration: BoxDecoration(
+          border: Border.all(color: Color.fromARGB(255, 159, 159, 159))),
+      child: new AlertDialog(
+        title: const Text(''),
+        content: new Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              width: 227,
+              height: 211,
+              child: ListView(
+                children: [
+                  Container(
+                    child: Text(
+                      "No Data",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-    ],
+    ),
   );
 }
