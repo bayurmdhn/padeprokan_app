@@ -2,6 +2,7 @@ import 'package:first_app_flutter/Components/Login/loginForm.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:first_app_flutter/size_config.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:simple_shadow/simple_shadow.dart';
@@ -33,20 +34,40 @@ class _SignInComponentState extends State<SignInComponent> {
                 ),
                 SimpleShadow(
                   child: Image.asset("assets/images/logo.png",
-                      height: 150, width: 202),
+                      height: 128, width: 124),
                   opacity: 0.5,
                   color: kSecondaryColor,
                   offset: Offset(5, 5),
                   sigma: 2,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 34, top: 8),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Login",
-                        style: mTitleStyle,
+                        style: new TextStyle(
+                          color: Colors.black,
+                          fontSize: 24.0,
+                        ),
+                        // style: mTitleStyle,
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 34, top: 8),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Login and Start Manage Your Learning \nProcess!",
+                        style: new TextStyle(
+                          color: Color.fromARGB(255, 137, 137, 137),
+                          fontSize: 14.0,
+                        ),
+                        // style: mTitleStyle,
                       ),
                     ],
                   ),

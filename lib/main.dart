@@ -1,4 +1,4 @@
-import 'package:first_app_flutter/Screens/Login/loginscreen.dart';
+import 'package:first_app_flutter/Screens/Login/loginScreen.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:first_app_flutter/routes.dart';
 import 'package:first_app_flutter/theme.dart';
@@ -7,6 +7,7 @@ import 'Profil/Profil.dart';
 
 void main() async {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Belajar',
     theme: theme(),
     initialRoute: SplashScreen.routeName,
@@ -29,12 +30,12 @@ class _SplashScreenState extends State<SplashScreen> {
     return SplashScreenView(
       navigateRoute: LoginScreen(),
       duration: 3000,
-      imageSize: 90,
+      imageSize: 126,
       imageSrc: "assets/images/Logo.png",
       backgroundColor: Colors.white,
-      // text: "",
+      // text: "SikatGigi",
       // textStyle: TextStyle(
-      //    fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+      //     fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
     );
   }
 }
