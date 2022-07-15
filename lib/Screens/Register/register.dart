@@ -16,6 +16,7 @@ class _RegisterState extends State<Register> {
   bool _secureText = true;
   bool _securepass = true;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -59,154 +60,250 @@ class _RegisterState extends State<Register> {
               ),
             ],
           ),
+          // new Column(
+          //   children: <Widget>[
+          //     new Container(
+          //       padding: EdgeInsets.only(left: 34, top: 46, right: 34),
+          //       child: new Form(
+          //         key: _formKey,
+          //         child: new TextFormField(
+          //           decoration: InputDecoration(
+          //             enabledBorder: OutlineInputBorder(
+          //                 borderRadius: BorderRadius.all(Radius.circular(6)),
+          //                 borderSide: BorderSide(
+          //                     color: Color.fromARGB(255, 255, 255, 255))),
+          //             focusedBorder: OutlineInputBorder(
+          //                 borderSide: BorderSide(
+          //                     width: 3,
+          //                     color: Color.fromRGBO(140, 79, 225, 1))),
+          //             hintText: "Name",
+          //             hintStyle:
+          //                 TextStyle(color: Color.fromRGBO(199, 196, 196, 1)),
+          //             filled: true,
+          //             fillColor: Colors.white,
+          //           ),
+          //           validator: (Value) {
+          //             if (Value!.isNotEmpty && Value.length > 3) {
+          //               return null;
+          //             } else if (Value.length < 4 && Value.isNotEmpty) {
+          //               return 'Your name is too short';
+          //             } else {
+          //               return 'Your full name is required';
+          //             }
+          //           },
+          //         ),
+          //       ),
+          //     )
+          //   ],
+          // ),
           new Column(
             children: <Widget>[
               new Container(
-                padding: EdgeInsets.only(left: 34, top: 46, right: 34),
-                child: new Form(
-                  key: _formKey,
-                  child: new TextFormField(
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(6)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 255, 255, 255))),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              width: 3,
-                              color: Color.fromRGBO(140, 79, 225, 1))),
-                      hintText: "Name",
-                      hintStyle:
-                          TextStyle(color: Color.fromRGBO(199, 196, 196, 1)),
-                      filled: true,
-                      fillColor: Colors.white,
+                  padding: EdgeInsets.only(left: 34, top: 14, right: 34),
+                  child: Form(
+                    key: formkey,
+                    child: Column(
+                      children: <Widget>[
+                        new TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255))),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 3,
+                                    color: Color.fromRGBO(140, 79, 225, 1))),
+                            hintText: "Name",
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(199, 196, 196, 1)),
+                            filled: true,
+                            fillColor: Colors.white,
+                          ),
+                          validator: (Value) {
+                            if (Value!.isNotEmpty && Value.length > 3) {
+                              return null;
+                            } else if (Value.length < 4 && Value.isNotEmpty) {
+                              return 'Your name is too short';
+                            } else {
+                              return 'Your full name is required';
+                            }
+                          },
+                        ),
+                        SizedBox(
+                          height: 14,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255))),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 3,
+                                    color: Color.fromRGBO(140, 79, 225, 1))),
+                            hintText: "Email",
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(199, 196, 196, 1)),
+                            filled: true,
+                            fillColor: Colors.white,
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "required";
+                            } else {
+                              return null;
+                            }
+                          },
+                        ),
+                        SizedBox(
+                          height: 14,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255))),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 3,
+                                    color: Color.fromRGBO(140, 79, 225, 1))),
+                            hintText: "Passwowrd",
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(199, 196, 196, 1)),
+                            filled: true,
+                            fillColor: Colors.white,
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "required";
+                            } else {
+                              return null;
+                            }
+                          },
+                        ),
+                        SizedBox(
+                          height: 14,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255))),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 3,
+                                    color: Color.fromRGBO(140, 79, 225, 1))),
+                            hintText: "Confirm Your Password",
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(199, 196, 196, 1)),
+                            filled: true,
+                            fillColor: Colors.white,
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "required";
+                            } else {
+                              return null;
+                            }
+                          },
+                        ),
+                      ],
                     ),
-                    validator: (Value) {
-                      if (Value!.isEmpty && Value.length > 3) {
-                        return null;
-                      } else if (Value.length < 4 && Value.isEmpty) {
-                        return 'Your name is too short';
-                      } else {
-                        return 'Your full name is required';
-                      }
-                    },
-                  ),
-                ),
-              )
+                  ))
             ],
           ),
-          new Column(
-            children: <Widget>[
-              new Container(
-                padding: EdgeInsets.only(left: 34, top: 14, right: 34),
-                child: new Column(
-                  children: <Widget>[
-                    new TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(6)),
-                            borderSide: BorderSide(
-                                color: Color.fromARGB(255, 255, 255, 255))),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                width: 3,
-                                color: Color.fromRGBO(140, 79, 225, 1))),
-                        hintText: "Email",
-                        hintStyle:
-                            TextStyle(color: Color.fromRGBO(199, 196, 196, 1)),
-                        filled: true,
-                        fillColor: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-          new Column(
-            children: <Widget>[
-              new Container(
-                padding: EdgeInsets.only(left: 34, top: 14, right: 34),
-                child: new Column(
-                  children: <Widget>[
-                    new TextFormField(
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 255, 255, 255))),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 3,
-                                  color: Color.fromRGBO(140, 79, 225, 1))),
-                          hintText: "Password",
-                          hintStyle: TextStyle(
-                              color: Color.fromRGBO(199, 196, 196, 1)),
-                          filled: true,
-                          fillColor: Colors.white,
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _secureText
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                              color: Color.fromRGBO(219, 223, 247, 1),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _secureText = !_secureText;
-                              });
-                            },
-                          )),
-                      obscureText: _secureText,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-          new Column(
-            children: <Widget>[
-              new Container(
-                padding: EdgeInsets.only(left: 34, top: 14, right: 34),
-                child: new Column(
-                  children: <Widget>[
-                    new TextFormField(
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 255, 255, 255))),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 3,
-                                  color: Color.fromRGBO(140, 79, 225, 1))),
-                          hintText: "Confirm Your Password",
-                          hintStyle: TextStyle(
-                              color: Color.fromRGBO(199, 196, 196, 1)),
-                          filled: true,
-                          fillColor: Colors.white,
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _securepass
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                              color: Color.fromRGBO(219, 223, 247, 1),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _securepass = !_securepass;
-                              });
-                            },
-                          )),
-                      obscureText: _securepass,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+          // new Column(
+          //   children: <Widget>[
+          //     new Container(
+          //       padding: EdgeInsets.only(left: 34, top: 14, right: 34),
+          //       child: new Column(
+          //         children: <Widget>[
+          //           new TextFormField(
+          //             decoration: InputDecoration(
+          //                 enabledBorder: OutlineInputBorder(
+          //                     borderRadius:
+          //                         BorderRadius.all(Radius.circular(6)),
+          //                     borderSide: BorderSide(
+          //                         color: Color.fromARGB(255, 255, 255, 255))),
+          //                 focusedBorder: OutlineInputBorder(
+          //                     borderSide: BorderSide(
+          //                         width: 3,
+          //                         color: Color.fromRGBO(140, 79, 225, 1))),
+          //                 hintText: "Password",
+          //                 hintStyle: TextStyle(
+          //                     color: Color.fromRGBO(199, 196, 196, 1)),
+          //                 filled: true,
+          //                 fillColor: Colors.white,
+          //                 suffixIcon: IconButton(
+          //                   icon: Icon(
+          //                     _secureText
+          //                         ? Icons.visibility_off
+          //                         : Icons.visibility,
+          //                     color: Color.fromRGBO(219, 223, 247, 1),
+          //                   ),
+          //                   onPressed: () {
+          //                     setState(() {
+          //                       _secureText = !_secureText;
+          //                     });
+          //                   },
+          //                 )),
+          //             obscureText: _secureText,
+          //           )
+          //         ],
+          //       ),
+          //     )
+          //   ],
+          // ),
+          // new Column(
+          //   children: <Widget>[
+          //     new Container(
+          //       padding: EdgeInsets.only(left: 34, top: 14, right: 34),
+          //       child: new Column(
+          //         children: <Widget>[
+          //           new TextFormField(
+          //             decoration: InputDecoration(
+          //                 enabledBorder: OutlineInputBorder(
+          //                     borderRadius:
+          //                         BorderRadius.all(Radius.circular(6)),
+          //                     borderSide: BorderSide(
+          //                         color: Color.fromARGB(255, 255, 255, 255))),
+          //                 focusedBorder: OutlineInputBorder(
+          //                     borderSide: BorderSide(
+          //                         width: 3,
+          //                         color: Color.fromRGBO(140, 79, 225, 1))),
+          //                 hintText: "Confirm Your Password",
+          //                 hintStyle: TextStyle(
+          //                     color: Color.fromRGBO(199, 196, 196, 1)),
+          //                 filled: true,
+          //                 fillColor: Colors.white,
+          //                 suffixIcon: IconButton(
+          //                   icon: Icon(
+          //                     _securepass
+          //                         ? Icons.visibility_off
+          //                         : Icons.visibility,
+          //                     color: Color.fromRGBO(219, 223, 247, 1),
+          //                   ),
+          //                   onPressed: () {
+          //                     setState(() {
+          //                       _securepass = !_securepass;
+          //                     });
+          //                   },
+          //                 )),
+          //             obscureText: _securepass,
+          //           )
+          //         ],
+          //       ),
+          //     )
+          //   ],
+          // ),
           new Column(
             children: <Widget>[
               new Container(
@@ -216,7 +313,7 @@ class _RegisterState extends State<Register> {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        if (!_formKey.currentState!.validate()) {
+                        if (!formkey.currentState!.validate()) {
                           return;
                         }
                       },
@@ -247,7 +344,7 @@ class _RegisterState extends State<Register> {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        Register()));
+                                        LoginScreen()));
                           },
                           child: Container(
                             padding: EdgeInsets.only(left: 5),
