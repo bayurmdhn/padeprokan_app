@@ -44,12 +44,12 @@ class HomePage extends StatelessWidget {
                       IconButton(
                           onPressed: () {
                             showDialog(
-                              
                                 context: context,
                                 builder: (context) => Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           12, 23, 24, 34),
                                       child: AlertDialog(
+                                        alignment: Alignment.topRight,
                                         content: Container(
                                           child: Row(
                                             children: [
