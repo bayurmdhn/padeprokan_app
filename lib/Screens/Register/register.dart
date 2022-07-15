@@ -82,9 +82,9 @@ class _RegisterState extends State<Register> {
                       fillColor: Colors.white,
                     ),
                     validator: (Value) {
-                      if (Value!.isNotEmpty && Value.length > 3) {
+                      if (Value!.isEmpty && Value.length > 3) {
                         return null;
-                      } else if (Value.length < 4 && Value.isNotEmpty) {
+                      } else if (Value.length < 4 && Value.isEmpty) {
                         return 'Your name is too short';
                       } else {
                         return 'Your full name is required';
@@ -210,7 +210,7 @@ class _RegisterState extends State<Register> {
           new Column(
             children: <Widget>[
               new Container(
-                padding: EdgeInsets.only(top: 34),
+                padding: EdgeInsets.only(left: 34, top: 34, right: 34),
                 child: new Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -229,24 +229,62 @@ class _RegisterState extends State<Register> {
                           minimumSize: Size(346, 40),
                           padding: EdgeInsets.only(top: 20, bottom: 20)),
                     ),
+                    SizedBox(height: 34),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => LoginScreen()));
-                      },
+                      onTap: () {},
                       child: Container(
-                        padding: EdgeInsets.only(left: 50),
-                        child: Column(children: <Widget>[
-                          Text(
-                            "Login here!",
-                            style: new TextStyle(
-                              color: Color.fromRGBO(84, 66, 187, 1),
-                              fontSize: 14.0,
-                            ),
+                          child: Row(children: <Widget>[
+                        Text(
+                          "Already have an account?",
+                          style: new TextStyle(
+                            color: Color.fromRGBO(141, 126, 224, 1),
+                            fontSize: 14.0,
                           ),
-                        ]),
-                      ),
-                    )
+                          // style: TextStyle(decoration: TextDecoration.underline),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        Register()));
+                          },
+                          child: Container(
+                            padding: EdgeInsets.only(left: 5),
+                            child: Row(children: <Widget>[
+                              Text(
+                                "Login here!",
+                                style: new TextStyle(
+                                  color: Color.fromRGBO(84, 66, 187, 1),
+                                  fontSize: 14.0,
+                                ),
+                              )
+                            ]),
+                          ),
+                        )
+                      ])),
+                      // child: Text(
+                      //   "Don't have account?",
+                      //   style: TextStyle(decoration: TextDecoration.underline),
+                      // ),
+                    ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    //         builder: (BuildContext context) => LoginScreen()));
+                    //   },
+                    //   child: Container(
+                    //     child: Column(children: <Widget>[
+                    //       Text(
+                    //         "Already have an account? Login here",
+                    //         style: new TextStyle(
+                    //           color: Color.fromRGBO(84, 66, 187, 1),
+                    //           fontSize: 14.0,
+                    //         ),
+                    //       ),
+                    //     ]),
+                    //   ),
+                    // )
                   ],
                 ),
               ),

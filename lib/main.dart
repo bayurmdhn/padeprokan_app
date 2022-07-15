@@ -3,6 +3,7 @@ import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:first_app_flutter/routes.dart';
 import 'package:first_app_flutter/theme.dart';
 import 'package:flutter/material.dart';
+import 'Profil/Profil.dart';
 
 void main() async {
   runApp(MaterialApp(
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       navigateRoute: LoginScreen(),
       duration: 3000,
       imageSize: 126,
-      imageSrc: "assets/images/logo.png",
+      imageSrc: "assets/images/Logo.png",
       backgroundColor: Colors.white,
       // text: "SikatGigi",
       // textStyle: TextStyle(
