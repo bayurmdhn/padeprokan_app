@@ -57,7 +57,12 @@ class HomePage extends StatelessWidget {
                                                 Icons.circle_rounded,
                                                 color: Color.fromARGB(
                                                     255, 138, 138, 138),
-                                              )
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 13),
+                                                child: Text("My Account"),
+                                              ),
                                             ],
                                           ),
                                         ),
