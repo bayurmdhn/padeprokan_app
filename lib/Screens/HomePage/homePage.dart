@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(fontFamily: 'Roboto'),
         home: Scaffold(
+          //AppBar Padeprokan
           appBar: AppBar(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,6 +29,7 @@ class HomePage extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
+                  //Profile Picture button and Notification button
                   Row(
                     children: [
                       Padding(
@@ -37,42 +39,42 @@ class HomePage extends StatelessWidget {
                               Icons.notifications,
                               color: Color.fromARGB(255, 138, 138, 138),
                             ),
-                            onPressed: () {
-                              PopupMenuButton(
-                                child: Text("Show Popup Menu"),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(15.0))),
-                                itemBuilder: (context) => [
-                                  PopupMenuItem(
-                                    child: Text("pub.dev"),
-                                  ),
-                                  PopupMenuItem(
-                                    child: Text("Flutter"),
-                                  ),
-                                  PopupMenuItem(
-                                    child: Text("Google.com"),
-                                  ),
-                                  PopupMenuItem(
-                                    child: Text(
-                                        "https://blogdeveloperspot.blogspot.com"),
-                                  ),
-                                ],
-                              );
-                            },
+                            onPressed: () {},
                           )),
-                      ProfilePicture(
-                        name: "Test",
-                        radius: 13.5,
-                        fontsize: 18,
-                        random: true,
-                      )
+                      IconButton(
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) => Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          12, 23, 24, 34),
+                                      child: AlertDialog(
+                                        alignment: Alignment.topRight,
+                                        content: Container(
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.circle_rounded,
+                                                color: Color.fromARGB(
+                                                    255, 138, 138, 138),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ));
+                          },
+                          icon: Icon(
+                            Icons.circle_rounded,
+                            color: Color.fromARGB(255, 138, 138, 138),
+                          ))
                     ],
                   ),
                 ],
               ),
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
               centerTitle: true),
+          //MainBody
           body: ListView(
             children: [
               Container(
@@ -92,6 +94,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ],
                       ),
+                      //Search Engine
                       new Column(
                         children: <Widget>[
                           new Container(
@@ -126,6 +129,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ],
                       ),
+                      //No Space Interface
                       Container(
                         padding: EdgeInsets.only(top: 73),
                         child: Column(
@@ -146,6 +150,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ]),
+                //Screen size
                 decoration: new BoxDecoration(
                     color: Color.fromARGB(255, 219, 223, 247)),
                 width: MediaQuery.of(context).size.width,
@@ -153,6 +158,7 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
+          //Add Space Button
           floatingActionButton: Padding(
             padding: const EdgeInsets.only(bottom: 78),
             child: FloatingActionButton(
@@ -164,37 +170,4 @@ class HomePage extends StatelessWidget {
           ),
         ));
   }
-}
-
-Widget _buildPopupDialog(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.fromLTRB(59, 10, 0, 430),
-    child: Container(
-      decoration: BoxDecoration(
-          border: Border.all(color: Color.fromARGB(255, 159, 159, 159))),
-      child: new AlertDialog(
-        title: const Text(''),
-        content: new Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: 227,
-              height: 211,
-              child: ListView(
-                children: [
-                  Container(
-                    child: Text(
-                      "No Data",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    ),
-  );
 }
