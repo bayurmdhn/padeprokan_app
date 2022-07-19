@@ -7,6 +7,8 @@ import 'package:flutter/widgets.dart';
 import '../../Login/loginScreen.dart';
 
 class Body extends StatelessWidget {
+  bool _secureConfirm = true;
+  bool _securePass = true;
   late String _name, _email;
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmPassword = TextEditingController();
@@ -149,6 +151,7 @@ class Body extends StatelessWidget {
                             return 'Your password is required';
                           }
                         },
+                        obscureText: _securePass,
                       ),
                       SizedBox(
                         height: 14,
