@@ -37,30 +37,20 @@ class _SignInFormState extends State<SignInForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildPassword(),
           SizedBox(height: getProportionateScreenHeight(30)),
-          Row(
-            children: [
-              // Checkbox(
-              //     value: remeber,
-              //     onChanged: (value) {
-              //       setState(() {
-              //         remeber = value;
-              //       });
-              //     }),
-              Text('Remembering'),
-              Spacer(),
-              GestureDetector(
-                onTap: () {},
-                child: Text(
-                  "Forgot Password?",
-                  style: new TextStyle(
-                    color: Color.fromRGBO(84, 66, 187, 1),
-                    fontSize: 14.0,
-                  ),
-                  // style: TextStyle(decoration: TextDecoration.underline),
-                ),
-              )
-            ],
-          ),
+          // Row(
+          //   children: [
+          // Checkbox(
+          //     value: remeber,
+          //     onChanged: (value) {
+          //       setState(() {
+          //         remeber = value;
+          //       });
+          //     }),
+          // Text('Remembering'),
+          // Spacer(),
+          //   ],
+          // ),
+
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).pushReplacement(MaterialPageRoute(

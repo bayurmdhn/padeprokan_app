@@ -3,13 +3,20 @@ import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app_flutter/Screens/Register/Components/background.dart';
 import 'package:flutter/widgets.dart';
+import 'package:set_state/set_state.dart';
 
 import '../../Login/loginScreen.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  @override
+  State<Body> createState() => _Body();
+}
+
+class _Body extends State<Body> {
   bool _secureConfirm = true;
   bool _securePass = true;
-  late String _name, _email;
+  String _email = '';
+  String _name = '';
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmPassword = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -85,7 +92,7 @@ class Body extends StatelessWidget {
                             return 'Your full name is required';
                           }
                         },
-                        onSaved: (var name) {
+                        onSaved: (name) {
                           _name = name!;
                         },
                       ),
@@ -118,34 +125,46 @@ class Body extends StatelessWidget {
                             return 'Your email is required';
                           }
                         },
-                        onSaved: (var email) {
+                        onSaved: (email) {
                           _email = email!;
                         },
                       ),
                       SizedBox(
                         height: 14,
                       ),
-                      new TextFormField(
+                      TextFormField(
                         decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 255, 255, 255))),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2,
-                                  color: Color.fromRGBO(140, 79, 225, 1))),
-                          hintText: "Password",
-                          hintStyle: TextStyle(
-                              color: Color.fromRGBO(199, 196, 196, 1)),
-                          filled: true,
-                          fillColor: Colors.white,
-                        ),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255))),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 3,
+                                    color: Color.fromRGBO(140, 79, 225, 1))),
+                            hintText: "Passwowrd",
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(199, 196, 196, 1)),
+                            filled: true,
+                            fillColor: Colors.white,
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _securePass
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: Color.fromRGBO(219, 223, 247, 1),
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _securePass = !_securePass;
+                                });
+                              },
+                            )),
                         validator: (Value) {
                           if (Value!.isNotEmpty && Value.length > 3) {
                             return null;
-                          } else if (Value.length < 4 && Value.isNotEmpty) {
+                          } else if (Value.length < 6 && Value.isNotEmpty) {
                             return 'Please insert at least 6 characters !';
                           } else {
                             return 'Your password is required';
@@ -158,21 +177,33 @@ class Body extends StatelessWidget {
                       ),
                       new TextFormField(
                         decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 255, 255, 255))),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2,
-                                  color: Color.fromRGBO(140, 79, 225, 1))),
-                          hintText: "Confirm Your Password",
-                          hintStyle: TextStyle(
-                              color: Color.fromRGBO(199, 196, 196, 1)),
-                          filled: true,
-                          fillColor: Colors.white,
-                        ),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255))),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(140, 79, 225, 1))),
+                            hintText: "Confirm Your Password",
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(199, 196, 196, 1)),
+                            filled: true,
+                            fillColor: Colors.white,
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _secureConfirm
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: Color.fromRGBO(219, 223, 247, 1),
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _secureConfirm = !_secureConfirm;
+                                });
+                              },
+                            )),
                         validator: (Value) {
                           if (Value!.isNotEmpty && Value.length > 3) {
                             return null;
@@ -182,6 +213,7 @@ class Body extends StatelessWidget {
                             return 'Your Password is required';
                           }
                         },
+                        obscureText: _secureConfirm,
                       ),
                       SizedBox(
                         height: 34,
