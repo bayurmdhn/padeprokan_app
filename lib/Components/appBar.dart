@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class appBarrrr extends StatefulWidget {
+class appBarrrr extends StatefulWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => const Size.fromHeight(50);
   const appBarrrr({Key? key}) : super(key: key);
 
   @override
