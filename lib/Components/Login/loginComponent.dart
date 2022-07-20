@@ -20,64 +20,57 @@ class _SignInComponentState extends State<SignInComponent> {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenHeight(20)),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: SizeConfig.screenHeight * 0.04,
-                ),
-                SizedBox(
-                  height: SizeConfig.screenHeight * 0.04,
-                ),
-                SimpleShadow(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SimpleShadow(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 97),
                   child: Image.asset("assets/images/logo.png",
                       height: 128, width: 124),
-                  opacity: 0.5,
-                  color: kSecondaryColor,
-                  offset: Offset(5, 5),
-                  sigma: 2,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 34, top: 8),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Login",
-                        style: new TextStyle(
-                          color: Colors.black,
-                          fontSize: 24.0,
-                        ),
-                        // style: mTitleStyle,
+                opacity: 0.5,
+                color: kSecondaryColor,
+                offset: Offset(5, 5),
+                sigma: 2,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 34, top: 28),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Login",
+                      style: new TextStyle(
+                        color: Colors.black,
+                        fontSize: 24.0,
                       ),
-                    ],
-                  ),
+                      // style: mTitleStyle,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 34, top: 8),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Login and Start Manage Your Learning \nProcess!",
-                        style: new TextStyle(
-                          color: Color.fromARGB(255, 137, 137, 137),
-                          fontSize: 14.0,
-                        ),
-                        // style: mTitleStyle,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 34, top: 8),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Login and Start Manage Your Learning \nProcess!",
+                      style: new TextStyle(
+                        color: Color.fromARGB(255, 137, 137, 137),
+                        fontSize: 14.0,
                       ),
-                    ],
-                  ),
+                      // style: mTitleStyle,
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                SignInForm()
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 38,
+              ),
+              SignInForm()
+            ],
           ),
         ),
       ),

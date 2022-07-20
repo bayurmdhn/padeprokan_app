@@ -5,6 +5,7 @@ class Background extends StatelessWidget {
   const Background({
     Key? key,
     required this.child,
+    required ThemeData theme,
   }) : super(key: key);
 
   @override

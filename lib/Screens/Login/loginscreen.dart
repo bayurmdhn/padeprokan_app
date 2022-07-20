@@ -17,10 +17,10 @@ class LoginScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Color.fromRGBO(219, 223, 247, 1),
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(219, 223, 247, 1),
-        automaticallyImplyLeading: false,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Color.fromRGBO(219, 223, 247, 1),
+      //   automaticallyImplyLeading: false,
+      // ),
       body: SignInComponent(),
     );
   }
