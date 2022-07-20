@@ -1,3 +1,4 @@
+import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
 import 'package:first_app_flutter/Screens/Login/loginScreen.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
 import 'package:first_app_flutter/Reverensi/register.dart';
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-      navigateRoute: LoginScreen(),
+      navigateRoute: HomePage(),
       duration: 3000,
       imageSize: 126,
       imageSrc: "assets/images/Logo.png",
