@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:first_app_flutter/Components/custom_surfix_icons.dart';
 import 'package:first_app_flutter/Components/default_button_custome_color.dart';
+import 'package:first_app_flutter/Screens/ForgotPassword/forgotPass.dart';
 import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
@@ -46,8 +47,18 @@ class _SignInFormState extends State<SignInForm> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                  padding: EdgeInsets.only(right: 34),
-                  child: Text("Forgot Password?")),
+                padding: EdgeInsets.only(right: 34),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (BuildContext context) => forgotPass()));
+                  },
+                  child: Text(
+                    "Forgot Password?",
+                    style: forgotPassword,
+                  ),
+                ),
+              )
             ],
           ),
           SizedBox(
@@ -72,12 +83,11 @@ class _SignInFormState extends State<SignInForm> {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
                   builder: (BuildContext context) => HomePage()));
             },
-            child: Text("Login"),
-            style: ElevatedButton.styleFrom(
-                primary: Color.fromRGBO(247, 183, 49, 1),
-                onPrimary: Colors.white,
-                minimumSize: Size(297, 1),
-                padding: EdgeInsets.only(top: 20, bottom: 20)),
+            child: Text(
+              "Login",
+              style: text3,
+            ),
+            style: elevated1,
           ),
           // ElevatedButton(
           //   onPressed: () {},
@@ -96,11 +106,7 @@ class _SignInFormState extends State<SignInForm> {
             children: <Widget>[
               Text(
                 "Don’t have an account yet?",
-                style: new TextStyle(
-                  color: Color.fromRGBO(141, 126, 224, 1),
-                  fontSize: 14.0,
-                  fontFamily: 'Roboto',
-                ),
+                style: text4,
               ),
               GestureDetector(
                   onTap: () {
@@ -111,12 +117,7 @@ class _SignInFormState extends State<SignInForm> {
                     padding: const EdgeInsets.only(left: 5),
                     child: Text(
                       "Register here",
-                      style: new TextStyle(
-                        color: Color.fromRGBO(84, 66, 187, 1),
-                        fontSize: 14.0,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: text5,
                     ),
                   ))
             ],

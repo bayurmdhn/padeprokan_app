@@ -42,9 +42,10 @@ class _SignInComponentState extends State<SignInComponent> {
                     Text(
                       "Login",
                       style: new TextStyle(
-                        color: Colors.black,
-                        fontSize: 24.0,
-                      ),
+                          color: Colors.black,
+                          fontSize: 24.0,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.bold),
                       // style: mTitleStyle,
                     ),
                   ],
@@ -60,6 +61,7 @@ class _SignInComponentState extends State<SignInComponent> {
                       style: new TextStyle(
                         color: Color.fromARGB(255, 137, 137, 137),
                         fontSize: 14.0,
+                        fontFamily: 'Roboto',
                       ),
                       // style: mTitleStyle,
                     ),

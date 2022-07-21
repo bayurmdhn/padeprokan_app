@@ -4,6 +4,61 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../size_config.dart';
 
+//Komponen Buat Text di Login Dan Register
+var text1 = TextStyle(
+    color: Colors.black,
+    fontSize: 24.0,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.bold);
+
+var text2 = TextStyle(
+    color: Color.fromARGB(255, 137, 137, 137),
+    fontSize: 14.0,
+    fontFamily: 'Roboto');
+
+var text3 = TextStyle(fontSize: 14.0, fontFamily: 'Roboto');
+
+var text4 = TextStyle(
+  color: Color.fromRGBO(141, 126, 224, 1),
+  fontSize: 14.0,
+  fontFamily: 'Roboto',
+);
+
+var text5 = TextStyle(
+  color: Color.fromRGBO(84, 66, 187, 1),
+  fontSize: 14.0,
+  fontFamily: 'Roboto',
+  fontWeight: FontWeight.bold,
+);
+
+var forgotPassword = TextStyle(
+    color: Color.fromRGBO(84, 66, 187, 1),
+    fontSize: 14.0,
+    fontFamily: 'Roboto');
+
+var signIn = TextStyle(
+  color: Color.fromRGBO(106, 106, 106, 1),
+  fontSize: 14.0,
+  fontFamily: 'Roboto',
+);
+
+//Elevated Button di Login Dan Register
+var elevated1 = ElevatedButton.styleFrom(
+    primary: Color.fromRGBO(247, 183, 49, 1),
+    onPrimary: Colors.white,
+    minimumSize: Size(330, 1),
+    padding: EdgeInsets.only(top: 20, bottom: 20));
+
+//Form Register Dan Login
+const String kNameRequ = "Your full name is required";
+const String kEmailRequ = "Your email is required";
+const String kPassRequ = "Your password is required";
+const String kNameShort = "Your name is too short";
+const String kValidEmail = "Please insert a valid email!";
+const String kPass6char = "Please insert at least 6 characters !";
+const String kConfirmPass = "Two passwords that you enter is inconsistent!";
+const String kForgotinput = "Please input your email";
+//Warna
 const kPrimaryColor = Color(0xFFFFC654);
 const kSecondaryColor = Color(0xFF398AB9);
 const kThirdColor = Color(0xFFD8D2CB);
@@ -64,21 +119,21 @@ const String kNamelNullError = "Please Enter your name";
 const String kPhoneNumberNullError = "Please Enter your phone number";
 const String kAddressNullError = "Please Enter your address";
 
-final otpInputDecoration = InputDecoration(
-  fillColor: kPrimaryColor,
-  contentPadding:
-      EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
-  border: outlineInputBorder(),
-  focusedBorder: outlineInputBorder(),
-  enabledBorder: outlineInputBorder(),
-);
+// final otpInputDecoration = InputDecoration(
+//   fillColor: kPrimaryColor,
+//   contentPadding:
+//       EdgeInsets.symmetric(vertical: getProportionateScreenWidth(6)),
+//   border: outlineInputBorder(),
+//   focusedBorder: outlineInputBorder(),
+//   enabledBorder: outlineInputBorder(),
+// );
 
-OutlineInputBorder outlineInputBorder() {
-  return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
-    borderSide: BorderSide(color: kTextColor),
-  );
-}
+// OutlineInputBorder outlineInputBorder() {
+//   return OutlineInputBorder(
+//     borderRadius: BorderRadius.circular(getProportionateScreenWidth(6)),
+//     borderSide: BorderSide(color: kTextColor),
+//   );
+// }
 
 // Style for title
 var mTitleStyle = GoogleFonts.inter(
@@ -101,7 +156,6 @@ var mTitle = GoogleFonts.inter(
 
 var mTitle2 = GoogleFonts.inter(
     fontWeight: FontWeight.w600, color: mTitleColor, fontSize: 14);
-
 // Style for title Name
 var mTitleStyleNameApps = GoogleFonts.inter(
   fontWeight: FontWeight.bold,
