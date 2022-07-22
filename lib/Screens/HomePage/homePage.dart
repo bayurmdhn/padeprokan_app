@@ -225,7 +225,11 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.only(top: 73),
                         child: Column(
                           children: [
-                            Image.asset('assets/images/Logo copy.png'),
+                            Image.asset(
+                              'assets/images/Logo copy.png',
+                              width: 220,
+                              height: 160,
+                            ),
                             Container(
                               padding: EdgeInsets.only(top: 79),
                               child: Text(
@@ -250,15 +254,15 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           //Add Space Button
-          // floatingActionButton: Padding(
-          //   padding: const EdgeInsets.only(bottom: 78),
-          //   child: FloatingActionButton(
-          //     onPressed: () {},
-          //     tooltip: 'Create New Space',
-          //     child: const Icon(Icons.add),
-          //     backgroundColor: Color.fromARGB(255, 255, 162, 2),
-          //   ),
-          // ),
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(bottom: 78),
+            child: FloatingActionButton(
+              onPressed: () {},
+              tooltip: 'Create New Space',
+              child: const Icon(Icons.add),
+              backgroundColor: Color.fromARGB(255, 255, 162, 2),
+            ),
+          ),
         ));
   }
 }
