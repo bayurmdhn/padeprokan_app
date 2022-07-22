@@ -18,7 +18,8 @@ class _appBarrrrState extends State<appBarrrr> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            new Image.asset('assets/images/Logo padeprokan.png'),
+            new Image.asset('assets/images/Logo padeprokan.png',
+                width: 26, height: 26),
             new Text(
               "Spaces",
               textAlign: TextAlign.center,

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:popup_card/popup_card.dart';
 import '../../Components/appBar.dart';
+import '../../Components/Homepage/cardHome.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
