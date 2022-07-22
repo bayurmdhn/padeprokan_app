@@ -37,7 +37,7 @@ class _Body extends State<Body> {
                 child: Image.asset(
                   "assets/images/logo.png",
                   height: 128.0,
-                  width: 124.0,
+                  width: 131.0,
                 ),
               ),
               Positioned(

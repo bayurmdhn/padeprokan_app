@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../Utils/constants.dart';
-import '../../Login/loginScreen.dart';
-import 'Components/background.dart';
+import '../../../../Utils/constants.dart';
+import '../../../Login/loginScreen.dart';
 import 'background.dart';
 
 class BodyForgot extends StatefulWidget {
@@ -25,7 +24,7 @@ class _BodyForgot extends State<BodyForgot> {
           child: Image.asset(
             "assets/images/logo.png",
             height: 128.0,
-            width: 124.0,
+            width: 131.0,
           ),
         ),
         Positioned(

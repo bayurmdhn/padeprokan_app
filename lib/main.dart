@@ -1,3 +1,4 @@
+import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
 import 'package:first_app_flutter/Screens/Login/loginscreen.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
@@ -32,10 +33,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-      navigateRoute: LoginScreen(),
+      navigateRoute: docsFiles(),
       duration: 3000,
-      imageSize: 126,
-      imageSrc: "assets/images/Logo.png",
+      imageSize: 170,
+      imageSrc: "assets/images/logo.png",
       backgroundColor: Colors.white,
       // text: "SikatGigi",
       // textStyle: TextStyle(
