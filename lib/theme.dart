@@ -18,7 +18,6 @@ InputDecorationTheme inputDecorationTheme() {
     borderSide: BorderSide(
       color: kTextColor,
     ),
-    gapPadding: 2,
   );
   return InputDecorationTheme(
     // If  you are using latest version of flutter then lable text and hint text shown like this

@@ -32,6 +32,7 @@ dependencies:
   email_validator: ^2.0.1
   set_state: ^1.0.0
   popup_card: ^0.1.0
+  flutter_speed_dial: ^6.0.0
   
 
 
@@ -76,7 +77,9 @@ flutter:
      - assets/images/Padeprokan.png
      - assets/images/
      - assets/images/logoo.png
-     - assets/images/Padeprokan.png
+     - assets/images/emptyDocs.png
+     - assets/images/addFolder.png
+     - assets/images/addFile.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

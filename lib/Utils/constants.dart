@@ -42,6 +42,13 @@ var signIn = TextStyle(
   fontFamily: 'Roboto',
 );
 
+var dontHave = TextStyle(
+  color: Color.fromRGBO(73, 73, 73, 1),
+  fontSize: 24.0,
+  fontFamily: 'Roboto',
+  fontWeight: FontWeight.bold,
+);
+
 //Elevated Button di Login Dan Register
 var elevated1 = ElevatedButton.styleFrom(
     primary: Color.fromRGBO(247, 183, 49, 1),
@@ -58,7 +65,13 @@ const String kValidEmail = "Please insert a valid email!";
 const String kPass6char = "Please insert at least 6 characters !";
 const String kConfirmPass = "Two passwords that you enter is inconsistent!";
 const String kForgotinput = "Please input your email";
+const String kDontHaveFile = "You don't have any file!";
+
 //Warna
+
+const kWhite = Color.fromARGB(255, 255, 255, 255);
+const kBackGround = Color.fromRGBO(219, 223, 247, 1);
+const kColorAdd = Color.fromRGBO(255, 165, 2, 1);
 const kPrimaryColor = Color(0xFFFFC654);
 const kSecondaryColor = Color(0xFF398AB9);
 const kThirdColor = Color(0xFFD8D2CB);
