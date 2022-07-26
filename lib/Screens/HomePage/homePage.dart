@@ -1,4 +1,5 @@
 import 'dart:js';
+import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
@@ -231,7 +232,14 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ),
                                           GestureDetector(
-                                            onTap: () {},
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const spaceCard()),
+                                              );
+                                            },
                                             child: Container(
                                               width: 71,
                                               height: 27,

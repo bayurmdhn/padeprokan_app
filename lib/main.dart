@@ -7,7 +7,7 @@ import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:first_app_flutter/routes.dart';
 import 'package:first_app_flutter/theme.dart';
 import 'package:flutter/material.dart';
-import 'Profil/Profil.dart';
+import 'package:first_app_flutter/Screens/Profil/Profil.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
 
 void main() async {
