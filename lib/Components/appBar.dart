@@ -13,7 +13,7 @@ class appBarClass extends StatelessWidget {
       children: <Widget>[
         new Image.asset('assets/images/Logo padeprokan.png'),
         new Text(
-          "Spacesttt",
+          "Spaces",
           textAlign: TextAlign.center,
           style: TextStyle(
               color: Colors.grey,
@@ -88,10 +88,12 @@ class appBarClass extends StatelessWidget {
                                       child: Container(
                                         child: Row(
                                           children: [
-                                            Icon(
-                                              Icons.circle_rounded,
-                                              color: Color.fromARGB(
-                                                  255, 138, 138, 138),
+                                            Container(
+                                              child: Icon(
+                                                Icons.circle_rounded,
+                                                color: Color.fromARGB(
+                                                    255, 138, 138, 138),
+                                              ),
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.only(
