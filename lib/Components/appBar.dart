@@ -12,7 +12,7 @@ class appBarClass extends StatelessWidget {
       children: <Widget>[
         new Image.asset('assets/images/Logo padeprokan.png'),
         new Text(
-          "Spaces",
+          "Spacesttt",
           textAlign: TextAlign.center,
           style: TextStyle(
               color: Colors.grey,
