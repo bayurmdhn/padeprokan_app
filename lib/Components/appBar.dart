@@ -1,3 +1,4 @@
+import 'package:first_app_flutter/Screens/Profil/Profil.dart';
 import 'package:flutter/material.dart';
 
 class appBarClass extends StatelessWidget {
@@ -75,22 +76,34 @@ class appBarClass extends StatelessWidget {
                                 width: 200,
                                 child: Column(
                                   children: [
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.circle_rounded,
-                                          color: Color.fromARGB(
-                                              255, 138, 138, 138),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const ProfilePage()),
+                                        );
+                                      },
+                                      child: Container(
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.circle_rounded,
+                                              color: Color.fromARGB(
+                                                  255, 138, 138, 138),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 13),
+                                              child: Text(
+                                                "My Account",
+                                                style: TextStyle(fontSize: 14),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 13),
-                                          child: Text(
-                                            "My Account",
-                                            style: TextStyle(fontSize: 14),
-                                          ),
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                     Divider(
                                       color: Color.fromARGB(255, 138, 138, 138),
