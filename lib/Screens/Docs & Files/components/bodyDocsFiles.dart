@@ -1,3 +1,4 @@
+import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/speedDial.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../../../Utils/constants.dart';
@@ -76,41 +77,7 @@ class _bodyDocsFiles extends State<bodyDocsFiles> {
           // ),
         ]),
       ),
-      floatingActionButton: SpeedDial(
-          icon: Icons.add_circle,
-          buttonSize: const Size(55, 55),
-          backgroundColor: kColorAdd,
-          overlayColor: kBackGround,
-          overlayOpacity: 0.2,
-          children: [
-            SpeedDialChild(
-                child: Image.asset(
-                  "assets/images/addFile.png",
-                  color: kWhite,
-                  height: 26,
-                  width: 26,
-                ),
-                backgroundColor: kColorAdd,
-                label: "New File TXT"),
-            SpeedDialChild(
-                child: Image.asset(
-                  "assets/images/addFolder.png",
-                  color: kWhite,
-                  height: 26,
-                  width: 26,
-                ),
-                backgroundColor: kColorAdd,
-                label: "Add Folder"),
-            // SpeedDialChild(
-            //     child: Image.asset(
-            //       "",
-            //       color: kWhite,
-            //       height: 26,
-            //       width: 26,
-            //     ),
-            //     backgroundColor: kColorAdd,
-            //     label: "Upload File")
-          ]),
+      floatingActionButton: speedDial(),
     );
   }
 }

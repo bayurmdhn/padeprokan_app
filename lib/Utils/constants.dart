@@ -49,6 +49,12 @@ var dontHave = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+var add = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 9,
+    color: Colors.white,
+    fontWeight: FontWeight.normal);
+
 //Elevated Button di Login Dan Register
 var elevated1 = ElevatedButton.styleFrom(
     primary: Color.fromRGBO(247, 183, 49, 1),
@@ -68,7 +74,7 @@ const String kForgotinput = "Please input your email";
 const String kDontHaveFile = "You don't have any file!";
 
 //Warna
-
+const kblack = Color.fromARGB(255, 0, 0, 0);
 const kWhite = Color.fromARGB(255, 255, 255, 255);
 const kBackGround = Color.fromRGBO(219, 223, 247, 1);
 const kColorAdd = Color.fromRGBO(255, 165, 2, 1);
