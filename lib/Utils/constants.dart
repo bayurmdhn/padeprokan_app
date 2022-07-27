@@ -13,7 +13,7 @@ var text1 = TextStyle(
 
 var text2 = TextStyle(
     color: Color.fromARGB(255, 137, 137, 137),
-    fontSize: 14.0,
+    fontSize: 10.0,
     fontFamily: 'Roboto');
 
 var text3 = TextStyle(fontSize: 14.0, fontFamily: 'Roboto');
@@ -55,6 +55,18 @@ var add = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.normal);
 
+var embedLink = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    color: kgrey,
+    fontWeight: FontWeight.normal);
+
+var embedLink2 = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    color: kbin,
+    fontWeight: FontWeight.normal);
+
 //Elevated Button di Login Dan Register
 var elevated1 = ElevatedButton.styleFrom(
     primary: Color.fromRGBO(247, 183, 49, 1),
@@ -74,6 +86,9 @@ const String kForgotinput = "Please input your email";
 const String kDontHaveFile = "You don't have any file!";
 
 //Warna
+const kgrey = Color.fromRGBO(91, 91, 91, 1);
+const kbin = Color.fromRGBO(255, 0, 0, 1);
+const kdivider = Color.fromRGBO(159, 159, 159, 1);
 const kblack = Color.fromARGB(255, 0, 0, 0);
 const kWhite = Color.fromARGB(255, 255, 255, 255);
 const kBackGround = Color.fromRGBO(219, 223, 247, 1);
