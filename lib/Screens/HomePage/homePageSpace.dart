@@ -1,20 +1,30 @@
 import 'dart:js';
 import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
-import 'package:first_app_flutter/Screens/HomePage/homePageSpace.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
+import '../../Components/Homepage/cardHome.dart';
 
 import '../../Components/appBar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePageSpace extends StatefulWidget {
+  const HomePageSpace({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePageSpace> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePageSpace> {
+  List<spaceCard> listDynamic = [];
+  addDynamic() {
+    listDynamic.add(new spaceCard(
+        textColor: Colors.black,
+        backgroundColor: Colors.white,
+        text: "PKL Class",
+        spaceColor: Colors.green));
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -84,22 +94,14 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         padding: EdgeInsets.only(top: 73),
                         child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/images/Logo copy.png',
-                              width: 220,
-                              height: 160,
-                            ),
+                          children: <Widget>[
+                            new Flexible(
+                                child: ListView.builder(
+                                    itemCount: listDynamic.length,
+                                    itemBuilder: (_, index) =>
+                                        listDynamic[index])),
                             Container(
                               padding: EdgeInsets.only(top: 79),
-                              child: Text(
-                                "You Have No Space Here!",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 73, 73, 73),
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold),
-                              ),
                             )
                           ],
                         ),
@@ -234,12 +236,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           GestureDetector(
                                             onTap: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const HomePageSpace()),
-                                              );
+                                              addDynamic();
                                             },
                                             child: Container(
                                               width: 71,

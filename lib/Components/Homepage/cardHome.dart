@@ -3,37 +3,46 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class spaceCard extends StatefulWidget {
-  const spaceCard({Key? key}) : super(key: key);
+class spaceCard extends StatelessWidget {
+  final Color textColor;
+  final Color spaceColor;
+  final Color backgroundColor;
+  final String text;
 
-  @override
-  State<spaceCard> createState() => _spaceCardState();
-}
+  spaceCard(
+      {Key? key,
+      required this.textColor,
+      required this.backgroundColor,
+      required this.text,
+      required this.spaceColor})
+      : super(key: key);
 
-class _spaceCardState extends State<spaceCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
-      width: 346,
-      height: 160,
-      child: Column(
-        children: [
-          Container(
-            width: 346,
-            height: 108,
-            decoration: BoxDecoration(color: Colors.blue),
-          ),
-          Row(
-            children: [
-              Text(
-                "PKL Class",
-                style: TextStyle(fontSize: 16, color: Colors.black),
-              ),
-            ],
-          )
-        ],
-      ),
-    );
+        width: 346,
+        height: 160,
+        decoration: BoxDecoration(
+            color: backgroundColor, borderRadius: BorderRadius.circular(8)),
+        child: Column(
+          children: [
+            Container(
+              width: 346,
+              height: 108,
+              decoration: BoxDecoration(color: spaceColor),
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  text,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ],
+            )
+          ],
+        ));
   }
 }
