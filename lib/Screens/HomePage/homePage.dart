@@ -1,6 +1,7 @@
 import 'dart:js';
 import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
 import 'package:first_app_flutter/Screens/HomePage/homePageSpace.dart';
+import 'package:first_app_flutter/Screens/Spaces/spaceScreen.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
@@ -108,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const HomePage()),
+                                      builder: (context) => const Space()),
                                 );
                               },
                               child: spaceCard(
