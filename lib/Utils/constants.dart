@@ -13,7 +13,7 @@ var text1 = TextStyle(
 
 var text2 = TextStyle(
     color: Color.fromARGB(255, 137, 137, 137),
-    fontSize: 10.0,
+    fontSize: 14.0,
     fontFamily: 'Roboto');
 
 var text3 = TextStyle(fontSize: 14.0, fontFamily: 'Roboto');
@@ -66,6 +66,11 @@ var embedLink2 = TextStyle(
     fontSize: 12,
     color: kbin,
     fontWeight: FontWeight.normal);
+
+var searchFiles = TextStyle(
+    color: Color.fromARGB(255, 137, 137, 137),
+    fontSize: 10.0,
+    fontFamily: 'Roboto');
 
 //Elevated Button di Login Dan Register
 var elevated1 = ElevatedButton.styleFrom(
