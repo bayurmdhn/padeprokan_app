@@ -14,10 +14,11 @@ class _bodyDocsFiles extends State<bodyDocsFiles> {
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
+    final mediaQueryWidht = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         color: kBackGround,
-        width: double.infinity,
+        width: mediaQueryWidht * 1,
         height: mediaQueryHeight * 1,
         child: Stack(alignment: Alignment.topCenter, children: <Widget>[
           Positioned(

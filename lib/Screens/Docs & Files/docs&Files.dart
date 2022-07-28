@@ -9,6 +9,7 @@ class docsFiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appBarrDocs = AppBar(
+      backgroundColor: kWhite,
       title: appBarClass(
         judul: 'Docs & file',
       ),
