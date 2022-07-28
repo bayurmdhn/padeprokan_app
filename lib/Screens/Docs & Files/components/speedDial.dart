@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 import '../docs&Files.dart';
+import 'bodyDocsFiles.dart';
 
 class speedDial extends StatelessWidget {
   const speedDial({
@@ -69,6 +70,7 @@ class speedDial extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (context) {
+                      final height = MediaQuery.of(context).size.height;
                       return Material(
                         color: Color.fromARGB(0, 0, 0, 0),
                         child: Padding(
@@ -81,6 +83,8 @@ class speedDial extends StatelessWidget {
                             child: Column(
                               children: [
                                 Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
                                       padding:
@@ -95,17 +99,11 @@ class speedDial extends StatelessWidget {
                                     ),
                                     Padding(
                                         padding: const EdgeInsets.only(
-                                            top: 21, left: 7),
+                                            top: 21, right: 21),
                                         child: IconButton(
-                                            onPressed: () {
-                                              Navigator.of(context)
-                                                  .pushReplacement(
-                                                      MaterialPageRoute(
-                                                          builder: (BuildContext
-                                                                  context) =>
-                                                              docsFiles()));
-                                            },
-                                            icon: Icon(Icons.close)))
+                                          onPressed: () {},
+                                          icon: Icon(Icons.close),
+                                        ))
                                   ],
                                 ),
                                 // Row(

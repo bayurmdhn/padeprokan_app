@@ -13,11 +13,12 @@ class bodyDocsFiles extends StatefulWidget {
 class _bodyDocsFiles extends State<bodyDocsFiles> {
   @override
   Widget build(BuildContext context) {
+    final mediaQueryHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         color: kBackGround,
         width: double.infinity,
-        height: MediaQuery.of(context).size.height,
+        height: mediaQueryHeight * 1,
         child: Stack(alignment: Alignment.topCenter, children: <Widget>[
           Positioned(
               top: 50,

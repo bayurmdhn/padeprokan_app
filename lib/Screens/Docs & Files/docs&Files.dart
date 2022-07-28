@@ -8,13 +8,13 @@ import 'components/bodyDocsFiles.dart';
 class docsFiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        title: appBarClass(
-          judul: 'Docs & file',
-        ),
+    final appBarrDocs = AppBar(
+      title: appBarClass(
+        judul: 'Docs & file',
       ),
+    );
+    return Scaffold(
+      appBar: appBarrDocs,
       body: bodyDocsFiles(),
     );
   }
