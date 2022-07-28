@@ -246,7 +246,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                           children: [
                                             Padding(
                                               padding: const EdgeInsets.only(
-                                                  right: 15),
+                                                  right: 20),
                                               child: GestureDetector(
                                                 onTap: () {},
                                                 child: Container(
@@ -342,7 +342,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     Container(
                                       child: Padding(
                                         padding: const EdgeInsets.only(
-                                            top: 29, right: 30),
+                                            top: 29, right: 20),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -374,7 +374,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                               MainAxisAlignment.end,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsets.only(),
+                                              padding: const EdgeInsets.only(
+                                                  right: 20),
                                               child: GestureDetector(
                                                 onTap: () {},
                                                 child: Container(
