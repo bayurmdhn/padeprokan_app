@@ -77,11 +77,14 @@ flutter:
      - assets/images/Padeprokan.png
      - assets/images/
      - assets/images/logoo.png
+     - assets/images/Not data.png
      - assets/images/emptyDocs.png
      - assets/images/addFolder.png
      - assets/images/addFile.png
      - assets/images/drive.png
      - assets/images/clouddd.png
+     - assets/images/Not data.png
+     
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
