@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return SplashScreenView(
       navigateRoute: LoginScreen(),
       duration: 3000,
-      imageSize: 150,
+      imageSize: 120,
       imageSrc: "assets/images/logo.png",
       backgroundColor: Colors.white,
       // text: "SikatGigi",
