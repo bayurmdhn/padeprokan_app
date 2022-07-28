@@ -122,28 +122,31 @@ class speedDial extends StatelessWidget {
                               ),
                               Material(
                                 child: Form(
-                                  child: SizedBox(
-                                    width: 320,
-                                    height: 29,
-                                    child: TextFormField(
-                                      decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(5)),
-                                            borderSide: BorderSide(
-                                                color: Color.fromRGBO(
-                                                    140, 79, 225, 1))),
-                                        focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                                width: 2,
-                                                color: Color.fromRGBO(
-                                                    140, 79, 225, 1))),
-                                        hintText: "Untitled",
-                                        hintStyle: text2,
-                                        filled: true,
-                                        fillColor: Colors.white,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 18, right: 22),
+                                    child: SizedBox(
+                                      height: 29,
+                                      child: TextFormField(
+                                        decoration: InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(5)),
+                                              borderSide: BorderSide(
+                                                  color: Color.fromRGBO(
+                                                      140, 79, 225, 1))),
+                                          focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  width: 2,
+                                                  color: Color.fromRGBO(
+                                                      140, 79, 225, 1))),
+                                          hintText: "Untitled",
+                                          hintStyle: text2,
+                                          filled: true,
+                                          fillColor: Colors.white,
+                                        ),
+                                        style: TextStyle(fontSize: 12),
                                       ),
-                                      style: TextStyle(fontSize: 12),
                                     ),
                                   ),
                                 ),
@@ -174,30 +177,32 @@ class speedDial extends StatelessWidget {
                               ),
                               Material(
                                 child: Form(
-                                  child: SizedBox(
-                                    width: 320,
-                                    height: 29,
-                                    child: TextFormField(
-                                      decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(5)),
-                                            borderSide: BorderSide(
-                                                color: Color.fromRGBO(
-                                                    140, 79, 225, 1),
-                                                width: 1)),
-                                        focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                                width: 2,
-                                                color: Color.fromRGBO(
-                                                    140, 79, 225, 1))),
-                                        hintText:
-                                            "e.g.https://drive.google.com/open?id=1cMc-qT_W......",
-                                        hintStyle: text2,
-                                        filled: true,
-                                        fillColor: Colors.white,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 18, right: 22),
+                                    child: SizedBox(
+                                      height: 29,
+                                      child: TextFormField(
+                                        decoration: InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(5)),
+                                              borderSide: BorderSide(
+                                                  color: Color.fromRGBO(
+                                                      140, 79, 225, 1))),
+                                          focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  width: 2,
+                                                  color: Color.fromRGBO(
+                                                      140, 79, 225, 1))),
+                                          hintText:
+                                              "e.g.https://drive.google.com/open?id=1cMc-qT_W......",
+                                          hintStyle: text2,
+                                          filled: true,
+                                          fillColor: Colors.white,
+                                        ),
+                                        style: TextStyle(fontSize: 12),
                                       ),
-                                      style: TextStyle(fontSize: 12),
                                     ),
                                   ),
                                 ),
