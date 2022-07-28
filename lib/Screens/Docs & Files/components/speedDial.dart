@@ -106,7 +106,14 @@ class speedDial extends StatelessWidget {
                                       child: Material(
                                         color: Color.fromARGB(0, 0, 0, 0),
                                         child: IconButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.of(context)
+                                                .pushReplacement(
+                                                    MaterialPageRoute(
+                                                        builder: (BuildContext
+                                                                context) =>
+                                                            docsFiles()));
+                                          },
                                           icon: Icon(Icons.close),
                                         ),
                                       )),
