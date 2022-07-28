@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import '../../Components/appBar.dart';
 
 class Space extends StatefulWidget {
   const Space({Key? key}) : super(key: key);
@@ -17,36 +18,42 @@ class _SpaceState extends State<Space> {
         theme: ThemeData(fontFamily: 'Roboto'),
         home: Scaffold(
             appBar: AppBar(
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    new Image.asset('assets/images/Logo padeprokan.png'),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 17),
-                      child: new Text(
-                        "PKL/CLASS",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 18,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 17),
-                          child: Image.asset(
-                              'assets/images/clarity_notification-solid.png'),
-                        ),
-                        Image.asset('assets/images/Akun.png'),
-                      ],
-                    ),
-                  ],
+                title: appBarClass(
+                  judul: 'PKL Class',
                 ),
                 backgroundColor: Color.fromARGB(255, 255, 255, 255),
                 centerTitle: true),
+            // AppBar(
+            //     title: Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: <Widget>[
+            //         new Image.asset('assets/images/Logo padeprokan.png'),
+            //         Padding(
+            //           padding: const EdgeInsets.only(left: 17),
+            //           child: new Text(
+            //             "PKL/CLASS",
+            //             textAlign: TextAlign.center,
+            //             style: TextStyle(
+            //                 color: Colors.grey,
+            //                 fontSize: 18,
+            //                 fontFamily: 'Roboto',
+            //                 fontWeight: FontWeight.bold),
+            //           ),
+            //         ),
+            //         Row(
+            //           children: [
+            //             Padding(
+            //               padding: const EdgeInsets.only(right: 17),
+            //               child: Image.asset(
+            //                   'assets/images/clarity_notification-solid.png'),
+            //             ),
+            //             Image.asset('assets/images/Akun.png'),
+            //           ],
+            //         ),
+            //       ],
+            //     ),
+            //     backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            //     centerTitle: true),
             body: Container(
               child: GridView.count(
                 primary: false,

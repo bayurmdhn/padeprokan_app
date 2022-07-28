@@ -1,9 +1,13 @@
 import 'package:first_app_flutter/Screens/Profil/Profil.dart';
 import 'package:flutter/material.dart';
+import '../Screens/HomePage/homePage.dart';
 
 class appBarClass extends StatelessWidget {
-  const appBarClass({
+  final String judul;
+
+  appBarClass({
     Key? key,
+    required this.judul,
   }) : super(key: key);
 
   @override
@@ -11,9 +15,16 @@ class appBarClass extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        new Image.asset('assets/images/Logo padeprokan.png'),
+        GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomePage()),
+              );
+            },
+            child: new Image.asset('assets/images/Logo padeprokan.png')),
         new Text(
-          "Spaces",
+          judul,
           textAlign: TextAlign.center,
           style: TextStyle(
               color: Colors.grey,
