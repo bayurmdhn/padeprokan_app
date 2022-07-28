@@ -25,7 +25,9 @@ class _ProfilePageState extends State<ProfilePage> {
         home: Scaffold(
           //AppBar Padeprokan
           appBar: AppBar(
-              title: appBarClass(),
+              title: appBarClass(
+                judul: 'Profil',
+              ),
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
               centerTitle: true),
           body: ListView(

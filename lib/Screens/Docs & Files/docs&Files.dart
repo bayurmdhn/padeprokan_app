@@ -11,7 +11,9 @@ class docsFiles extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: appBarClass(),
+        title: appBarClass(
+          judul: 'Docs & file',
+        ),
       ),
       body: bodyDocsFiles(),
     );
