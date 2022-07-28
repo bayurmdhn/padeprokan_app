@@ -4,6 +4,7 @@ import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import '../../Components/Homepage/cardHome.dart';
+import 'package:flutter/services.dart';
 
 import '../../Components/appBar.dart';
 
@@ -15,15 +16,16 @@ class HomePageSpace extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePageSpace> {
-  List<spaceCard> listDynamic = [];
-  addDynamic() {
-    listDynamic.add(new spaceCard(
-        textColor: Colors.black,
-        backgroundColor: Colors.white,
-        text: "PKL Class",
-        spaceColor: Colors.green));
-    setState(() {});
-  }
+  List<Widget> adds = [];
+  // List<spaceCard> listDynamic = [];
+  // addDynamic() {
+  //   listDynamic.add(new spaceCard(
+  //       textColor: Colors.black,
+  //       backgroundColor: Colors.white,
+  //       text: "PKL Class",
+  //       spaceColor: Colors.green));
+  //   setState(() {});
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -95,11 +97,11 @@ class _HomePageState extends State<HomePageSpace> {
                         padding: EdgeInsets.only(top: 73),
                         child: Column(
                           children: <Widget>[
-                            new Flexible(
-                                child: ListView.builder(
-                                    itemCount: listDynamic.length,
-                                    itemBuilder: (_, index) =>
-                                        listDynamic[index])),
+                            // new Flexible(
+                            //     child: ListView.builder(
+                            //         itemCount: listDynamic.length,
+                            //         itemBuilder: (_, index) =>
+                            //             listDynamic[index])),
                             Container(
                               padding: EdgeInsets.only(top: 79),
                             )
@@ -236,7 +238,17 @@ class _HomePageState extends State<HomePageSpace> {
                                           ),
                                           GestureDetector(
                                             onTap: () {
-                                              addDynamic();
+                                              // switch (index) {
+                                              //   case 0:
+                                              //     adds.add(spaceCard(
+                                              //         textColor: Colors.black,
+                                              //         backgroundColor:
+                                              //             Colors.white,
+                                              //         text: "PKL Class",
+                                              //         spaceColor:
+                                              //             Colors.green));
+                                              //     setState(() {});
+                                              // }
                                             },
                                             child: Container(
                                               width: 71,

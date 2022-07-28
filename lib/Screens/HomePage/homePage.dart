@@ -85,21 +85,35 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.only(top: 73),
                         child: Column(
                           children: [
-                            Image.asset(
-                              'assets/images/Logo copy.png',
-                              width: 220,
-                              height: 160,
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(top: 79),
-                              child: Text(
-                                "You Have No Space Here!",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 73, 73, 73),
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                            // Image.asset(
+                            //   'assets/images/Logo copy.png',
+                            //   width: 220,
+                            //   height: 160,
+                            // ),
+                            // Container(
+                            //   padding: EdgeInsets.only(top: 79),
+                            //   child: Text(
+                            //     "You Have No Space Here!",
+                            //     textAlign: TextAlign.center,
+                            //     style: TextStyle(
+                            //         color: Color.fromARGB(255, 73, 73, 73),
+                            //         fontSize: 24,
+                            //         fontWeight: FontWeight.bold),
+                            //   ),
+                            // ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomePage()),
+                                );
+                              },
+                              child: spaceCard(
+                                  textColor: Colors.black,
+                                  backgroundColor: Colors.white,
+                                  text: "PKL Class",
+                                  spaceColor: Colors.green),
                             )
                           ],
                         ),
