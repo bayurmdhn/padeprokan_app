@@ -22,7 +22,9 @@ class _HomePageState extends State<HomePage> {
         home: Scaffold(
           //AppBar Padeprokan
           appBar: AppBar(
-              title: appBarClass(),
+              title: appBarClass(
+                judul: 'Spaces',
+              ),
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
               centerTitle: true),
           //MainBody
