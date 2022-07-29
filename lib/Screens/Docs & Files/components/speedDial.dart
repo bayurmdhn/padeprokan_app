@@ -68,8 +68,6 @@ class _speedDial extends State<speedDial> {
                           padding: const EdgeInsets.only(
                               top: 183, left: 16, right: 16, bottom: 375),
                           child: Container(
-                            width: 386,
-                            height: 284,
                             decoration: BoxDecoration(
                                 color: kWhite,
                                 borderRadius: BorderRadius.circular(8)),
@@ -110,9 +108,25 @@ class _speedDial extends State<speedDial> {
                               ),
                               Container(
                                   decoration: BoxDecoration(
-                                      color: Color.fromRGBO(239, 239, 239, 1),
+                                      border: Border.all(
+                                        color: Color.fromRGBO(140, 79, 225, 1),
+                                        width: 1,
+                                      ),
+                                      color: kfile,
                                       borderRadius: BorderRadius.circular(8)),
-                                  child: Column()),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        "assets/images/fileDrop.png",
+                                        width: 36,
+                                        height: 36,
+                                      ),
+                                      Text(
+                                          "Click or drag file to this area to upload "),
+                                      Text(
+                                          "Support for a singel or bulk upload. Strictly prohibit\nfrom uploading company data or other band files")
+                                    ],
+                                  )),
                             ]),
                           ),
                         ),
