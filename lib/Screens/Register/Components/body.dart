@@ -61,15 +61,24 @@ class _Body extends State<Body> {
                           new TextFormField(
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(6)),
-                                  borderSide: BorderSide(
-                                      color:
-                                          Color.fromARGB(255, 255, 255, 255))),
+                                borderRadius: BorderRadius.circular(6),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
                               focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      width: 2,
-                                      color: Color.fromRGBO(140, 79, 225, 1))),
+                                borderRadius: BorderRadius.circular(6),
+                                borderSide: BorderSide(
+                                  width: 2,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(6),
+                                borderSide: BorderSide(
+                                  color: Color.fromRGBO(140, 79, 225, 1),
+                                ),
+                              ),
                               hintText: "Name",
                               hintStyle: text2,
                               filled: true,
@@ -94,15 +103,24 @@ class _Body extends State<Body> {
                           new TextFormField(
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(6)),
-                                  borderSide: BorderSide(
-                                      color:
-                                          Color.fromARGB(255, 255, 255, 255))),
+                                borderRadius: BorderRadius.circular(6),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
                               focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      width: 2,
-                                      color: Color.fromRGBO(140, 79, 225, 1))),
+                                borderRadius: BorderRadius.circular(6),
+                                borderSide: BorderSide(
+                                  width: 2,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(6),
+                                borderSide: BorderSide(
+                                  color: Color.fromRGBO(140, 79, 225, 1),
+                                ),
+                              ),
                               hintText: "Email",
                               hintStyle: text2,
                               filled: true,
@@ -128,16 +146,24 @@ class _Body extends State<Body> {
                             controller: _password,
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(6)),
-                                    borderSide: BorderSide(
-                                        color: Color.fromARGB(
-                                            255, 255, 255, 255))),
+                                  borderRadius: BorderRadius.circular(6),
+                                  borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                ),
                                 focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        width: 3,
-                                        color:
-                                            Color.fromRGBO(140, 79, 225, 1))),
+                                  borderRadius: BorderRadius.circular(6),
+                                  borderSide: BorderSide(
+                                    width: 2,
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(6),
+                                  borderSide: BorderSide(
+                                    color: Color.fromRGBO(140, 79, 225, 1),
+                                  ),
+                                ),
                                 hintText: "Passwowrd",
                                 hintStyle: text2,
                                 filled: true,
@@ -173,16 +199,24 @@ class _Body extends State<Body> {
                             controller: _confirmPassword,
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(6)),
-                                    borderSide: BorderSide(
-                                        color: Color.fromARGB(
-                                            255, 255, 255, 255))),
+                                  borderRadius: BorderRadius.circular(6),
+                                  borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                ),
                                 focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        width: 2,
-                                        color:
-                                            Color.fromRGBO(140, 79, 225, 1))),
+                                  borderRadius: BorderRadius.circular(6),
+                                  borderSide: BorderSide(
+                                    width: 2,
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(6),
+                                  borderSide: BorderSide(
+                                    color: Color.fromRGBO(140, 79, 225, 1),
+                                  ),
+                                ),
                                 hintText: "Confirm Your Password",
                                 hintStyle: text2,
                                 filled: true,
