@@ -1,11 +1,11 @@
 import 'dart:math';
-import 'package:first_app_flutter/Components/appBarBack.dart';
-import 'package:first_app_flutter/Screens/Courses/courseScreen.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../../Components/appBar.dart';
+import '../../Components/appBarBack.dart';
+import '../Courses/courseScreen.dart';
 
 class Space extends StatefulWidget {
   const Space({Key? key}) : super(key: key);
