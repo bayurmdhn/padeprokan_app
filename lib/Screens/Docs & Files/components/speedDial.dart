@@ -7,11 +7,14 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../docs&Files.dart';
 import 'bodyDocsFiles.dart';
 
-class speedDial extends StatelessWidget {
-  const speedDial({
-    Key? key,
-  }) : super(key: key);
+class speedDial extends StatefulWidget {
+  const speedDial({Key? key}) : super(key: key);
 
+  @override
+  State<speedDial> createState() => _speedDial();
+}
+
+class _speedDial extends State<speedDial> {
   @override
   Widget build(BuildContext context) {
     return SpeedDial(
@@ -70,6 +73,7 @@ class speedDial extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (context) {
+                      TextEditingController _untitled = TextEditingController();
                       return Material(
                         color: Color.fromARGB(0, 0, 0, 0),
                         child: Padding(
@@ -147,6 +151,7 @@ class speedDial extends StatelessWidget {
                                     child: SizedBox(
                                       height: 29,
                                       child: TextFormField(
+                                        controller: _untitled,
                                         decoration: InputDecoration(
                                           enabledBorder: OutlineInputBorder(
                                               borderRadius: BorderRadius.all(
@@ -262,7 +267,9 @@ class speedDial extends StatelessWidget {
                                       ),
                                     ),
                                     GestureDetector(
-                                      onTap: () {},
+                                      onTap: () {
+                                        print(_untitled.text);
+                                      },
                                       child: Padding(
                                         padding:
                                             const EdgeInsets.only(right: 21),
