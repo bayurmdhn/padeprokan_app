@@ -3,10 +3,10 @@ import 'package:first_app_flutter/Screens/Profil/Profil.dart';
 import 'package:flutter/material.dart';
 import '../Screens/HomePage/homePage.dart';
 
-class appBarClass extends StatelessWidget {
+class appBarBack extends StatelessWidget {
   final String judul;
 
-  appBarClass({
+  appBarBack({
     Key? key,
     required this.judul,
   }) : super(key: key);
@@ -16,14 +16,14 @@ class appBarClass extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
-              );
-            },
-            child: new Image.asset('assets/images/Logo padeprokan.png')),
+        IconButton(
+          onPressed: () =>
+              Navigator.of(context, rootNavigator: true).pop(context),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+        ),
         new Text(
           judul,
           textAlign: TextAlign.center,

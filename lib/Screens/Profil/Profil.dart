@@ -1,6 +1,7 @@
 import 'dart:js_util';
 
 import 'package:first_app_flutter/Components/appBar.dart';
+import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -25,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
         home: Scaffold(
           //AppBar Padeprokan
           appBar: AppBar(
-              title: appBarClass(
+              title: appBarBack(
                 judul: 'Profil',
               ),
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
