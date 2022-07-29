@@ -64,47 +64,57 @@ class _speedDial extends State<speedDial> {
                     builder: (context) {
                       return Material(
                         color: Color.fromARGB(0, 0, 0, 0),
-                        child: Container(
-                          width: 386,
-                          height: 284,
-                          decoration: BoxDecoration(
-                              color: kWhite,
-                              borderRadius: BorderRadius.circular(8)),
-                          child: Column(children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 17, top: 21),
-                                  child: Text(
-                                    "Uplode Files",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontFamily: 'Roboto',
-                                        color: kblack),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 183, left: 16, right: 16, bottom: 375),
+                          child: Container(
+                            width: 386,
+                            height: 284,
+                            decoration: BoxDecoration(
+                                color: kWhite,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Column(children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 17, top: 21),
+                                    child: Text(
+                                      "Uplode Files",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontFamily: 'Roboto',
+                                          color: kblack),
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 21, right: 21),
-                                  child: IconButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pushReplacement(
-                                          MaterialPageRoute(
-                                              builder: (BuildContext context) =>
-                                                  docsFiles()));
-                                    },
-                                    icon: Icon(Icons.close),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 21, right: 21),
+                                    child: IconButton(
+                                      onPressed: () => Navigator.of(context,
+                                              rootNavigator: true)
+                                          .pop(context),
+                                      icon: Icon(Icons.close),
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Divider(
-                              height: 16,
-                              color: kdivider,
-                              thickness: 1,
-                            ),
-                          ]),
+                                ],
+                              ),
+                              Divider(
+                                height: 16,
+                                color: kdivider,
+                                thickness: 1,
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Container(
+                                  decoration: BoxDecoration(
+                                      color: Color.fromRGBO(239, 239, 239, 1),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Column()),
+                            ]),
+                          ),
                         ),
                       );
                     });
@@ -154,13 +164,9 @@ class _speedDial extends State<speedDial> {
                                       padding: const EdgeInsets.only(
                                           top: 21, right: 21),
                                       child: IconButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pushReplacement(
-                                              MaterialPageRoute(
-                                                  builder:
-                                                      (BuildContext context) =>
-                                                          docsFiles()));
-                                        },
+                                        onPressed: () => Navigator.of(context,
+                                                rootNavigator: true)
+                                            .pop(context),
                                         icon: Icon(Icons.close),
                                       ),
                                     ),
