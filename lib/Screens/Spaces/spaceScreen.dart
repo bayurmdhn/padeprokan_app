@@ -144,7 +144,10 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => docsFiles()));
+                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
@@ -229,10 +232,7 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => docsFiles()));
-                      },
+                      onTap: () {},
                       splashColor: Colors.black,
                       child: Column(
                         children: [
