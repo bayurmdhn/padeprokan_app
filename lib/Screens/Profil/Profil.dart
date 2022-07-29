@@ -79,8 +79,57 @@ class _ProfilePageState extends State<ProfilePage> {
                                   children: [
                                     Container(
                                       child: IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(Icons.edit)),
+                                          onPressed: () {
+                                            showDialog(
+                                                context: context,
+                                                builder: (context) => Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 14),
+                                                      child: AlertDialog(
+                                                        alignment:
+                                                            Alignment.topLeft,
+                                                        content: Container(
+                                                            width: 486,
+                                                            height: 989,
+                                                            child: Column(
+                                                              children: [
+                                                                Row(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Text(
+                                                                      "Edit Profil",
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .black,
+                                                                          fontFamily:
+                                                                              "Roboto"),
+                                                                    ),
+                                                                    Column(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .end,
+                                                                      children: [
+                                                                        IconButton(
+                                                                            onPressed:
+                                                                                () {},
+                                                                            icon:
+                                                                                Icon(Icons.close)),
+                                                                      ],
+                                                                    )
+                                                                  ],
+                                                                )
+                                                              ],
+                                                            )),
+                                                      ),
+                                                    ));
+                                          },
+                                          icon: Icon(
+                                            Icons.edit,
+                                            color: Colors.white,
+                                          )),
                                     ),
                                   ],
                                 ),
@@ -422,7 +471,394 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 18),
+                      child: Container(
+                        width: 346,
+                        height: 359,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 6,
+                                offset: Offset(1, 1),
+                              ),
+                            ]),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 160),
+                                  child: Text(
+                                    "Expertise",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 36,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 20),
+                                        child: Text(
+                                          "This information can be edited from your profile",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 29, right: 20),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Image.asset(
+                                                  "assets/images/Not data.png"),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(top: 80.78),
+                                      child: Column(
+                                        children: [
+                                          Divider(
+                                            color: Colors.black,
+                                            thickness: 1,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 20),
+                                              child: GestureDetector(
+                                                onTap: () {},
+                                                child: Container(
+                                                  width: 122,
+                                                  height: 36,
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      IconButton(
+                                                          onPressed: () {},
+                                                          icon: Icon(
+                                                            Icons
+                                                                .add_circle_rounded,
+                                                            color: Colors.white,
+                                                            size: 25,
+                                                          )),
+                                                      Text(
+                                                        "Create New",
+                                                        style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 15),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.orange,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8)),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 18),
+                      child: Container(
+                        width: 346,
+                        height: 359,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 6,
+                                offset: Offset(1, 1),
+                              ),
+                            ]),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 15),
+                                  child: Text(
+                                    "Presentation Slide",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 36,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 20),
+                                        child: Text(
+                                          "This information can be edited from your profile",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 29, right: 20),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Image.asset(
+                                                  "assets/images/Not data.png"),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(top: 80.78),
+                                      child: Column(
+                                        children: [
+                                          Divider(
+                                            color: Colors.black,
+                                            thickness: 1,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 20),
+                                              child: GestureDetector(
+                                                onTap: () {},
+                                                child: Container(
+                                                  width: 122,
+                                                  height: 36,
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      IconButton(
+                                                          onPressed: () {},
+                                                          icon: Icon(
+                                                            Icons
+                                                                .add_circle_rounded,
+                                                            color: Colors.white,
+                                                            size: 25,
+                                                          )),
+                                                      Text(
+                                                        "Create New",
+                                                        style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 15),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.orange,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8)),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 18),
+                      child: Container(
+                        width: 346,
+                        height: 359,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 6,
+                                offset: Offset(1, 1),
+                              ),
+                            ]),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 165),
+                                  child: Text(
+                                    "Portfolio",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 36,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 20),
+                                        child: Text(
+                                          "This information can be edited from your profile",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 29, right: 20),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Image.asset(
+                                                  "assets/images/Not data.png"),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(top: 80.78),
+                                      child: Column(
+                                        children: [
+                                          Divider(
+                                            color: Colors.black,
+                                            thickness: 1,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 20),
+                                              child: GestureDetector(
+                                                onTap: () {},
+                                                child: Container(
+                                                  width: 122,
+                                                  height: 36,
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      IconButton(
+                                                          onPressed: () {},
+                                                          icon: Icon(
+                                                            Icons
+                                                                .add_circle_rounded,
+                                                            color: Colors.white,
+                                                            size: 25,
+                                                          )),
+                                                      Text(
+                                                        "Create New",
+                                                        style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 15),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.orange,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8)),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )
