@@ -33,6 +33,7 @@ dependencies:
   set_state: ^1.0.0
   popup_card: ^0.1.0
   flutter_speed_dial: ^6.0.0
+  file_picker: ^5.0.0
   
 
 
@@ -84,6 +85,16 @@ flutter:
      - assets/images/drive.png
      - assets/images/clouddd.png
      - assets/images/Not data.png
+     - assets/images/fileDrop.png
+     - assets/images/Automatic check-in logo.png
+     - assets/images/Courses logo.png
+     - assets/images/Docs & files.png
+     - assets/images/Group chat logo.png
+     - assets/images/Info Board logo.png
+     - assets/images/Schedule logo.png
+     - assets/images/Tasks logo.png
+     - assets/images/Video Conference logo.png
+
      
 
 

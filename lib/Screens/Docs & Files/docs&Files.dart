@@ -1,4 +1,5 @@
 import 'package:first_app_flutter/Components/appBar.dart';
+import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
 
@@ -11,7 +12,7 @@ class docsFiles extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: appBarClass(
+        title: appBarBack(
           judul: 'Docs & file',
         ),
       ),

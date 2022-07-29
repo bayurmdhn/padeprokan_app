@@ -1,8 +1,14 @@
 import 'dart:math';
+
+import 'package:first_app_flutter/Components/appBarBack.dart';
+
+import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../../Components/appBar.dart';
+import '../../Components/appBarBack.dart';
+import '../Courses/courseScreen.dart';
 
 class Space extends StatefulWidget {
   const Space({Key? key}) : super(key: key);
@@ -18,7 +24,7 @@ class _SpaceState extends State<Space> {
         theme: ThemeData(fontFamily: 'Roboto'),
         home: Scaffold(
             appBar: AppBar(
-                title: appBarClass(
+                title: appBarBack(
                   judul: 'PKL Class',
                 ),
                 backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -104,7 +110,10 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => Courses()));
+                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
@@ -142,7 +151,10 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => docsFiles()));
+                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
