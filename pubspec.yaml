@@ -33,6 +33,7 @@ dependencies:
   set_state: ^1.0.0
   popup_card: ^0.1.0
   flutter_speed_dial: ^6.0.0
+  file_picker: ^5.0.0
   
 
 

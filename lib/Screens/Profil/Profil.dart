@@ -1,6 +1,7 @@
 import 'dart:js_util';
 
 import 'package:first_app_flutter/Components/appBar.dart';
+import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -25,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
         home: Scaffold(
           //AppBar Padeprokan
           appBar: AppBar(
-              title: appBarClass(
+              title: appBarBack(
                 judul: 'Profil',
               ),
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -248,7 +249,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                           children: [
                                             Padding(
                                               padding: const EdgeInsets.only(
-                                                  right: 15),
+                                                  right: 20),
                                               child: GestureDetector(
                                                 onTap: () {},
                                                 child: Container(
@@ -344,7 +345,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     Container(
                                       child: Padding(
                                         padding: const EdgeInsets.only(
-                                            top: 29, right: 30),
+                                            top: 29, right: 20),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -376,7 +377,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                               MainAxisAlignment.end,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsets.only(),
+                                              padding: const EdgeInsets.only(
+                                                  right: 20),
                                               child: GestureDetector(
                                                 onTap: () {},
                                                 child: Container(

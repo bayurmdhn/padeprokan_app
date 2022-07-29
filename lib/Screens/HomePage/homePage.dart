@@ -16,6 +16,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Widget> _spaceCard = [];
+  void _addCardWidget() {
+    setState(() {
+      _spaceCard.add(_card());
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -88,6 +95,11 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.only(top: 73),
                         child: Column(
                           children: [
+                            // ListView.builder(
+                            //     itemCount: _spaceCard.length,
+                            //     itemBuilder: (context, index) {
+                            //       return _spaceCard[index];
+                            //     }),
                             // Image.asset(
                             //   'assets/images/Logo copy.png',
                             //   width: 220,
@@ -106,11 +118,8 @@ class _HomePageState extends State<HomePage> {
                             // ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Space()),
-                                );
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const Space()));
                               },
                               child: spaceCard(
                                   textColor: Colors.black,
@@ -251,12 +260,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           GestureDetector(
                                             onTap: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const HomePageSpace()),
-                                              );
+                                              _addCardWidget();
                                             },
                                             child: Container(
                                               width: 71,
@@ -297,4 +301,12 @@ class _HomePageState extends State<HomePage> {
           ),
         ));
   }
+}
+
+Widget _card() {
+  return Container(
+    width: 80,
+    height: 80,
+    color: Colors.red,
+  );
 }
