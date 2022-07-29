@@ -1,5 +1,8 @@
 import 'dart:math';
+<<<<<<< HEAD
+=======
 import 'package:first_app_flutter/Components/appBarBack.dart';
+>>>>>>> b4e96f1e60766548bbeb8fa15fa341aadf6d65f6
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -144,10 +147,17 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
+<<<<<<< HEAD
+                      onTap: () {Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                docsFiles()));},
+=======
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (BuildContext context) => docsFiles()));
                       },
+>>>>>>> b4e96f1e60766548bbeb8fa15fa341aadf6d65f6
                       splashColor: Colors.black,
                       child: Column(
                         children: [
