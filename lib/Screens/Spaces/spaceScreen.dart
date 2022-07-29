@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -18,7 +19,7 @@ class _SpaceState extends State<Space> {
         theme: ThemeData(fontFamily: 'Roboto'),
         home: Scaffold(
             appBar: AppBar(
-                title: appBarClass(
+                title: appBarBack(
                   judul: 'PKL Class',
                 ),
                 backgroundColor: Color.fromARGB(255, 255, 255, 255),
