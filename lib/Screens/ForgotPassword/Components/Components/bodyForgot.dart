@@ -47,12 +47,31 @@ class _BodyForgot extends State<BodyForgot> {
                 child: new TextFormField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(6)),
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 255, 255, 255))),
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                    ),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            width: 2, color: Color.fromRGBO(140, 79, 225, 1))),
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(
+                        width: 2,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(140, 79, 225, 1),
+                      ),
+                    ),
+                    // enabledBorder: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.all(Radius.circular(6)),
+                    //     borderSide: BorderSide(
+                    //         color: Color.fromARGB(255, 255, 255, 255))),
+                    // focusedBorder: OutlineInputBorder(
+                    //     borderSide: BorderSide(
+                    //         width: 2, color: Color.fromRGBO(140, 79, 225, 1))),
                     hintText: "Email",
                     hintStyle: text2,
                     filled: true,
