@@ -16,11 +16,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Widget> _spaceCard = [];
-  void _addCardWidget() {
-    setState(() {
-      _spaceCard.add(_card());
-    });
+  List<DynamicWidget> listDynamic = [];
+
+  addDynamic() {
+    listDynamic.add(DynamicWidget());
+    setState(() {});
   }
 
   @override
@@ -90,44 +90,33 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 346,
+                              height: MediaQuery.of(context).size.height,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 19),
+                                child: Container(
+                                  width: 346,
+                                  height: 160,
+                                  child: Flexible(
+                                      child: ListView.builder(
+                                          itemCount: listDynamic.length,
+                                          itemBuilder: (_, index) =>
+                                              listDynamic[index])),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       //No Space Interface
                       Container(
                         padding: EdgeInsets.only(top: 73),
                         child: Column(
-                          children: [
-                            // ListView.builder(
-                            //     itemCount: _spaceCard.length,
-                            //     itemBuilder: (context, index) {
-                            //       return _spaceCard[index];
-                            //     }),
-                            // Image.asset(
-                            //   'assets/images/Logo copy.png',
-                            //   width: 220,
-                            //   height: 160,
-                            // ),
-                            // Container(
-                            //   padding: EdgeInsets.only(top: 79),
-                            //   child: Text(
-                            //     "You Have No Space Here!",
-                            //     textAlign: TextAlign.center,
-                            //     style: TextStyle(
-                            //         color: Color.fromARGB(255, 73, 73, 73),
-                            //         fontSize: 24,
-                            //         fontWeight: FontWeight.bold),
-                            //   ),
-                            // ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => const Space()));
-                              },
-                              child: spaceCard(
-                                  textColor: Colors.black,
-                                  backgroundColor: Colors.white,
-                                  text: "PKL Class",
-                                  spaceColor: Colors.green),
-                            )
-                          ],
+                          children: [],
                         ),
                       ),
                     ]),
@@ -260,7 +249,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           GestureDetector(
                                             onTap: () {
-                                              _addCardWidget();
+                                              addDynamic();
                                             },
                                             child: Container(
                                               width: 71,
@@ -303,10 +292,21 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget _card() {
-  return Container(
-    width: 80,
-    height: 80,
-    color: Colors.red,
-  );
+class DynamicWidget extends StatelessWidget {
+  const DynamicWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => const Space()));
+      },
+      child: spaceCard(
+          textColor: Colors.black,
+          backgroundColor: Colors.white,
+          text: "PKL CLASS",
+          spaceColor: Colors.green),
+    );
+  }
 }

@@ -36,9 +36,12 @@ class spaceCard extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                Text(
-                  text,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                Padding(
+                  padding: const EdgeInsets.only(top: 7),
+                  child: Text(
+                    text,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             )
