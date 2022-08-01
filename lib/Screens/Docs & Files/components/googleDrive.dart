@@ -79,6 +79,10 @@ class googleDrive extends StatelessWidget {
                   child: SizedBox(
                     height: 29,
                     child: TextFormField(
+                      textAlignVertical: TextAlignVertical.bottom,
+                      cursorColor: kblack,
+                      cursorWidth: 1,
+                      style: TextStyle(fontSize: 12, fontFamily: 'Roboto'),
                       controller: _untitled,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -94,7 +98,6 @@ class googleDrive extends StatelessWidget {
                         filled: true,
                         fillColor: Colors.white,
                       ),
-                      style: TextStyle(fontSize: 12),
                     ),
                   ),
                 ),
@@ -129,6 +132,10 @@ class googleDrive extends StatelessWidget {
                   child: SizedBox(
                     height: 29,
                     child: TextFormField(
+                      textAlignVertical: TextAlignVertical.bottom,
+                      cursorColor: kblack,
+                      cursorWidth: 1,
+                      style: TextStyle(fontSize: 12, fontFamily: 'Roboto'),
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -144,7 +151,6 @@ class googleDrive extends StatelessWidget {
                         filled: true,
                         fillColor: Colors.white,
                       ),
-                      style: TextStyle(fontSize: 12),
                     ),
                   ),
                 ),
