@@ -70,7 +70,7 @@ class _Body extends State<Body> {
                                 borderRadius: BorderRadius.circular(6),
                                 borderSide: BorderSide(
                                   width: 2,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color: Color.fromRGBO(140, 79, 225, 1),
                                 ),
                               ),
                               border: OutlineInputBorder(
@@ -112,7 +112,7 @@ class _Body extends State<Body> {
                                 borderRadius: BorderRadius.circular(6),
                                 borderSide: BorderSide(
                                   width: 2,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color: Color.fromRGBO(140, 79, 225, 1),
                                 ),
                               ),
                               border: OutlineInputBorder(
@@ -155,7 +155,7 @@ class _Body extends State<Body> {
                                   borderRadius: BorderRadius.circular(6),
                                   borderSide: BorderSide(
                                     width: 2,
-                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    color: Color.fromRGBO(140, 79, 225, 1),
                                   ),
                                 ),
                                 border: OutlineInputBorder(
@@ -208,7 +208,7 @@ class _Body extends State<Body> {
                                   borderRadius: BorderRadius.circular(6),
                                   borderSide: BorderSide(
                                     width: 2,
-                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    color: Color.fromRGBO(140, 79, 225, 1),
                                   ),
                                 ),
                                 border: OutlineInputBorder(
