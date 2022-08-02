@@ -2,6 +2,7 @@ import 'dart:js';
 import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
 import 'package:first_app_flutter/Screens/HomePage/homePageSpace.dart';
 import 'package:first_app_flutter/Screens/Spaces/spaceScreen.dart';
+import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
@@ -16,6 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static String spaceName = "";
   List<DynamicWidget> listDynamic = [];
 
   addDynamic() {
@@ -91,34 +93,41 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       Expanded(
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 346,
-                              height: MediaQuery.of(context).size.height,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 19),
-                                child: Container(
-                                  width: 346,
-                                  height: 160,
-                                  child: Flexible(
-                                      child: ListView.builder(
-                                          itemCount: listDynamic.length,
-                                          itemBuilder: (_, index) =>
-                                              listDynamic[index])),
+                        child: Container(
+                          width: 346,
+                          height: MediaQuery.of(context).size.height,
+                          child: ListView(
+                            children: [
+                              Container(
+                                width: 346,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 19),
+                                  child: Container(
+                                    width: 346,
+                                    height: MediaQuery.of(context).size.height,
+                                    child: Column(
+                                      children: [
+                                        Flexible(
+                                            child: ListView.builder(
+                                                itemCount: listDynamic.length,
+                                                itemBuilder: (_, index) =>
+                                                    listDynamic[index])),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       //No Space Interface
-                      Container(
-                        padding: EdgeInsets.only(top: 73),
-                        child: Column(
-                          children: [],
-                        ),
-                      ),
+                      // Container(
+                      //   padding: EdgeInsets.only(top: 73),
+                      //   child: Column(
+                      //     children: [],
+                      //   ),
+                      // ),
                     ]),
                 //Screen size
                 decoration: new BoxDecoration(
@@ -184,18 +193,28 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   SizedBox(
-                                      width: 346,
-                                      height: 29,
-                                      child: TextFormField(
-                                        decoration: InputDecoration(
-                                            hintText: "Your space name",
-                                            hintStyle: TextStyle(fontSize: 11),
-                                            focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color: Color.fromARGB(
-                                                        255, 140, 79, 225)))),
-                                        style: TextStyle(fontSize: 11),
-                                      )),
+                                    width: 346,
+                                    height: 29,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        hintText: "Your space name",
+                                        hintStyle: TextStyle(fontSize: 11),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    255, 140, 79, 225))),
+                                      ),
+                                      style: TextStyle(fontSize: 11),
+                                      onChanged: (String text) {
+                                        setState(() {});
+                                        spaceName = text;
+                                      },
+                                      onFieldSubmitted: (String text) {
+                                        setState(() {});
+                                        spaceName = text;
+                                      },
+                                    ),
+                                  ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 27),
                                     child: Divider(
@@ -295,6 +314,8 @@ class _HomePageState extends State<HomePage> {
 class DynamicWidget extends StatelessWidget {
   const DynamicWidget({Key? key}) : super(key: key);
 
+  get spaceName => null;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -305,7 +326,7 @@ class DynamicWidget extends StatelessWidget {
       child: spaceCard(
           textColor: Colors.black,
           backgroundColor: Colors.white,
-          text: "PKL CLASS",
+          text: "$spaceName",
           spaceColor: Colors.green),
     );
   }
