@@ -103,7 +103,8 @@ class UplodeFile extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 12),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () =>
+                        Navigator.of(context, rootNavigator: true).pop(context),
                     child: Container(
                       width: 71,
                       height: 27,
