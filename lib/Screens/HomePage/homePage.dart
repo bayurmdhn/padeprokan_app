@@ -6,8 +6,12 @@ import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
-
+import 'package:set_state/set_state.dart';
+import 'dart:async';
 import '../../Components/appBar.dart';
+import 'dart:math' as math;
+
+String spaceName = "";
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,12 +21,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  static String spaceName = "";
   List<DynamicWidget> listDynamic = [];
-
+  int index = 0;
   addDynamic() {
     listDynamic.add(DynamicWidget());
     setState(() {});
+  }
+
+  void noSpace() {
+    setState(() {
+      if (index == 0) {
+        print("no space");
+      } else {
+        print("there are space");
+      }
+    });
   }
 
   @override
@@ -122,12 +135,31 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       //No Space Interface
-                      // Container(
-                      //   padding: EdgeInsets.only(top: 73),
-                      //   child: Column(
-                      //     children: [],
-                      //   ),
-                      // ),
+                      index == 0
+                          ? Container(
+                              padding: EdgeInsets.only(bottom: 100),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/Logo copy.png',
+                                    width: 220,
+                                    height: 160,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 57),
+                                    child: Text(
+                                      "You have no Space here!",
+                                      style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          color:
+                                              Color.fromARGB(255, 73, 73, 73)),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          : Center(),
                     ]),
                 //Screen size
                 decoration: new BoxDecoration(
@@ -232,7 +264,9 @@ class _HomePageState extends State<HomePage> {
                                             padding: const EdgeInsets.only(
                                                 right: 12),
                                             child: GestureDetector(
-                                              onTap: () {},
+                                              onTap: () {
+                                                Navigator.pop(context);
+                                              },
                                               child: Container(
                                                 width: 71,
                                                 height: 27,
@@ -269,6 +303,8 @@ class _HomePageState extends State<HomePage> {
                                           GestureDetector(
                                             onTap: () {
                                               addDynamic();
+                                              index++;
+                                              Navigator.pop(context);
                                             },
                                             child: Container(
                                               width: 71,
@@ -314,8 +350,6 @@ class _HomePageState extends State<HomePage> {
 class DynamicWidget extends StatelessWidget {
   const DynamicWidget({Key? key}) : super(key: key);
 
-  get spaceName => null;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -327,7 +361,8 @@ class DynamicWidget extends StatelessWidget {
           textColor: Colors.black,
           backgroundColor: Colors.white,
           text: "$spaceName",
-          spaceColor: Colors.green),
+          spaceColor: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+              .withOpacity(1.0)),
     );
   }
 }
