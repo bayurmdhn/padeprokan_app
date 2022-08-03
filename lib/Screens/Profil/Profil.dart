@@ -1,4 +1,5 @@
 import 'dart:js_util';
+import 'dart:math';
 
 import 'package:first_app_flutter/Components/appBar.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
@@ -82,50 +83,577 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: IconButton(
                                           onPressed: () {
                                             showDialog(
-                                                context: context,
-                                                builder: (context) => Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              left: 14),
-                                                      child: AlertDialog(
-                                                        alignment:
-                                                            Alignment.topLeft,
-                                                        content: Container(
-                                                            width: 486,
-                                                            height: 989,
-                                                            child: Column(
-                                                              children: [
-                                                                Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .start,
+                                              context: context,
+                                              builder: (context) => Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 14),
+                                                child: ListView(
+                                                  children: [
+                                                    AlertDialog(
+                                                      alignment:
+                                                          Alignment.topLeft,
+                                                      content: Container(
+                                                          width: 486,
+                                                          height: 880,
+                                                          child: Column(
+                                                            children: [
+                                                              Row(
+                                                                children: [
+                                                                  Text(
+                                                                    "Edit profil",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            20),
+                                                                  )
+                                                                ],
+                                                              ),
+                                                              Divider(
+                                                                color: Colors
+                                                                    .black,
+                                                                thickness: 1,
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
                                                                   children: [
-                                                                    Text(
-                                                                      "Edit Profil",
-                                                                      style: TextStyle(
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontFamily:
-                                                                              "Roboto"),
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Full Name",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
                                                                     ),
-                                                                    Column(
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .end,
-                                                                      children: [
-                                                                        IconButton(
-                                                                            onPressed:
-                                                                                () {},
-                                                                            icon:
-                                                                                Icon(Icons.close)),
-                                                                      ],
-                                                                    )
                                                                   ],
-                                                                )
-                                                              ],
-                                                            )),
-                                                      ),
-                                                    ));
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "My Account",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Email",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "My Account@gmail.vom",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Titel",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "Your study",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Avatar",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              Row(
+                                                                children: [
+                                                                  GestureDetector(
+                                                                    onTap:
+                                                                        () {},
+                                                                    child:
+                                                                        Container(
+                                                                      width: 74,
+                                                                      height:
+                                                                          67.32,
+                                                                      decoration: BoxDecoration(
+                                                                          borderRadius: BorderRadius.circular(
+                                                                              5),
+                                                                          border: Border.all(
+                                                                              color: Colors
+                                                                                  .black),
+                                                                          color: Color.fromARGB(
+                                                                              1,
+                                                                              239,
+                                                                              239,
+                                                                              239)),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            "+",
+                                                                            style:
+                                                                                TextStyle(fontSize: 20),
+                                                                          ),
+                                                                          Text(
+                                                                            "Upload",
+                                                                            style:
+                                                                                TextStyle(fontSize: 12),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Phone Number",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "eg.083205***",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Address",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "eg. Permata Bintaro Residance, A8, Kav.28. Elang empat street, Ciputat, Tangerang selatan",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Facebook",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "Your Facebook Link",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Twitter",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "Your Twitter Link",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Linkedin",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "Your Linkedin Link",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          bottom:
+                                                                              12),
+                                                                      child: RichText(
+                                                                          text: TextSpan(
+                                                                              text: "Github",
+                                                                              style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12),
+                                                                              children: [
+                                                                            TextSpan(
+                                                                                text: "*",
+                                                                                style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                          ])),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                  width: 346,
+                                                                  height: 29,
+                                                                  child:
+                                                                      TextFormField(
+                                                                    decoration: InputDecoration(
+                                                                        hintText:
+                                                                            "Your Github Link",
+                                                                        hintStyle: TextStyle(
+                                                                            fontSize:
+                                                                                11),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            11),
+                                                                  )),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        top:
+                                                                            22),
+                                                                child: Divider(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  thickness: 1,
+                                                                ),
+                                                              ),
+                                                              Column(
+                                                                children: [
+                                                                  Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .end,
+                                                                    children: [
+                                                                      Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.only(right: 12),
+                                                                        child:
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {},
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                71,
+                                                                            height:
+                                                                                27,
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              children: [
+                                                                                Text(
+                                                                                  "Cencel",
+                                                                                  style: TextStyle(color: Color.fromARGB(255, 131, 131, 131), fontSize: 13),
+                                                                                )
+                                                                              ],
+                                                                            ),
+                                                                            decoration: BoxDecoration(
+                                                                                color: Colors.white,
+                                                                                border: Border.all(
+                                                                                  color: Color.fromARGB(255, 143, 143, 143),
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(8)),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      GestureDetector(
+                                                                        onTap:
+                                                                            () {},
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              71,
+                                                                          height:
+                                                                              27,
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            children: [
+                                                                              Text(
+                                                                                "Submit",
+                                                                                style: TextStyle(color: Colors.white, fontSize: 13),
+                                                                              )
+                                                                            ],
+                                                                          ),
+                                                                          decoration: BoxDecoration(
+                                                                              color: Color.fromARGB(255, 177, 17, 255),
+                                                                              borderRadius: BorderRadius.circular(8)),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  )
+                                                                ],
+                                                              )
+                                                            ],
+                                                          )),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
                                           },
                                           icon: Icon(
                                             Icons.edit,
@@ -309,7 +837,242 @@ class _ProfilePageState extends State<ProfilePage> {
                                                         MainAxisAlignment.start,
                                                     children: [
                                                       IconButton(
-                                                          onPressed: () {},
+                                                          onPressed: () {
+                                                            showDialog(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (context) =>
+                                                                        Padding(
+                                                                          padding:
+                                                                              const EdgeInsets.only(bottom: 150),
+                                                                          child:
+                                                                              ListView(
+                                                                            children: [
+                                                                              AlertDialog(
+                                                                                alignment: Alignment.topCenter,
+                                                                                content: Container(
+                                                                                  width: 386,
+                                                                                  height: 580,
+                                                                                  child: Column(
+                                                                                    children: [
+                                                                                      Row(
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            "Add Education",
+                                                                                            style: TextStyle(fontSize: 16, fontFamily: "Roboto"),
+                                                                                          )
+                                                                                        ],
+                                                                                      ),
+                                                                                      Divider(
+                                                                                        color: Colors.black,
+                                                                                        thickness: 1,
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "School", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 29,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Your School / University Name", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Degre", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 29,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Your Degre", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Field of Study", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 29,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Your Study", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Year Star", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 29,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Year Star", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Year End", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 29,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Year End", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Thumbnail", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      Row(
+                                                                                        children: [
+                                                                                          GestureDetector(
+                                                                                            onTap: () {},
+                                                                                            child: Container(
+                                                                                              width: 74,
+                                                                                              height: 67.32,
+                                                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), border: Border.all(color: Colors.black), color: Color.fromARGB(1, 239, 239, 239)),
+                                                                                              child: Column(
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    "+",
+                                                                                                    style: TextStyle(fontSize: 20),
+                                                                                                  ),
+                                                                                                  Text(
+                                                                                                    "Upload",
+                                                                                                    style: TextStyle(fontSize: 12),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 34),
+                                                                                        child: Divider(
+                                                                                          color: Colors.black,
+                                                                                          thickness: 1,
+                                                                                        ),
+                                                                                      ),
+                                                                                      Column(
+                                                                                        children: [
+                                                                                          Row(
+                                                                                            mainAxisAlignment: MainAxisAlignment.end,
+                                                                                            children: [
+                                                                                              Padding(
+                                                                                                padding: const EdgeInsets.only(right: 12),
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {},
+                                                                                                  child: Container(
+                                                                                                    width: 71,
+                                                                                                    height: 27,
+                                                                                                    child: Column(
+                                                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                      children: [
+                                                                                                        Text(
+                                                                                                          "Cancel",
+                                                                                                          style: TextStyle(color: Color.fromARGB(255, 131, 131, 131), fontSize: 13),
+                                                                                                        ),
+                                                                                                      ],
+                                                                                                    ),
+                                                                                                    decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Color.fromARGB(255, 143, 143, 143)), borderRadius: BorderRadius.circular(8)),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                              GestureDetector(
+                                                                                                onTap: () {},
+                                                                                                child: Container(
+                                                                                                  width: 71,
+                                                                                                  height: 27,
+                                                                                                  child: Column(
+                                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                    children: [
+                                                                                                      Text(
+                                                                                                        "Submit",
+                                                                                                        style: TextStyle(color: Colors.white, fontSize: 13),
+                                                                                                      )
+                                                                                                    ],
+                                                                                                  ),
+                                                                                                  decoration: BoxDecoration(color: Color.fromARGB(255, 177, 17, 255), borderRadius: BorderRadius.circular(8)),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          )
+                                                                                        ],
+                                                                                      )
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              )
+                                                                            ],
+                                                                          ),
+                                                                        ));
+                                                          },
                                                           icon: Icon(
                                                             Icons
                                                                 .add_circle_rounded,
@@ -438,7 +1201,108 @@ class _ProfilePageState extends State<ProfilePage> {
                                                         MainAxisAlignment.start,
                                                     children: [
                                                       IconButton(
-                                                          onPressed: () {},
+                                                          onPressed: () {
+                                                            showDialog(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (context) =>
+                                                                        Padding(
+                                                                          padding:
+                                                                              const EdgeInsets.only(),
+                                                                          child:
+                                                                              ListView(
+                                                                            children: [
+                                                                              AlertDialog(
+                                                                                alignment: Alignment.topCenter,
+                                                                                content: Container(
+                                                                                  width: 386,
+                                                                                  height: 800,
+                                                                                  child: Column(
+                                                                                    children: [
+                                                                                      Row(
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            "Add work",
+                                                                                            style: TextStyle(fontSize: 16, fontFamily: "Roboto"),
+                                                                                          )
+                                                                                        ],
+                                                                                      ),
+                                                                                      Divider(
+                                                                                        color: Colors.black,
+                                                                                        thickness: 1,
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Titel", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 29,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Enter Your Job Titel", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Company name", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 35,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Enter Your company name", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsets.only(top: 15),
+                                                                                        child: Row(
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: const EdgeInsets.only(bottom: 12),
+                                                                                              child: RichText(
+                                                                                                  text: TextSpan(text: "Location", style: TextStyle(color: Color.fromARGB(255, 153, 153, 153), fontSize: 12), children: [
+                                                                                                TextSpan(text: "*", style: TextStyle(color: Color.fromARGB(255, 255, 19, 19)))
+                                                                                              ])),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      SizedBox(
+                                                                                          width: 346,
+                                                                                          height: 29,
+                                                                                          child: TextFormField(
+                                                                                            decoration: InputDecoration(hintText: "Enter the company address", hintStyle: TextStyle(fontSize: 11), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 225)))),
+                                                                                            style: TextStyle(fontSize: 11),
+                                                                                          )),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              )
+                                                                            ],
+                                                                          ),
+                                                                        ));
+                                                          },
                                                           icon: Icon(
                                                             Icons
                                                                 .add_circle_rounded,
