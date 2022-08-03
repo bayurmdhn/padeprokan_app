@@ -24,6 +24,16 @@ class textCard extends StatelessWidget {
       width: 163,
       height: 163,
       decoration: BoxDecoration(color: backgroundColor),
+      child: Column(
+        children: [
+          Image.asset(
+            "assets/images/text.png",
+            width: 78,
+            height: 78,
+          ),
+          Text("$text"),
+        ],
+      ),
 
       // child: Column(
       //   children: [
