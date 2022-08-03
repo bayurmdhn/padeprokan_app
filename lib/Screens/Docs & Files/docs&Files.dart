@@ -23,10 +23,20 @@ class docsFiles extends StatefulWidget {
 
 class _docsFiles extends State<docsFiles> {
   List<DynamicWidget> listDynamic = [];
-
+  int index = 0;
   addDynamic() {
     listDynamic.add(DynamicWidget());
     setState(() {});
+  }
+
+  void noSpace() {
+    setState(() {
+      if (index == 0) {
+        print("no space");
+      } else {
+        print("there are space");
+      }
+    });
   }
 
   @override
@@ -103,9 +113,33 @@ class _docsFiles extends State<docsFiles> {
                     ],
                   ),
                 )),
-                SizedBox(
-                  height: 20,
-                )
+                index == 0
+                    ? Container(
+                        width: mediaQueryWidht * 1,
+                        height: mediaQueryHeight * 0.75,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/emptyDocs.png',
+                              width: 220,
+                              height: 157,
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Text(
+                              "You don't have any file!",
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 73, 73, 73)),
+                            ),
+                          ],
+                        ),
+                      )
+                    : SizedBox(
+                        height: 20,
+                      )
                 // Positioned(
                 //     top: 122,
                 //     child: Center(
@@ -264,6 +298,7 @@ class _docsFiles extends State<docsFiles> {
                                           GestureDetector(
                                             onTap: () {
                                               addDynamic();
+                                              index++;
                                             },
                                             child: Padding(
                                               padding: const EdgeInsets.only(
@@ -598,9 +633,9 @@ class DynamicWidget extends StatelessWidget {
       onTap: () {},
       child: textCard(
           textColor: Colors.black,
-          backgroundColor: Colors.white,
+          backgroundColor: Color.fromRGBO(230, 230, 230, 1),
           text: "$fileName",
-          spaceColor: Color.fromARGB(255, 18, 124, 119)),
+          spaceColor: Color.fromRGBO(230, 230, 230, 1)),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -20,7 +21,10 @@ class textCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 163,
+      height: 163,
       decoration: BoxDecoration(color: backgroundColor),
+
       // child: Column(
       //   children: [
       //     Container(
