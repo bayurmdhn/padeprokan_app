@@ -30,7 +30,7 @@ class spaceCard extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                width: 346,
+                width: MediaQuery.of(context).size.width * 1,
                 height: 108,
                 decoration: BoxDecoration(color: spaceColor),
               ),

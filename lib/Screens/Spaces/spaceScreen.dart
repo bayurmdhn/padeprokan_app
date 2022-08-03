@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:first_app_flutter/Components/appBarBack.dart';
+import 'package:first_app_flutter/Screens/AutomaticCheckIn/automaticCheckIn.dart';
 
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:flutter/material.dart';
@@ -196,7 +197,10 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => autoCheck()));
+                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
