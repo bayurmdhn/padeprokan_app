@@ -1,6 +1,5 @@
 import 'dart:js';
 import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
-import 'package:first_app_flutter/Screens/HomePage/homePageSpace.dart';
 import 'package:first_app_flutter/Screens/Spaces/spaceScreen.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:path/path.dart';
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(0, 31, 0, 248),
+                padding: EdgeInsets.fromLTRB(0, 31, 0, 0),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -107,60 +106,56 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Expanded(
                         child: Container(
-                          width: 346,
+                          width: MediaQuery.of(context).size.width * 0.85,
                           height: MediaQuery.of(context).size.height,
-                          child: ListView(
-                            children: [
-                              Container(
-                                width: 346,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 19),
-                                  child: Container(
-                                    width: 346,
-                                    height: MediaQuery.of(context).size.height,
-                                    child: Column(
-                                      children: [
-                                        Flexible(
-                                            child: ListView.builder(
-                                                itemCount: listDynamic.length,
-                                                itemBuilder: (_, index) =>
-                                                    listDynamic[index])),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 19),
+                            child: Column(
+                              children: [
+                                Flexible(
+                                    child: ListView.builder(
+                                        itemCount: listDynamic.length,
+                                        itemBuilder: (_, index) =>
+                                            listDynamic[index])),
+                              ],
+                            ),
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       //No Space Interface
                       index == 0
                           ? Container(
                               padding: EdgeInsets.only(bottom: 100),
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/Logo copy.png',
-                                    width: 220,
-                                    height: 160,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 57),
-                                    child: Text(
-                                      "You have no Space here!",
-                                      style: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Color.fromARGB(255, 73, 73, 73)),
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 300),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/Logo copy.png',
+                                      width: 220,
+                                      height: 160,
                                     ),
-                                  )
-                                ],
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 57),
+                                      child: Text(
+                                        "You have no Space!",
+                                        style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromARGB(
+                                                255, 73, 73, 73)),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             )
                           : Center(),
                     ]),
+
                 //Screen size
                 decoration: new BoxDecoration(
                     color: Color.fromARGB(255, 219, 223, 247)),
@@ -171,7 +166,7 @@ class _HomePageState extends State<HomePage> {
           ),
           //Add Space Button
           floatingActionButton: Padding(
-            padding: const EdgeInsets.only(bottom: 78),
+            padding: const EdgeInsets.only(bottom: 79),
             child: FloatingActionButton(
               onPressed: () {
                 showDialog(
@@ -229,7 +224,7 @@ class _HomePageState extends State<HomePage> {
                                     height: 29,
                                     child: TextFormField(
                                       decoration: InputDecoration(
-                                        hintText: "Your space name",
+                                        hintText: "Your Space name",
                                         hintStyle: TextStyle(fontSize: 11),
                                         focusedBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
