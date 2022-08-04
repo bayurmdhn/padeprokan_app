@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class textCard extends StatelessWidget {
+class addFolderCard extends StatelessWidget {
   final Color textColor;
 
   final Color backgroundColor;
   final String text;
 
-  textCard({
+  addFolderCard({
     Key? key,
     required this.textColor,
     required this.backgroundColor,
