@@ -91,6 +91,7 @@ const String kForgotinput = "Please input your email";
 const String kDontHaveFile = "You don't have any file!";
 
 //Warna
+const kfile = Color.fromRGBO(239, 239, 239, 1);
 const kgrey = Color.fromRGBO(91, 91, 91, 1);
 const kbin = Color.fromRGBO(255, 0, 0, 1);
 const kdivider = Color.fromRGBO(159, 159, 159, 1);

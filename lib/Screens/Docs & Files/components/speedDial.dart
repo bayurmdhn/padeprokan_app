@@ -1,11 +1,15 @@
 import 'dart:html';
 import 'dart:ui';
+import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/addFolder.dart';
+import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/uplodeFile.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
+import 'package:first_app_flutter/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-
 import '../docs&Files.dart';
 import 'bodyDocsFiles.dart';
+import 'googleDrive.dart';
 
 class speedDial extends StatefulWidget {
   const speedDial({Key? key}) : super(key: key);
@@ -35,7 +39,145 @@ class _speedDial extends State<speedDial> {
               backgroundColor: kColorAdd,
               label: "New File TXT",
               labelBackgroundColor: kblack,
-              labelStyle: add),
+              labelStyle: add,
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      TextEditingController _fileName = TextEditingController();
+                      TextEditingController _isi = TextEditingController();
+                      return Material(
+                        color: Color.fromARGB(0, 0, 0, 0),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 14, right: 14, top: 100, bottom: 430),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                              color: kWhite,
+                            ),
+                            child: Column(children: [
+                              // Material(
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8, right: 8, top: 5),
+                                child: TextField(
+                                  maxLines: 1,
+                                  cursorColor: kblack,
+                                  controller: _fileName,
+                                  cursorWidth: 1,
+                                  style: TextStyle(color: kblack, fontSize: 20),
+                                  decoration: InputDecoration(
+                                      hintText: 'File Name',
+                                      hintStyle: TextStyle(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 20,
+                                          color: kblack)),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 8, right: 8),
+                                child: TextField(
+                                  controller: _isi,
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: 13,
+                                  cursorColor: kblack,
+                                  cursorWidth: 1,
+                                  style: TextStyle(color: kblack, fontSize: 12),
+                                  decoration: InputDecoration(
+                                      hintText: 'Write your document here',
+                                      hintStyle: TextStyle(
+                                          fontSize: 12, fontFamily: 'Roboto'),
+                                      border: InputBorder.none),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 22),
+                                    child: GestureDetector(
+                                      onTap: () => Navigator.of(context,
+                                              rootNavigator: true)
+                                          .pop(context),
+                                      child: Container(
+                                        width: 71,
+                                        height: 28,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "Cancel",
+                                              style: TextStyle(
+                                                  color: Color.fromARGB(
+                                                      255, 131, 131, 131),
+                                                  fontSize: 13),
+                                            ),
+                                          ],
+                                        ),
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            border: Border.all(
+                                                color: Color.fromARGB(
+                                                    255, 143, 143, 143)),
+                                            borderRadius:
+                                                BorderRadius.circular(8)),
+                                      ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      print(_fileName.text);
+                                      print(_isi.text);
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(right: 21),
+                                      child: Container(
+                                        width: 117,
+                                        height: 28,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.all(6),
+                                              child: Icon(
+                                                Icons.save,
+                                                size: 16,
+                                                color: kWhite,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 4),
+                                              child: Text(
+                                                "Save & publish",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 13),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        decoration: BoxDecoration(
+                                            color:
+                                                Color.fromRGBO(44, 187, 32, 1),
+                                            borderRadius:
+                                                BorderRadius.circular(8)),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ]),
+                          ),
+                        ),
+                      );
+                    });
+              }),
           SpeedDialChild(
               child: Image.asset(
                 "assets/images/addFolder.png",
@@ -46,105 +188,24 @@ class _speedDial extends State<speedDial> {
               backgroundColor: kColorAdd,
               label: "Add Folder",
               labelBackgroundColor: kblack,
-              labelStyle: add),
-          SpeedDialChild(
-              child: Image.asset(
-                "assets/images/clouddd.png",
-                color: kWhite,
-                height: 26,
-                width: 26,
-              ),
-              backgroundColor: kColorAdd,
-              label: "Upload File",
-              labelBackgroundColor: kblack,
               labelStyle: add,
               onTap: () {
                 showDialog(
                     context: context,
                     builder: (context) {
+                      TextEditingController _folderName =
+                          TextEditingController();
                       return Material(
                         color: Color.fromARGB(0, 0, 0, 0),
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 183, left: 16, right: 16, bottom: 375),
+                          padding: EdgeInsets.only(
+                              left: 14, right: 14, top: 183, bottom: 430),
                           child: Container(
-                            width: 386,
-                            height: 284,
                             decoration: BoxDecoration(
                                 color: kWhite,
                                 borderRadius: BorderRadius.circular(8)),
-                            child: Column(children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 17, top: 21),
-                                    child: Text(
-                                      "Uplode Files",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontFamily: 'Roboto',
-                                          color: kblack),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 21, right: 21),
-                                    child: IconButton(
-                                      onPressed: () => Navigator.of(context,
-                                              rootNavigator: true)
-                                          .pop(context),
-                                      icon: Icon(Icons.close),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Divider(
-                                height: 16,
-                                color: kdivider,
-                                thickness: 1,
-                              ),
-                              SizedBox(
-                                height: 6,
-                              ),
-                              Container(
-                                  decoration: BoxDecoration(
-                                      color: Color.fromRGBO(239, 239, 239, 1),
-                                      borderRadius: BorderRadius.circular(8)),
-                                  child: Column()),
-                            ]),
-                          ),
-                        ),
-                      );
-                    });
-              }),
-          SpeedDialChild(
-              child: Image.asset(
-                "assets/images/drive.png",
-                color: kWhite,
-                height: 26,
-                width: 29.69,
-              ),
-              backgroundColor: kColorAdd,
-              label: "Google Drive",
-              labelBackgroundColor: kblack,
-              labelStyle: add,
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      TextEditingController _untitled = TextEditingController();
-                      return Material(
-                        color: Color.fromARGB(0, 0, 0, 0),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 183, left: 16, right: 16, bottom: 375),
-                          child: Container(
-                              decoration: BoxDecoration(
-                                  color: kWhite,
-                                  borderRadius: BorderRadius.circular(8)),
-                              child: Column(children: [
+                            child: Column(
+                              children: <Widget>[
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -153,7 +214,7 @@ class _speedDial extends State<speedDial> {
                                       padding:
                                           EdgeInsets.only(left: 17, top: 21),
                                       child: Text(
-                                        "Embed Link From google drive",
+                                        "Add Folder",
                                         style: TextStyle(
                                             fontSize: 16,
                                             fontFamily: 'Roboto',
@@ -173,122 +234,70 @@ class _speedDial extends State<speedDial> {
                                   ],
                                 ),
                                 Divider(
-                                  height: 16,
-                                  color: kdivider,
                                   thickness: 1,
-                                ),
-                                SizedBox(
-                                  height: 6,
-                                ),
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 17),
-                                      child: Text(
-                                        "File name",
-                                        style: embedLink,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 3.5),
-                                      child: Text(
-                                        "*",
-                                        style: embedLink2,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 15,
+                                  height: 20,
+                                  color: kdivider,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18, right: 22),
-                                  child: Form(
-                                    child: SizedBox(
-                                      height: 29,
-                                      child: TextFormField(
-                                        controller: _untitled,
-                                        decoration: InputDecoration(
-                                          enabledBorder: OutlineInputBorder(
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(5)),
-                                              borderSide: BorderSide(
-                                                  color: Color.fromRGBO(
-                                                      140, 79, 225, 1))),
-                                          focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                  width: 2,
-                                                  color: Color.fromRGBO(
-                                                      140, 79, 225, 1))),
-                                          hintText: "Untitled",
-                                          hintStyle: searchFiles,
-                                          filled: true,
-                                          fillColor: Colors.white,
-                                        ),
-                                        style: TextStyle(fontSize: 12),
+                                  padding:
+                                      const EdgeInsets.only(left: 19, top: 24),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "Folder Name",
+                                        style: TextStyle(
+                                            color: kgrey,
+                                            fontFamily: 'Roboto',
+                                            fontSize: 12),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 12,
-                                ),
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 17),
-                                      child: Text(
-                                        "Embed link",
-                                        style: embedLink,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 3.5),
-                                      child: Text(
-                                        "*",
-                                        style: embedLink2,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 15,
-                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 18, right: 22),
-                                  child: Form(
-                                    child: SizedBox(
-                                      height: 29,
-                                      child: TextFormField(
-                                        decoration: InputDecoration(
-                                          enabledBorder: OutlineInputBorder(
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(5)),
-                                              borderSide: BorderSide(
-                                                  color: Color.fromRGBO(
-                                                      140, 79, 225, 1))),
-                                          focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                  width: 2,
-                                                  color: Color.fromRGBO(
-                                                      140, 79, 225, 1))),
-                                          hintText:
-                                              "e.g.https://drive.google.com/open?id=1cMc-qT_W......",
-                                          hintStyle: searchFiles,
-                                          filled: true,
-                                          fillColor: Colors.white,
+                                      left: 19, top: 15, right: 20),
+                                  child: SizedBox(
+                                    height: 29,
+                                    width: 346,
+                                    child: TextField(
+                                      controller: _folderName,
+                                      cursorColor: kblack,
+                                      cursorWidth: 1,
+                                      style: TextStyle(
+                                          fontSize: 12, fontFamily: 'Roboto'),
+                                      textAlignVertical:
+                                          TextAlignVertical.bottom,
+                                      decoration: InputDecoration(
+                                        enabledBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(5)),
+                                            borderSide: BorderSide(
+                                                color: Color.fromRGBO(
+                                                    140, 79, 225, 1))),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                width: 2,
+                                                color: Color.fromRGBO(
+                                                    140, 79, 225, 1))),
+                                        hintText: "New folder name",
+                                        hintStyle: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 12,
+                                            color: Color.fromRGBO(
+                                                194, 194, 194, 1)),
+                                        prefixIcon: Icon(
+                                          Icons.folder,
+                                          size: 16,
+                                          color: kblack,
                                         ),
-                                        style: TextStyle(fontSize: 12),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Divider(
-                                  height: 25,
-                                  color: kdivider,
+                                  height: 27,
                                   thickness: 1,
+                                  color: kdivider,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
@@ -296,7 +305,9 @@ class _speedDial extends State<speedDial> {
                                     Padding(
                                       padding: const EdgeInsets.only(right: 12),
                                       child: GestureDetector(
-                                        onTap: () {},
+                                        onTap: () => Navigator.of(context,
+                                                rootNavigator: true)
+                                            .pop(context),
                                         child: Container(
                                           width: 71,
                                           height: 27,
@@ -325,7 +336,7 @@ class _speedDial extends State<speedDial> {
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        print(_untitled.text);
+                                        print(_folderName.text);
                                       },
                                       child: Padding(
                                         padding:
@@ -355,9 +366,49 @@ class _speedDial extends State<speedDial> {
                                     ),
                                   ],
                                 )
-                              ])),
+                              ],
+                            ),
+                          ),
                         ),
                       );
+                      ;
+                    });
+              }),
+          SpeedDialChild(
+              child: Image.asset(
+                "assets/images/clouddd.png",
+                color: kWhite,
+                height: 26,
+                width: 26,
+              ),
+              backgroundColor: kColorAdd,
+              label: "Upload File",
+              labelBackgroundColor: kblack,
+              labelStyle: add,
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return const UplodeFile();
+                    });
+              }),
+          SpeedDialChild(
+              child: Image.asset(
+                "assets/images/drive.png",
+                color: kWhite,
+                height: 26,
+                width: 29.69,
+              ),
+              backgroundColor: kColorAdd,
+              label: "Google Drive",
+              labelBackgroundColor: kblack,
+              labelStyle: add,
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      TextEditingController _untitled = TextEditingController();
+                      return googleDrive(untitled: _untitled);
                     });
               }),
         ]);
