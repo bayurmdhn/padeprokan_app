@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:first_app_flutter/Components/appBar.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:flutter/material.dart';
@@ -30,17 +32,24 @@ class docsFiles extends StatefulWidget {
 
 class _docsFiles extends State<docsFiles> {
   List<textDynamic> listDynamic = [];
-  int index = 0;
+  List<addFolerDynamic> folderDynamic = [];
+  int indexx = 0;
   addDynamic() {
     listDynamic.add(textDynamic());
     setState(() {});
   }
 
-  List<addFolerDynamic> folderDynamic = [];
-  addFolder() {
+  newDynamic() {
     folderDynamic.add(addFolerDynamic());
     setState(() {});
   }
+
+  // if (textFile == 10) {
+  //   return listDynamic;
+  // } else if (textFile == 15) {
+  //   return folderDynamic;
+  // }
+  // setState(() {});
 
   @override
   Widget build(BuildContext context) {
@@ -107,9 +116,7 @@ class _docsFiles extends State<docsFiles> {
                     children: [
                       Flexible(
                         child: GridView.builder(
-                          itemBuilder: (context, index) {
-                            return listDynamic[index];
-                          },
+                          itemBuilder: (context, index) => listDynamic[index],
                           itemCount: listDynamic.length,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
@@ -133,7 +140,7 @@ class _docsFiles extends State<docsFiles> {
                   ),
                 )),
                 //Gambar Tidak Ada File dan Folder
-                index == 0
+                indexx == 0
                     ? Container(
                         width: mediaQueryWidht * 1,
                         height: mediaQueryHeight * 0.75,
@@ -317,7 +324,7 @@ class _docsFiles extends State<docsFiles> {
                                           GestureDetector(
                                             onTap: () {
                                               addDynamic();
-                                              index++;
+                                              indexx++;
                                               Navigator.pop(context);
                                             },
                                             child: Padding(
@@ -564,10 +571,10 @@ class _docsFiles extends State<docsFiles> {
                                             ),
                                             GestureDetector(
                                               onTap: () {
-                                                addFolder();
+                                                newDynamic();
                                                 Navigator.pop(context);
                                                 print(_folderName.text);
-                                                index++;
+                                                indexx++;
                                               },
                                               child: Padding(
                                                 padding: const EdgeInsets.only(

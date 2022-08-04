@@ -19,7 +19,7 @@ class _addFolerDynamicState extends State<addFolerDynamic> {
       onTap: () {},
       child: addFolderCard(
         textColor: Colors.black,
-        backgroundColor: Color.fromRGBO(230, 230, 230, 1),
+        backgroundColor: Color.fromARGB(255, 184, 3, 3),
         text: "$fileName",
       ),
     );
