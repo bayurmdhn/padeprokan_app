@@ -12,6 +12,19 @@ class autoCheck extends StatefulWidget {
 }
 
 class _autoCheckState extends State<autoCheck> {
+  TimeOfDay time = TimeOfDay(hour: 8, minute: 30);
+
+  void _showTimePicker() {
+    showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    ).then((value) {
+      setState(() {
+        time = value!;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -79,11 +92,18 @@ class _autoCheckState extends State<autoCheck> {
                             child: Column(
                               children: [
                                 Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       "Add Automatic Check-In",
                                       style: TextStyle(fontSize: 16),
                                     ),
+                                    IconButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        icon: Icon(Icons.close))
                                   ],
                                 ),
                                 Divider(
@@ -138,6 +158,64 @@ class _autoCheckState extends State<autoCheck> {
                                     },
                                   ),
                                 ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 15),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 12),
+                                        child: RichText(
+                                            text: TextSpan(
+                                                text: "Time Notify",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 153, 153, 153),
+                                                    fontSize: 12),
+                                                children: [
+                                              TextSpan(
+                                                  text: "*",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 255, 19, 19)))
+                                            ])),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                GestureDetector(
+                                    onTap: _showTimePicker,
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: 117,
+                                          height: 29,
+                                          decoration: BoxDecoration(  
+                                              border: Border.all(
+                                                  color: Color.fromARGB(
+                                                      255, 140, 79, 225)),
+                                              borderRadius:
+                                                  BorderRadius.circular(5)),
+                                          child: Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 7),
+                                                child: Text(
+                                                  time
+                                                      .format(context)
+                                                      .toString(),
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color.fromARGB(
+                                                          255, 194, 194, 194)),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ))
                               ],
                             ),
                           ),
