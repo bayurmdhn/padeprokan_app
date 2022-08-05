@@ -22,36 +22,25 @@ class addFolderCard extends StatelessWidget {
     return Container(
       width: 163,
       height: 163,
-      decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(2),
-          border: Border.all(color: Color.fromRGBO(177, 177, 177, 1))),
-      child: Column(
+      child: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 24),
-            child: Image.asset(
-              "assets/images/text.png",
-              width: 78,
-              height: 78,
-            ),
+          Image.asset(
+            "assets/images/Add docs.png",
+            width: 163,
+            height: 163,
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(2),
-              color: kWhite,
+          Positioned.fill(
+              child: Align(
+            alignment: Alignment.center,
+            child: Text(
+              text,
+              style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                  fontFamily: 'Roboto',
+                  color: kWhite),
             ),
-            width: MediaQuery.of(context).size.width * 1,
-            height: 28,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 6, top: 8),
-              child: Text(
-                "$text" + ".txt",
-                style: TextStyle(
-                    fontSize: 12, color: kblack, fontFamily: 'Roboto'),
-              ),
-            ),
-          ),
+          ))
         ],
       ),
 
