@@ -39,9 +39,6 @@ class _SplashScreenState extends State<SplashScreen> {
       imageSize: 120,
       imageSrc: "assets/images/logo.png",
       backgroundColor: Colors.white,
-      // text: "SikatGigi",
-      // textStyle: TextStyle(
-      //     fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
     );
   }
 }
