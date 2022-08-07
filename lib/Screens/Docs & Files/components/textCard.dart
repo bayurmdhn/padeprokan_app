@@ -35,17 +35,20 @@ class textCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 3, right: 3),
                     child: GestureDetector(
-                      child: Container(
-                          decoration: BoxDecoration(
-                              color: kWhite,
-                              borderRadius: BorderRadius.circular(3)),
-                          width: 30,
-                          height: 20,
-                          child: Center(
-                              child: Icon(
-                            Icons.more_horiz,
-                            size: 13,
-                          ))),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                            decoration: BoxDecoration(
+                                color: kWhite,
+                                borderRadius: BorderRadius.circular(3)),
+                            width: 30,
+                            height: 20,
+                            child: Center(
+                                child: Icon(
+                              Icons.more_horiz,
+                              size: 13,
+                            ))),
+                      ),
                     ),
                   ))),
           Column(
