@@ -95,9 +95,10 @@ flutter:
      - assets/images/Tasks logo.png
      - assets/images/Video Conference logo.png
      - assets/images/Check in List is Empty.png
+     - assets/images/text.png
+     - assets/images/Add docs.png
 
      
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
