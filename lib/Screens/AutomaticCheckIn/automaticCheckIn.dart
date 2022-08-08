@@ -1,5 +1,6 @@
 import 'package:first_app_flutter/Components/Automatic%20Check%20In/questionCard.dart';
 import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
+import 'package:first_app_flutter/Screens/AutomaticCheckIn/checkIn.dart';
 import 'package:flutter/material.dart';
 import '../../Components/appBarBack.dart';
 
@@ -348,7 +349,10 @@ class DynamicWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const checkInPage()));
+        },
         child: Padding(
           padding: const EdgeInsets.only(top: 17),
           child: questionCard(question: '$questionName'),
