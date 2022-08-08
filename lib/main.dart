@@ -1,4 +1,5 @@
 import 'package:first_app_flutter/Reverensi/login.dart';
+import 'package:first_app_flutter/Screens/AutomaticCheckIn/checkIn.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
 import 'package:first_app_flutter/Screens/Login/loginscreen.dart';
@@ -34,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-      navigateRoute: HomePage(),
+      navigateRoute: ProfilePage(),
       duration: 3000,
       imageSize: 120,
       imageSrc: "assets/images/logo.png",

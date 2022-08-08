@@ -1,7 +1,11 @@
 import 'dart:js_util';
+import 'dart:math';
 
 import 'package:first_app_flutter/Components/appBar.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
+import 'package:first_app_flutter/Screens/Profil/Add%20Education.dart';
+import 'package:first_app_flutter/Screens/Profil/Add%20Work.dart';
+import 'package:first_app_flutter/Screens/Profil/Edit%20profile.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -77,62 +81,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               children: <Widget>[
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Container(
-                                      child: IconButton(
-                                          onPressed: () {
-                                            showDialog(
-                                                context: context,
-                                                builder: (context) => Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              left: 14),
-                                                      child: AlertDialog(
-                                                        alignment:
-                                                            Alignment.topLeft,
-                                                        content: Container(
-                                                            width: 486,
-                                                            height: 989,
-                                                            child: Column(
-                                                              children: [
-                                                                Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    Text(
-                                                                      "Edit Profil",
-                                                                      style: TextStyle(
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontFamily:
-                                                                              "Roboto"),
-                                                                    ),
-                                                                    Column(
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .end,
-                                                                      children: [
-                                                                        IconButton(
-                                                                            onPressed:
-                                                                                () {},
-                                                                            icon:
-                                                                                Icon(Icons.close)),
-                                                                      ],
-                                                                    )
-                                                                  ],
-                                                                )
-                                                              ],
-                                                            )),
-                                                      ),
-                                                    ));
-                                          },
-                                          icon: Icon(
-                                            Icons.edit,
-                                            color: Colors.white,
-                                          )),
-                                    ),
-                                  ],
+                                  children: [EditProfil()],
                                 ),
                                 Column(
                                   children: [
@@ -300,37 +249,19 @@ class _ProfilePageState extends State<ProfilePage> {
                                               padding: const EdgeInsets.only(
                                                   right: 20),
                                               child: GestureDetector(
-                                                onTap: () {},
-                                                child: Container(
-                                                  width: 122,
-                                                  height: 36,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      IconButton(
-                                                          onPressed: () {},
-                                                          icon: Icon(
-                                                            Icons
-                                                                .add_circle_rounded,
-                                                            color: Colors.white,
-                                                            size: 25,
-                                                          )),
-                                                      Text(
-                                                        "Create New",
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 15),
+                                                  onTap: () {},
+                                                  child: Column(
+                                                    children: <Widget>[
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          AddEducation()
+                                                        ],
                                                       )
                                                     ],
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.orange,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8)),
-                                                ),
-                                              ),
+                                                  )),
                                             ),
                                           ],
                                         )
@@ -426,41 +357,20 @@ class _ProfilePageState extends State<ProfilePage> {
                                               MainAxisAlignment.end,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 20),
-                                              child: GestureDetector(
-                                                onTap: () {},
-                                                child: Container(
-                                                  width: 122,
-                                                  height: 36,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      IconButton(
-                                                          onPressed: () {},
-                                                          icon: Icon(
-                                                            Icons
-                                                                .add_circle_rounded,
-                                                            color: Colors.white,
-                                                            size: 25,
-                                                          )),
-                                                      Text(
-                                                        "Create New",
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 15),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.orange,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8)),
-                                                ),
-                                              ),
-                                            ),
+                                                padding: const EdgeInsets.only(
+                                                    right: 20),
+                                                child: GestureDetector(
+                                                    onTap: () {},
+                                                    child: Column(
+                                                      children: <Widget>[
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [AddWork()],
+                                                        )
+                                                      ],
+                                                    ))),
                                           ],
                                         )
                                       ],
