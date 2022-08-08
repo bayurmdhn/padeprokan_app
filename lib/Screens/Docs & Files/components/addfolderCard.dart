@@ -31,6 +31,32 @@ class addFolderCard extends StatelessWidget {
           ),
           Positioned.fill(
               child: Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 3, right: 2),
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext) => AlertDialog(
+                                  content: Container(),
+                                ));
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                              color: kWhite,
+                              borderRadius: BorderRadius.circular(3)),
+                          width: 30,
+                          height: 20,
+                          child: Center(
+                              child: Icon(
+                            Icons.more_horiz,
+                            size: 13,
+                          ))),
+                    ),
+                  ))),
+          Positioned.fill(
+              child: Align(
             alignment: Alignment.center,
             child: Text(
               text,
