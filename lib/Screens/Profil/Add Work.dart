@@ -203,20 +203,6 @@ class _AddWorkState extends State<AddWork> {
                                                                     225)))),
                                             style: TextStyle(fontSize: 11),
                                           )),
-                                      CheckboxListTile(
-                                        controlAffinity:
-                                            ListTileControlAffinity.leading,
-                                        title: Text(
-                                          'I Still Work Here',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              fontFamily: "Roboto"),
-                                        ),
-                                        value: false,
-                                        onChanged: (bool) {
-                                          setState(() {});
-                                        },
-                                      )
                                     ],
                                   ),
                                 ),

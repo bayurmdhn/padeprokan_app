@@ -1,15 +1,12 @@
 import 'package:first_app_flutter/Components/appBar.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/Courses/components/bodyCoursesPage.dart';
-
 import 'dart:math';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
-
 import '../../Utils/constants.dart';
 import 'components/bodyCoursesPage.dart';
 
@@ -25,6 +22,7 @@ class docsFiles extends StatelessWidget {
       ),
       body: bodyCoursesPage(),
     );
+
 
     return MaterialApp(
         theme: ThemeData(fontFamily: 'Roboto'),
@@ -382,5 +380,7 @@ class docsFiles extends StatelessWidget {
             ),
           ),
         ));
+=======
+>>>>>>> b9c0e2a2f723f95808a9dad81aa1dc6fe80835c8
   }
 }
