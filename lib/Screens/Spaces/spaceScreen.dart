@@ -113,7 +113,7 @@ class _SpaceState extends State<Space> {
                       onTap: () {Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                             builder: (BuildContext context) =>
-                                                bodyCoursesPage()));},
+                                                Courses()));},
                       splashColor: Colors.black,
                       child: Column(
                         children: [
@@ -154,11 +154,12 @@ class _SpaceState extends State<Space> {
                       onTap: () {Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                             builder: (BuildContext context) =>
-                                                bodyCoursesPage()));},
+                                          docsFiles()));},
                       splashColor: Colors.black,
                       child: Column(
                         children: [
                           Image.asset('assets/images/Docs & files.png'),
+                          // ignore: prefer_const_constructors
                           Text(
                             "Docs & Files",
                             textAlign: null,

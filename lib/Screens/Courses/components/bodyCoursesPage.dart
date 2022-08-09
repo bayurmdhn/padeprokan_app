@@ -20,10 +20,7 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
     final mediaQueryWidht = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: appBarBack(judul: 'Courses'),
-        
-      ),
+      
       body: Container(
         color: kBackGround,
         width: mediaQueryWidht * 1,
@@ -69,7 +66,7 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
                     Padding(
                       padding: const EdgeInsets.only(top: 40),
                       child: Text(
-                        kDontHaveFile,
+                        kDontHaveSpace,
                         style: dontHave,
                       ),
                     )
