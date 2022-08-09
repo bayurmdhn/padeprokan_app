@@ -173,14 +173,9 @@ class DynamicWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const checkInPage()));
-        },
-        child: Padding(
-          padding: const EdgeInsets.only(top: 17),
-          child: Answer(),
-        ));
+    return Padding(
+      padding: const EdgeInsets.only(top: 17),
+      child: Answer(),
+    );
   }
 }
