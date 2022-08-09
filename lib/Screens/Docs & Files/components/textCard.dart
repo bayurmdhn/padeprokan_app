@@ -1,5 +1,6 @@
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -35,20 +36,18 @@ class textCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 3, right: 3),
                     child: GestureDetector(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                            decoration: BoxDecoration(
-                                color: kWhite,
-                                borderRadius: BorderRadius.circular(3)),
-                            width: 30,
-                            height: 20,
-                            child: Center(
-                                child: Icon(
-                              Icons.more_horiz,
-                              size: 13,
-                            ))),
-                      ),
+                      onTap: () {},
+                      child: Container(
+                          decoration: BoxDecoration(
+                              color: kWhite,
+                              borderRadius: BorderRadius.circular(3)),
+                          width: 30,
+                          height: 20,
+                          child: Center(
+                              child: Icon(
+                            Icons.more_horiz,
+                            size: 13,
+                          ))),
                     ),
                   ))),
           Column(
@@ -71,7 +70,7 @@ class textCard extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 6, top: 8),
                   child: Text(
-                    "$text" + ".txt",
+                    "$text",
                     style: TextStyle(
                         fontSize: 12, color: kblack, fontFamily: 'Roboto'),
                   ),
