@@ -21,6 +21,8 @@ class textCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryHeight = MediaQuery.of(context).size.height;
+    final mediaQueryWidht = MediaQuery.of(context).size.width;
     return Container(
       width: 163,
       height: 163,
@@ -36,7 +38,11 @@ class textCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 3, right: 3),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        // showDialog(
+                        //     context: context,
+                        //     builder: (BuildContext) => );
+                      },
                       child: Container(
                           decoration: BoxDecoration(
                               color: kWhite,
@@ -55,7 +61,7 @@ class textCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 30, bottom: 24),
                 child: Image.asset(
-                  "assets/images/text.png",
+                  "assets/images/fileTxt.png",
                   width: 78,
                   height: 78,
                 ),
@@ -65,7 +71,7 @@ class textCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(2),
                   color: kWhite,
                 ),
-                width: MediaQuery.of(context).size.width * 1,
+                width: mediaQueryWidht * 1,
                 height: 28,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 6, top: 8),

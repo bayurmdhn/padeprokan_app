@@ -16,6 +16,7 @@ import 'components/uplodeFile.dart';
 
 String folderName = "";
 String fileName = "";
+String fileIsi = "";
 TextEditingController _folderName = TextEditingController();
 TextEditingController _fileName = TextEditingController();
 TextEditingController _isi = TextEditingController();
@@ -259,6 +260,14 @@ class _docsFiles extends State<docsFiles> {
                                       padding: const EdgeInsets.only(
                                           left: 8, right: 8),
                                       child: TextFormField(
+                                        onChanged: (String text) {
+                                          setState(() {});
+                                          fileIsi = text;
+                                        },
+                                        onFieldSubmitted: (String text) {
+                                          setState(() {});
+                                          fileIsi = text;
+                                        },
                                         controller: _isi,
                                         keyboardType: TextInputType.multiline,
                                         maxLines: 12,
