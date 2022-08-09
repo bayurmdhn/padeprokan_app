@@ -1,8 +1,5 @@
 import 'dart:math';
-<<<<<<< HEAD
-=======
 import 'package:first_app_flutter/Components/appBarBack.dart';
->>>>>>> b4e96f1e60766548bbeb8fa15fa341aadf6d65f6
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -130,7 +127,7 @@ class _SpaceState extends State<Space> {
                                 padding: const EdgeInsets.all(3),
                                 child: Text(
                                   'Collection of our learning material on any format such as Video, Ebook, Doc, Etc',
-                                  textAlign: TextAlign.end,
+                                  textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 217, 212, 197),
                                     fontFamily: 'Roboto',
@@ -147,17 +144,10 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-<<<<<<< HEAD
                       onTap: () {Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                             builder: (BuildContext context) =>
                                                 docsFiles()));},
-=======
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => docsFiles()));
-                      },
->>>>>>> b4e96f1e60766548bbeb8fa15fa341aadf6d65f6
                       splashColor: Colors.black,
                       child: Column(
                         children: [
@@ -172,6 +162,20 @@ class _SpaceState extends State<Space> {
                               fontSize: 18,
                             ),
                           ),
+                          Column(
+                           children: [
+                            Padding(padding: const EdgeInsets.all(3),
+                            child: Text('Upload or read your docs & files here',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 217, 212, 197),
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.normal,
+                              fontSize: 10,
+                            ),),
+                            )
+                           ], 
+                          )
                         ],
                       ),
                     ),
@@ -182,7 +186,8 @@ class _SpaceState extends State<Space> {
                       splashColor: Colors.black,
                       child: Column(
                         children: [
-                          Image.asset('assets/images/Schedule logo.png'),
+                          Image.asset('assets/images/Schedule logo.png',
+                          ),
                           Text(
                             "Schedule",
                             textAlign: null,
@@ -193,6 +198,21 @@ class _SpaceState extends State<Space> {
                               fontSize: 18,
                             ),
                           ),
+                          Column(
+                            children: [
+                              Padding(padding: EdgeInsets.all(3),
+                              child: Text('Schedule your work & time line here',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 217, 212, 197),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.normal,
+                                fontSize: 10,
+                              )
+                              ),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -212,9 +232,22 @@ class _SpaceState extends State<Space> {
                               color: Colors.black,
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                              fontSize: 17,
                             ),
                           ),
+                          Column(
+                            children: [
+                              Padding(padding: EdgeInsets.all(3),
+                              child: Text('Daily report to track your own/team progres',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 217, 212, 197),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.normal,
+                                fontSize: 10,
+                              ),),)
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -236,6 +269,21 @@ class _SpaceState extends State<Space> {
                               fontSize: 18,
                             ),
                           ),
+                          Column(
+                            children: [
+                              Padding(padding: EdgeInsets.all(3),
+                              child: Text('Chit chat about your work progress, daily activity, or just some random talk',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color.fromARGB(225, 217, 212, 197),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.normal,
+                                fontSize: 12,
+
+                              ),),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -257,6 +305,19 @@ class _SpaceState extends State<Space> {
                               fontSize: 18,
                             ),
                           ),
+                          Column(
+                            children: [
+                              Padding(padding: EdgeInsets.all(3),
+                              child: Text('Get the latest information on your workplace/school',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color.fromARGB(225, 217, 212, 197),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.normal,
+                                fontSize: 12,
+                              ),),)
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -278,6 +339,19 @@ class _SpaceState extends State<Space> {
                               fontSize: 18,
                             ),
                           ),
+                          Column(
+                            children: [
+                              Padding(padding: EdgeInsets.all(3),
+                              child: Text('Kanban board to track your task/project',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color.fromARGB(225, 217, 212, 197),
+                                fontFamily: 'Roboto',
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                              ),),)
+                            ],
+                          )
                         ],
                       ),
                     ),
