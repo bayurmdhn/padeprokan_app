@@ -1,3 +1,7 @@
+import 'dart:html';
+
+import 'package:first_app_flutter/Components/appBarBack.dart';
+import 'package:first_app_flutter/Screens/Courses/components/speedDial.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/speedDial.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -16,6 +20,10 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
     final mediaQueryWidht = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        title: appBarBack(judul: 'Courses'),
+        
+      ),
       body: Container(
         color: kBackGround,
         width: mediaQueryWidht * 1,
@@ -54,7 +62,7 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
                 child: Column(
                   children: [
                     Image.asset(
-                      "assets/images/emptyDocs.png",
+                      'assets/images/LogoCP.png',
                       height: 157,
                       width: 220,
                     ),
