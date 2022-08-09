@@ -157,11 +157,6 @@ class _SpaceState extends State<Space> {
                             builder: (BuildContext context) =>
                                 bodyCoursesPage()));
                       },
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                bodyCoursesPage()));
-                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [

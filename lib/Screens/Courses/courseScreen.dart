@@ -23,7 +23,6 @@ class docsFiles extends StatelessWidget {
       body: bodyCoursesPage(),
     );
 
-
     return MaterialApp(
         theme: ThemeData(fontFamily: 'Roboto'),
         home: Scaffold(
@@ -380,7 +379,5 @@ class docsFiles extends StatelessWidget {
             ),
           ),
         ));
-=======
->>>>>>> b9c0e2a2f723f95808a9dad81aa1dc6fe80835c8
   }
 }
