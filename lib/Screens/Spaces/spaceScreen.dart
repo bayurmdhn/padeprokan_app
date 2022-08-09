@@ -112,7 +112,8 @@ class _SpaceState extends State<Space> {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => Courses()));
+                            builder: (BuildContext context) =>
+                                bodyCoursesPage()));
                       },
                       splashColor: Colors.black,
                       child: Column(
@@ -153,12 +154,14 @@ class _SpaceState extends State<Space> {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => docsFiles()));
+                            builder: (BuildContext context) =>
+                                bodyCoursesPage()));
                       },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
                           Image.asset('assets/images/Docs & files.png'),
+                          // ignore: prefer_const_constructors
                           Text(
                             "Docs & Files",
                             textAlign: null,
