@@ -171,18 +171,21 @@ class _SpaceState extends State<Space> {
                             ),
                           ),
                           Column(
-                           children: [
-                            Padding(padding: const EdgeInsets.all(3),
-                            child: Text('Upload or read your docs & files here',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 217, 212, 197),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.normal,
-                              fontSize: 10,
-                            ),),
-                            )
-                           ], 
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(3),
+                                child: Text(
+                                  'Upload or read your docs & files here',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 217, 212, 197),
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              )
+                            ],
                           )
                         ],
                       ),
@@ -194,7 +197,8 @@ class _SpaceState extends State<Space> {
                       splashColor: Colors.black,
                       child: Column(
                         children: [
-                          Image.asset('assets/images/Schedule logo.png',
+                          Image.asset(
+                            'assets/images/Schedule logo.png',
                           ),
                           Text(
                             "Schedule",
@@ -208,16 +212,17 @@ class _SpaceState extends State<Space> {
                           ),
                           Column(
                             children: [
-                              Padding(padding: EdgeInsets.all(3),
-                              child: Text('Schedule your work & time line here',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 217, 212, 197),
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 10,
-                              )
-                              ),
+                              Padding(
+                                padding: EdgeInsets.all(3),
+                                child: Text(
+                                    'Schedule your work & time line here',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 217, 212, 197),
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 10,
+                                    )),
                               )
                             ],
                           )
@@ -248,15 +253,19 @@ class _SpaceState extends State<Space> {
                           ),
                           Column(
                             children: [
-                              Padding(padding: EdgeInsets.all(3),
-                              child: Text('Daily report to track your own/team progres',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 217, 212, 197),
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 10,
-                              ),),)
+                              Padding(
+                                padding: EdgeInsets.all(3),
+                                child: Text(
+                                  'Daily report to track your own/team progres',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 217, 212, 197),
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              )
                             ],
                           )
                         ],
@@ -282,16 +291,18 @@ class _SpaceState extends State<Space> {
                           ),
                           Column(
                             children: [
-                              Padding(padding: EdgeInsets.all(3),
-                              child: Text('Chit chat about your work progress, daily activity, or just some random talk',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color.fromARGB(225, 217, 212, 197),
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-
-                              ),),
+                              Padding(
+                                padding: EdgeInsets.all(3),
+                                child: Text(
+                                  'Chit chat about your work progress, daily activity, or just some random talk',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(225, 217, 212, 197),
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
                               )
                             ],
                           )
@@ -318,15 +329,19 @@ class _SpaceState extends State<Space> {
                           ),
                           Column(
                             children: [
-                              Padding(padding: EdgeInsets.all(3),
-                              child: Text('Get the latest information on your workplace/school',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color.fromARGB(225, 217, 212, 197),
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-                              ),),)
+                              Padding(
+                                padding: EdgeInsets.all(3),
+                                child: Text(
+                                  'Get the latest information on your workplace/school',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(225, 217, 212, 197),
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              )
                             ],
                           )
                         ],
@@ -352,15 +367,19 @@ class _SpaceState extends State<Space> {
                           ),
                           Column(
                             children: [
-                              Padding(padding: EdgeInsets.all(3),
-                              child: Text('Kanban board to track your task/project',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color.fromARGB(225, 217, 212, 197),
-                                fontFamily: 'Roboto',
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),),)
+                              Padding(
+                                padding: EdgeInsets.all(3),
+                                child: Text(
+                                  'Kanban board to track your task/project',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(225, 217, 212, 197),
+                                    fontFamily: 'Roboto',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              )
                             ],
                           )
                         ],
