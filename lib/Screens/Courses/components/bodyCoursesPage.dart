@@ -1,3 +1,4 @@
+import 'package:first_app_flutter/Screens/Courses/components/speedDial.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/speedDial.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';

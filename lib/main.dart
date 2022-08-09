@@ -5,6 +5,7 @@ import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
 import 'package:first_app_flutter/Screens/Login/loginscreen.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
 import 'package:first_app_flutter/Reverensi/register.dart';
+import 'package:first_app_flutter/Screens/Spaces/spaceScreen.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:first_app_flutter/routes.dart';
 import 'package:first_app_flutter/theme.dart';
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-      navigateRoute: ProfilePage(),
+      navigateRoute: HomePage(),
       duration: 3000,
       imageSize: 120,
       imageSrc: "assets/images/logo.png",

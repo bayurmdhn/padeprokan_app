@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 import 'package:first_app_flutter/Components/appBar.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/Courses/components/bodyCoursesPage.dart';
-=======
+
 import 'dart:math';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
->>>>>>> d088f9604ec55c64a5b5833de2969a7bb33596c0
+
 import 'package:flutter/material.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
 
@@ -17,7 +16,6 @@ import 'components/bodyCoursesPage.dart';
 class docsFiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +25,7 @@ class docsFiles extends StatelessWidget {
       ),
       body: bodyCoursesPage(),
     );
-=======
+
     return MaterialApp(
         theme: ThemeData(fontFamily: 'Roboto'),
         home: Scaffold(
@@ -384,6 +382,5 @@ class docsFiles extends StatelessWidget {
             ),
           ),
         ));
->>>>>>> d088f9604ec55c64a5b5833de2969a7bb33596c0
   }
 }
