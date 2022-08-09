@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../../Components/appBar.dart';
+import '../../Components/appBarBack.dart';
+import '../Courses/courseScreen.dart';
 
 class Space extends StatefulWidget {
   const Space({Key? key}) : super(key: key);
@@ -223,7 +225,10 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => autoCheck()));
+                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
