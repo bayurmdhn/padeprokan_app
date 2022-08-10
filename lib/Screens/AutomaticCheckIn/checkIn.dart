@@ -3,6 +3,8 @@ import 'package:first_app_flutter/Screens/AutomaticCheckIn/answer.dart';
 import 'package:flutter/material.dart';
 import '../../Screens/AutomaticCheckIn/automaticCheckIn.dart';
 
+String answer = '';
+
 class checkInPage extends StatefulWidget {
   const checkInPage({Key? key}) : super(key: key);
 
@@ -46,9 +48,12 @@ class _checkInPageState extends State<checkInPage> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 28),
-                            child: Text(
-                              'Question',
-                              style: TextStyle(fontSize: 25),
+                            child: Container(
+                              width: 200,
+                              child: Text(
+                                'Question',
+                                style: TextStyle(fontSize: 25),
+                              ),
                             ),
                           ),
                         ],
@@ -98,6 +103,14 @@ class _checkInPageState extends State<checkInPage> {
                                           width: 244,
                                           height: 24,
                                           child: TextFormField(
+                                            onChanged: (String text) {
+                                              setState(() {});
+                                              answer = text;
+                                            },
+                                            onFieldSubmitted: (String text) {
+                                              setState(() {});
+                                              answer = text;
+                                            },
                                             decoration: InputDecoration(
                                               hintText:
                                                   "Type your message here",
