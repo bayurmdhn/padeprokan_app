@@ -161,6 +161,7 @@ class _SpaceState extends State<Space> {
                       child: Column(
                         children: [
                           Image.asset('assets/images/Docs & files.png'),
+                          // ignore: prefer_const_constructors
                           Text(
                             "Docs & Files",
                             textAlign: null,

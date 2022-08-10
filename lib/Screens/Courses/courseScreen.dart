@@ -10,7 +10,7 @@ import 'package:first_app_flutter/Screens/Register/Components/body.dart';
 import '../../Utils/constants.dart';
 import 'components/bodyCoursesPage.dart';
 
-class docsFiles extends StatelessWidget {
+class Courses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
