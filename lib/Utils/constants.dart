@@ -89,6 +89,7 @@ const String kPass6char = "Please insert at least 6 characters !";
 const String kConfirmPass = "Two passwords that you enter is inconsistent!";
 const String kForgotinput = "Please input your email";
 const String kDontHaveFile = "You don't have any file!";
+const String kDontHaveSpace = "You're space not have course now";
 
 //Warna
 const kfile = Color.fromRGBO(239, 239, 239, 1);

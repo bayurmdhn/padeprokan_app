@@ -1,6 +1,9 @@
 import 'package:first_app_flutter/Components/appBarBack.dart';
+import 'package:first_app_flutter/Screens/AutomaticCheckIn/answer.dart';
 import 'package:flutter/material.dart';
 import '../../Screens/AutomaticCheckIn/automaticCheckIn.dart';
+
+String answer = '';
 
 class checkInPage extends StatefulWidget {
   const checkInPage({Key? key}) : super(key: key);
@@ -10,6 +13,16 @@ class checkInPage extends StatefulWidget {
 }
 
 class _checkInPageState extends State<checkInPage> {
+  DateTime dateToday =
+      DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+
+  List<DynamicWidget> listDynamic = [];
+  int index = 0;
+  addDynamic() {
+    listDynamic.add(DynamicWidget());
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,9 +48,12 @@ class _checkInPageState extends State<checkInPage> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 28),
-                            child: Text(
-                              'Question',
-                              style: TextStyle(fontSize: 25),
+                            child: Container(
+                              width: 200,
+                              child: Text(
+                                'Question',
+                                style: TextStyle(fontSize: 25),
+                              ),
                             ),
                           ),
                         ],
@@ -46,7 +62,7 @@ class _checkInPageState extends State<checkInPage> {
                         padding: const EdgeInsets.only(top: 21),
                         child: Container(
                           width: 346,
-                          height: 153,
+                          height: 200,
                           padding: EdgeInsets.only(top: 10, left: 12),
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -87,6 +103,14 @@ class _checkInPageState extends State<checkInPage> {
                                           width: 244,
                                           height: 24,
                                           child: TextFormField(
+                                            onChanged: (String text) {
+                                              setState(() {});
+                                              answer = text;
+                                            },
+                                            onFieldSubmitted: (String text) {
+                                              setState(() {});
+                                              answer = text;
+                                            },
                                             decoration: InputDecoration(
                                               hintText:
                                                   "Type your message here",
@@ -101,19 +125,49 @@ class _checkInPageState extends State<checkInPage> {
                                           )),
                                     ),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          addDynamic();
+                                        },
                                         icon: Icon(Icons.send_rounded))
                                   ],
                                 ),
-                              )
+                              ),
+                              Row(
+                                children: [
+                                  Divider(
+                                    thickness: 1,
+                                    color: Color.fromARGB(255, 148, 148, 148),
+                                  ),
+                                  Text(dateToday.toString())
+                                ],
+                              ),
                             ],
                           ),
                         ),
                       ),
                     ],
                   ),
-                )
+                ),
+                Expanded(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.85,
+                    height: MediaQuery.of(context).size.height,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 19),
+                      child: Column(
+                        children: [
+                          Flexible(
+                              child: ListView.builder(
+                                  itemCount: listDynamic.length,
+                                  itemBuilder: (_, index) =>
+                                      listDynamic[index])),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ]),
+
               //Screen size
               decoration:
                   new BoxDecoration(color: Color.fromARGB(255, 219, 223, 247)),
@@ -123,6 +177,18 @@ class _checkInPageState extends State<checkInPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class DynamicWidget extends StatelessWidget {
+  const DynamicWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 17),
+      child: Answer(),
     );
   }
 }
