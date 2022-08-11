@@ -169,6 +169,7 @@ class _autoCheckState extends State<autoCheck> {
                                   width: 346,
                                   height: 29,
                                   child: TextFormField(
+                                    textAlignVertical: TextAlignVertical.bottom,
                                     decoration: InputDecoration(
                                       hintText: "What did you do yesterday?",
                                       hintStyle: TextStyle(fontSize: 11),
@@ -239,8 +240,7 @@ class _autoCheckState extends State<autoCheck> {
                                                       .toString(),
                                                   style: TextStyle(
                                                       fontSize: 12,
-                                                      color: Color.fromARGB(
-                                                          255, 194, 194, 194)),
+                                                      color: Colors.black),
                                                 ),
                                               ),
                                               Icon(

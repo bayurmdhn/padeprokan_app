@@ -84,7 +84,7 @@ class _checkInPageState extends State<checkInPage> {
                                 child: Row(
                                   children: [
                                     Text(
-                                      'Answer',
+                                      '$questionName',
                                       style: TextStyle(fontSize: 20),
                                     )
                                   ],
@@ -103,6 +103,8 @@ class _checkInPageState extends State<checkInPage> {
                                           width: 244,
                                           height: 24,
                                           child: TextFormField(
+                                            textAlignVertical:
+                                                TextAlignVertical.bottom,
                                             onChanged: (String text) {
                                               setState(() {});
                                               answer = text;

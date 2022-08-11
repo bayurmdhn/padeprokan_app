@@ -2,6 +2,8 @@ import 'dart:ui';
 import '../../Screens/AutomaticCheckIn/checkIn.dart';
 import 'package:flutter/material.dart';
 
+enum MenuItem { item1, item2 }
+
 String sendDuration = 'A Few seconds ago';
 
 class Answer extends StatelessWidget {
@@ -49,8 +51,48 @@ class Answer extends StatelessWidget {
                         sendDuration,
                         style: TextStyle(
                             fontSize: 10,
-                            color: Color.fromARGB(255, 217, 217, 217)),
+                            color: Color.fromARGB(255, 89, 89, 89)),
                       ),
+                      PopupMenuButton(
+                          onSelected: (value) {
+                            if (value == MenuItem.item1) {}
+                            if (value == MenuItem.item2) {}
+                          },
+                          icon: Icon(
+                            Icons.more_horiz,
+                            color: Color.fromARGB(255, 89, 89, 89),
+                          ),
+                          iconSize: 13,
+                          itemBuilder: (context) => [
+                                PopupMenuItem(
+                                    child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.edit,
+                                      color: Color.fromARGB(255, 89, 89, 89),
+                                    ),
+                                    Text(
+                                      'Edit',
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 89, 89, 89)),
+                                    )
+                                  ],
+                                )),
+                                PopupMenuItem(
+                                    child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.delete,
+                                      color: Color.fromARGB(255, 89, 89, 89),
+                                    ),
+                                    Text('Delete',
+                                        style: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 89, 89, 89)))
+                                  ],
+                                ))
+                              ])
                     ],
                   ),
                 ),

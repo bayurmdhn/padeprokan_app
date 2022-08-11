@@ -4,7 +4,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../../Screens/HomePage/homePage.dart';
 
-class spaceCard extends StatelessWidget {
+enum MenuItem { item1, item2 }
+
+class spaceCard extends StatefulWidget {
   final Color textColor;
   final Color spaceColor;
   final Color backgroundColor;
@@ -19,6 +21,11 @@ class spaceCard extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<spaceCard> createState() => _spaceCardState();
+}
+
+class _spaceCardState extends State<spaceCard> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 18),
@@ -26,15 +33,177 @@ class spaceCard extends StatelessWidget {
           width: 346,
           height: 160,
           decoration: BoxDecoration(
-              color: backgroundColor, borderRadius: BorderRadius.circular(8)),
+              color: widget.backgroundColor,
+              borderRadius: BorderRadius.circular(8)),
           child: Column(
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * 1,
                 height: 108,
-                decoration: BoxDecoration(color: spaceColor),
+                decoration: BoxDecoration(color: widget.spaceColor),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        PopupMenuButton(
+                            onSelected: (value) {
+                              if (value == MenuItem.item1) {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                          content: Container(
+                                            width: 380,
+                                            height: 188,
+                                            child: Column(children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 16),
+                                                    child: Text(
+                                                      "Rename Space",
+                                                      style: TextStyle(
+                                                          fontSize: 16),
+                                                    ),
+                                                  ),
+                                                  IconButton(
+                                                      onPressed: () {
+                                                        Navigator.pop(context);
+                                                      },
+                                                      icon: Icon(Icons.close))
+                                                ],
+                                              ),
+                                              Divider(
+                                                thickness: 1,
+                                                color: Color.fromARGB(
+                                                    255, 188, 188, 188),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    bottom: 0),
+                                                child: Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              top: 19),
+                                                      child: RichText(
+                                                          text: TextSpan(
+                                                              text:
+                                                                  "Space name",
+                                                              style: TextStyle(
+                                                                  color: Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          153,
+                                                                          153,
+                                                                          153),
+                                                                  fontSize: 12),
+                                                              children: [
+                                                            TextSpan(
+                                                                text: "*",
+                                                                style: TextStyle(
+                                                                    color: Color
+                                                                        .fromARGB(
+                                                                            255,
+                                                                            255,
+                                                                            19,
+                                                                            19)))
+                                                          ])),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 346,
+                                                height: 29,
+                                                child: TextFormField(
+                                                  textAlignVertical:
+                                                      TextAlignVertical.bottom,
+                                                  decoration: InputDecoration(
+                                                    hintText: "Your Space name",
+                                                    hintStyle:
+                                                        TextStyle(fontSize: 11),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                            borderSide: BorderSide(
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        140,
+                                                                        79,
+                                                                        225))),
+                                                  ),
+                                                  style:
+                                                      TextStyle(fontSize: 11),
+                                                  onChanged: (String text) {
+                                                    setState(() {});
+                                                    spaceName = text;
+                                                  },
+                                                  onFieldSubmitted:
+                                                      (String text) {
+                                                    setState(() {});
+                                                    spaceName = text;
+                                                  },
+                                                ),
+                                              ),
+                                            ]),
+                                          ),
+                                        ));
+                              }
+                              if (value == MenuItem.item2) {}
+                            },
+                            icon: Icon(
+                              Icons.more_vert,
+                              color: Colors.white,
+                              size: 25,
+                            ),
+                            itemBuilder: (context) => [
+                                  PopupMenuItem(
+                                      value: MenuItem.item1,
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.edit,
+                                            color: Color.fromARGB(
+                                                255, 0, 102, 255),
+                                          ),
+                                          Text(
+                                            'Edit',
+                                            style: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 0, 102, 255)),
+                                          )
+                                        ],
+                                      )),
+                                  PopupMenuItem(
+                                      value: MenuItem.item2,
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.delete,
+                                            color:
+                                                Color.fromARGB(255, 246, 0, 0),
+                                          ),
+                                          Text('Delete',
+                                              style: TextStyle(
+                                                  color: Color.fromARGB(
+                                                      255, 246, 0, 0)))
+                                        ],
+                                      ))
+                                ])
+                      ],
+                    ),
+                  ],
+                ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
                     width: 10,
@@ -42,7 +211,7 @@ class spaceCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 7),
                     child: Text(
-                      text,
+                      widget.text,
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),

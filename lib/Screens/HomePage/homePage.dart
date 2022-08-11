@@ -223,6 +223,8 @@ class _HomePageState extends State<HomePage> {
                                     width: 346,
                                     height: 29,
                                     child: TextFormField(
+                                      textAlignVertical:
+                                          TextAlignVertical.bottom,
                                       decoration: InputDecoration(
                                         hintText: "Your Space name",
                                         hintStyle: TextStyle(fontSize: 11),
