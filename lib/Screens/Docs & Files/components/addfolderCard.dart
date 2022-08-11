@@ -69,31 +69,6 @@ class addFolderCard extends StatelessWidget {
           ))
         ],
       ),
-
-      // child: Column(
-      //   children: [
-      //     Container(
-      //       width: 163,
-      //       height: 129,
-      //       decoration: BoxDecoration(color: spaceColor),
-      //     ),
-      //     Row(
-      //       children: [
-      //         SizedBox(
-      //           width: 10,
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.only(top: 7),
-      //           child: Text(
-      //             text,
-      //             style:
-      //                 TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      //           ),
-      //         ),
-      //       ],
-      //     )
-      //   ],
-      // )
     );
   }
 }
