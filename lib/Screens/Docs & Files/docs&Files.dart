@@ -7,12 +7,10 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../../Utils/constants.dart';
 import '../HomePage/homePage.dart';
 import '../Spaces/spaceScreen.dart';
-import 'components/bodyDocsFiles.dart';
+
 import 'components/folderDynamic.dart';
-import 'components/googleDrive.dart';
 import 'components/textCard.dart';
 import 'components/textDynamic.dart';
-import 'components/uplodeFile.dart';
 
 String folderName = "";
 String fileName = "";
@@ -348,7 +346,8 @@ class _docsFiles extends State<docsFiles> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.only(),
+                                                        const EdgeInsets.only(
+                                                            right: 4),
                                                     child: Text(
                                                       "Save & publish",
                                                       style: TextStyle(
@@ -1090,19 +1089,3 @@ class _docsFiles extends State<docsFiles> {
     );
   }
 }
-
-// class DynamicWidget extends StatelessWidget {
-//   const DynamicWidget({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: () {},
-//       child: textCard(
-//           textColor: Colors.black,
-//           backgroundColor: Color.fromRGBO(230, 230, 230, 1),
-//           text: "$fileName",
-//           spaceColor: Color.fromRGBO(230, 230, 230, 1)),
-//     );
-//   }
-// }

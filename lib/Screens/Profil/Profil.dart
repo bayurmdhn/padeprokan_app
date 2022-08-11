@@ -4,6 +4,9 @@ import 'dart:math';
 import 'package:first_app_flutter/Components/appBar.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/Profil/Add%20Education.dart';
+import 'package:first_app_flutter/Screens/Profil/Add%20Expertise.dart';
+import 'package:first_app_flutter/Screens/Profil/Add%20Portofolio.dart';
+import 'package:first_app_flutter/Screens/Profil/Add%20Presentation.dart';
 import 'package:first_app_flutter/Screens/Profil/Add%20Work.dart';
 import 'package:first_app_flutter/Screens/Profil/Edit%20profile.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
@@ -468,37 +471,19 @@ class _ProfilePageState extends State<ProfilePage> {
                                               padding: const EdgeInsets.only(
                                                   right: 20),
                                               child: GestureDetector(
-                                                onTap: () {},
-                                                child: Container(
-                                                  width: 122,
-                                                  height: 36,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      IconButton(
-                                                          onPressed: () {},
-                                                          icon: Icon(
-                                                            Icons
-                                                                .add_circle_rounded,
-                                                            color: Colors.white,
-                                                            size: 25,
-                                                          )),
-                                                      Text(
-                                                        "Create New",
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 15),
+                                                  onTap: () {},
+                                                  child: Column(
+                                                    children: <Widget>[
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          AddExpertise()
+                                                        ],
                                                       )
                                                     ],
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.orange,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8)),
-                                                ),
-                                              ),
+                                                  )),
                                             ),
                                           ],
                                         )
@@ -597,37 +582,19 @@ class _ProfilePageState extends State<ProfilePage> {
                                               padding: const EdgeInsets.only(
                                                   right: 20),
                                               child: GestureDetector(
-                                                onTap: () {},
-                                                child: Container(
-                                                  width: 122,
-                                                  height: 36,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      IconButton(
-                                                          onPressed: () {},
-                                                          icon: Icon(
-                                                            Icons
-                                                                .add_circle_rounded,
-                                                            color: Colors.white,
-                                                            size: 25,
-                                                          )),
-                                                      Text(
-                                                        "Create New",
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 15),
+                                                  onTap: () {},
+                                                  child: Column(
+                                                    children: <Widget>[
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          AddPresentation()
+                                                        ],
                                                       )
                                                     ],
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.orange,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8)),
-                                                ),
-                                              ),
+                                                  )),
                                             ),
                                           ],
                                         )
@@ -726,37 +693,19 @@ class _ProfilePageState extends State<ProfilePage> {
                                               padding: const EdgeInsets.only(
                                                   right: 20),
                                               child: GestureDetector(
-                                                onTap: () {},
-                                                child: Container(
-                                                  width: 122,
-                                                  height: 36,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      IconButton(
-                                                          onPressed: () {},
-                                                          icon: Icon(
-                                                            Icons
-                                                                .add_circle_rounded,
-                                                            color: Colors.white,
-                                                            size: 25,
-                                                          )),
-                                                      Text(
-                                                        "Create New",
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 15),
+                                                  onTap: () {},
+                                                  child: Column(
+                                                    children: <Widget>[
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          AddPortofolio()
+                                                        ],
                                                       )
                                                     ],
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.orange,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8)),
-                                                ),
-                                              ),
+                                                  )),
                                             ),
                                           ],
                                         )

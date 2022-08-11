@@ -3,7 +3,7 @@ import 'dart:html';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 
 import 'package:first_app_flutter/Screens/Courses/components/speedDial.dart';
-import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/speedDial.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -22,7 +22,6 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
     final mediaQueryWidht = MediaQuery.of(context).size.width;
     return Scaffold(
-      
       body: Container(
         color: kBackGround,
         width: mediaQueryWidht * 1,
