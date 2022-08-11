@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-      navigateRoute: HomePage(),
+      navigateRoute: ProfilePage(),
       duration: 3000,
       imageSize: 120,
       imageSrc: "assets/images/logo.png",
