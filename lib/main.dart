@@ -38,11 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-<<<<<<< HEAD
-      navigateRoute: HomePage(),
-=======
       navigateRoute: LoginScreen(),
->>>>>>> 794de0877cd45bd12a013091e4ab6d1af00a3493
       duration: 3000,
       imageSize: 120,
       imageSrc: "assets/images/logo.png",
