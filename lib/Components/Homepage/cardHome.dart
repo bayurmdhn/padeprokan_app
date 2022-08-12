@@ -259,7 +259,171 @@ class _spaceCardState extends State<spaceCard> {
                                               ]),
                                             ]))));
                               }
-                              if (value == MenuItem.item2) {}
+                              if (value == MenuItem.item2) {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                          content: Container(
+                                            constraints: BoxConstraints(
+                                              maxHeight: 165,
+                                              minHeight: 80,
+                                            ),
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(5)),
+                                            width: 346,
+                                            height: 80,
+                                            child: Column(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.help_outline,
+                                                      size: 24,
+                                                      color: Color.fromARGB(
+                                                          255, 255, 165, 2),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 12),
+                                                      child: Text(
+                                                        "Are you sure to delete this space $spaceName ?",
+                                                        style: TextStyle(
+                                                            fontSize: 14,
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    82,
+                                                                    82,
+                                                                    82)),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 36, top: 8),
+                                                  child: Row(
+                                                    children: [
+                                                      Container(
+                                                        constraints:
+                                                            BoxConstraints(),
+                                                        child: Text(
+                                                          'This action cannot be undo',
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      174,
+                                                                      174,
+                                                                      174)),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 10),
+                                                  child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  right: 12),
+                                                          child:
+                                                              GestureDetector(
+                                                            onTap: () {
+                                                              Navigator.pop(
+                                                                  context);
+                                                            },
+                                                            child: Container(
+                                                              width: 71,
+                                                              height: 27,
+                                                              child: Column(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Text(
+                                                                    "Cancel",
+                                                                    style: TextStyle(
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            131,
+                                                                            131,
+                                                                            131),
+                                                                        fontSize:
+                                                                            13),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              decoration: BoxDecoration(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  border: Border.all(
+                                                                      color: Color.fromARGB(
+                                                                          255,
+                                                                          143,
+                                                                          143,
+                                                                          143)),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        GestureDetector(
+                                                          onTap: () {
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Container(
+                                                            width: 71,
+                                                            height: 27,
+                                                            child: Column(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Text(
+                                                                  "OK",
+                                                                  style: TextStyle(
+                                                                      color: Colors
+                                                                          .white,
+                                                                      fontSize:
+                                                                          13),
+                                                                )
+                                                              ],
+                                                            ),
+                                                            decoration: BoxDecoration(
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        253,
+                                                                        64,
+                                                                        64),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8)),
+                                                          ),
+                                                        ),
+                                                      ]),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ));
+                              }
                             },
                             icon: Icon(
                               Icons.more_vert,
@@ -306,7 +470,6 @@ class _spaceCardState extends State<spaceCard> {
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
                     width: 10,
