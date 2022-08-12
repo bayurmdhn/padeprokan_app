@@ -5,7 +5,6 @@ import 'package:first_app_flutter/Screens/Courses/components/coursesCard.dart';
 
 import 'package:first_app_flutter/Screens/Courses/components/speedDial.dart';
 import 'package:first_app_flutter/Screens/Courses/courseScreen.dart';
-import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/speedDial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -15,8 +14,7 @@ import 'dart:math' as math;
 
 String Coursesname = "";
 
-
-  class bodyCoursesPage extends StatefulWidget {
+class bodyCoursesPage extends StatefulWidget {
   const bodyCoursesPage({Key? key}) : super(key: key);
 
   @override
@@ -24,11 +22,11 @@ String Coursesname = "";
 }
 
 class _bodyCoursesPageState extends State<bodyCoursesPage> {
-    List<DynamicWidget> listDynamic = [];
-addDynamic() {
+  List<DynamicWidget> listDynamic = [];
+  addDynamic() {
     listDynamic.add(DynamicWidget());
     setState(() {});
-  } 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,39 +65,44 @@ addDynamic() {
                   fillColor: Colors.white,
                 ),
               ))),
-              Expanded(child: Container(
-                                width: MediaQuery.of(context).size.width * 0.85,
-                                height: MediaQuery.of(context).size.width,
-                                child: Padding(padding: const EdgeInsets.only(top: 100),
-                                child: Column(
-                                  children: [
-                                    Flexible(child: ListView.builder(
-                                      itemCount: listDynamic.length,
-                                      itemBuilder: (_, index) =>
-                                      listDynamic[index]))
-                                  ],
-                                ),),
-                              )),
-         index==0?Positioned(
-              top: 122,
-              child: Center(
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/LogoCP.png',
-                      height: 157,
-                      width: 220,
+          Expanded(
+              child: Container(
+            width: MediaQuery.of(context).size.width * 0.85,
+            height: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 100),
+              child: Column(
+                children: [
+                  Flexible(
+                      child: ListView.builder(
+                          itemCount: listDynamic.length,
+                          itemBuilder: (_, index) => listDynamic[index]))
+                ],
+              ),
+            ),
+          )),
+          index == 0
+              ? Positioned(
+                  top: 122,
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/LogoCP.png',
+                          height: 157,
+                          width: 220,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40),
+                          child: Text(
+                            kDontHaveSpace,
+                            style: dontHave,
+                          ),
+                        )
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: Text(
-                        kDontHaveSpace,
-                        style: dontHave,
-                      ),
-                    )
-                  ],
-                ),
-              )):Center(),
+                  ))
+              : Center(),
           // Positioned(
           //   bottom: 59,
           //   right: 34,
@@ -385,8 +388,8 @@ class DynamicWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const bodyCoursesPage()));
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const bodyCoursesPage()));
       },
       child: coursesCard(
           textColor: Colors.black,
