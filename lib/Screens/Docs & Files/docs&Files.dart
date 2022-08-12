@@ -68,7 +68,7 @@ class _docsFiles extends State<docsFiles> {
               SizedBox(
                 height: 51,
               ),
-              //Search Files
+              //Search Files (blom ada fitur nya)
               Container(
                 width: mediaQueryWidht * 0.9,
                 height: 34,
@@ -109,8 +109,8 @@ class _docsFiles extends State<docsFiles> {
                   children: [
                     Flexible(
                       child: GridView.builder(
-                        itemBuilder: (context, index) => listDynamic[index],
-                        itemCount: listDynamic.length,
+                        itemBuilder: (context, index) => folderDynamic[index],
+                        itemCount: folderDynamic.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             crossAxisSpacing: mediaQueryWidht * 0.07,
@@ -187,6 +187,7 @@ class _docsFiles extends State<docsFiles> {
                                         BorderRadius.all(Radius.circular(8)),
                                     color: kWhite,
                                   ),
+                                  //text form field nama file dan isinya
                                   child: Column(children: [
                                     Padding(
                                       padding: const EdgeInsets.only(
@@ -252,6 +253,7 @@ class _docsFiles extends State<docsFiles> {
                                         Padding(
                                           padding:
                                               const EdgeInsets.only(right: 22),
+                                          //tombol cancel
                                           child: GestureDetector(
                                             onTap: () => Navigator.of(context,
                                                     rootNavigator: true)
@@ -282,6 +284,7 @@ class _docsFiles extends State<docsFiles> {
                                             ),
                                           ),
                                         ),
+                                        //tombol Save and Publish
                                         GestureDetector(
                                           onTap: () {
                                             addDynamic();
@@ -363,6 +366,7 @@ class _docsFiles extends State<docsFiles> {
                                       borderRadius: BorderRadius.circular(8)),
                                   child: Column(
                                     children: <Widget>[
+                                      // text add folder
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -378,6 +382,7 @@ class _docsFiles extends State<docsFiles> {
                                                   color: kblack),
                                             ),
                                           ),
+                                          //icon close
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 top: 21, right: 21),
@@ -396,6 +401,7 @@ class _docsFiles extends State<docsFiles> {
                                         height: 20,
                                         color: kdivider,
                                       ),
+                                      //text Folder name
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             left: 19, top: 24),
@@ -411,6 +417,7 @@ class _docsFiles extends State<docsFiles> {
                                           ],
                                         ),
                                       ),
+                                      // Text Form Field new Folder
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             left: 19, top: 15, right: 20),
@@ -418,7 +425,6 @@ class _docsFiles extends State<docsFiles> {
                                           height: 29,
                                           width: 346,
                                           child: TextFormField(
-                                            controller: _folderName,
                                             cursorColor: kblack,
                                             cursorWidth: 1,
                                             style: TextStyle(
@@ -475,6 +481,7 @@ class _docsFiles extends State<docsFiles> {
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 right: 12),
+                                            //tombol Cancel
                                             child: GestureDetector(
                                               onTap: () => Navigator.of(context,
                                                       rootNavigator: true)
@@ -512,11 +519,11 @@ class _docsFiles extends State<docsFiles> {
                                               ),
                                             ),
                                           ),
+                                          // tombol Submit
                                           GestureDetector(
                                             onTap: () {
                                               newDynamic();
                                               Navigator.pop(context);
-                                              // print(_folderName.text);
                                               indexx++;
                                             },
                                             child: Padding(
@@ -617,6 +624,7 @@ class _docsFiles extends State<docsFiles> {
                                     SizedBox(
                                       height: 6,
                                     ),
+                                    //ketika di klik
                                     GestureDetector(
                                       onTap: () {},
                                       child: Container(
@@ -629,6 +637,7 @@ class _docsFiles extends State<docsFiles> {
                                               color: kfile,
                                               borderRadius:
                                                   BorderRadius.circular(8)),
+                                          //tempat upLode
                                           child: Column(
                                             children: [
                                               Padding(
@@ -713,6 +722,7 @@ class _docsFiles extends State<docsFiles> {
                                             ),
                                           ),
                                         ),
+                                        //tombol Uplode
                                         GestureDetector(
                                           onTap: () {},
                                           child: Padding(
@@ -791,6 +801,7 @@ class _docsFiles extends State<docsFiles> {
                                                   color: kblack),
                                             ),
                                           ),
+                                          //icon close
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 top: 21, right: 21),
@@ -812,6 +823,7 @@ class _docsFiles extends State<docsFiles> {
                                       SizedBox(
                                         height: 6,
                                       ),
+                                      //Text file name
                                       Row(
                                         children: [
                                           Padding(
@@ -835,6 +847,7 @@ class _docsFiles extends State<docsFiles> {
                                       SizedBox(
                                         height: 15,
                                       ),
+                                      //text Form Field
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             left: 18, right: 22),
@@ -915,6 +928,7 @@ class _docsFiles extends State<docsFiles> {
                                         child: Form(
                                           child: SizedBox(
                                             height: 29,
+                                            //text form field
                                             child: TextFormField(
                                               textAlignVertical:
                                                   TextAlignVertical.bottom,
@@ -958,6 +972,7 @@ class _docsFiles extends State<docsFiles> {
                                           ),
                                         ),
                                       ),
+                                      //garis
                                       Divider(
                                         height: 25,
                                         color: kdivider,
@@ -971,6 +986,7 @@ class _docsFiles extends State<docsFiles> {
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 right: 12),
+                                            // tombol Cancel
                                             child: GestureDetector(
                                               onTap: () => Navigator.of(context,
                                                       rootNavigator: true)
@@ -1008,6 +1024,7 @@ class _docsFiles extends State<docsFiles> {
                                               ),
                                             ),
                                           ),
+                                          //tombol Submit
                                           GestureDetector(
                                             onTap: () {
                                               print(_untitled.text);

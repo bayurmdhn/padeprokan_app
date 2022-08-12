@@ -213,11 +213,6 @@ class _textCardState extends State<textCard> {
                                                                       194,
                                                                       194,
                                                                       1)),
-                                                          prefixIcon: Icon(
-                                                            Icons.folder,
-                                                            size: 16,
-                                                            color: kblack,
-                                                          ),
                                                         ),
                                                       ),
                                                     ),
