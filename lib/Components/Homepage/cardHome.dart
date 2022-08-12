@@ -350,7 +350,7 @@ class _spaceCardState extends State<spaceCard> {
                                                                         Height *
                                                                             0.07,
                                                                     child: Text(
-                                                                        "ufhgshfeywwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"),
+                                                                        "Are you sure to delete this '$spaceName'"),
                                                                   )
                                                                   // Text(
                                                                   //   "Are you sure to delete this Space '$spaceName'",
