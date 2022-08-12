@@ -31,6 +31,50 @@ class _grupChatState extends State<grupChat> {
               border: Border.all(color: kblack, width: 1)),
           width: lebar * 1,
           height: tinggi * 1,
+          child: Column(
+            children: [
+              Expanded(child: Container()),
+              Row(
+                children: [
+                  Container(
+                    color: kWhite,
+                    width: lebar * 0.8,
+                    child: Form(
+                        child: Container(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.camera_alt_outlined,
+                                size: 23,
+                                color: kblack,
+                              ),
+                            ),
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.all(12),
+                            hintText: "Type your massage here"),
+                      ),
+                    )),
+                  ),
+                  Container(
+                    height: tinggi * 0.1,
+                    width: lebar * 0.1,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color.fromRGBO(117, 17, 255, 1)),
+                    child: Center(
+                      child: Icon(
+                        Icons.send_rounded,
+                        size: lebar * 0.055,
+                        color: kWhite,
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
