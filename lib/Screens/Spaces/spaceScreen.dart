@@ -154,8 +154,7 @@ class _SpaceState extends State<Space> {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                bodyCoursesPage()));
+                            builder: (BuildContext context) => docsFiles()));
                       },
                       splashColor: Colors.black,
                       child: Column(
