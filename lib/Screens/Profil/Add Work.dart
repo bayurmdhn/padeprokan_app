@@ -25,7 +25,7 @@ class _AddWorkState extends State<AddWork> {
                         alignment: Alignment.topCenter,
                         content: Container(
                           width: 386,
-                          height: 800,
+                          height: 690,
                           child: Column(
                             children: [
                               Row(
@@ -157,6 +157,281 @@ class _AddWorkState extends State<AddWork> {
                                   )),
                               Column(
                                 children: [MyStatefulWidget()],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 12),
+                                      child: RichText(
+                                          text: TextSpan(
+                                              text: "Starting Work On",
+                                              style: TextStyle(
+                                                  color: Color.fromARGB(
+                                                      255, 153, 153, 153),
+                                                  fontSize: 12),
+                                              children: [
+                                            TextSpan(
+                                                text: "*",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 255, 19, 19)))
+                                          ])),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 346,
+                                  height: 29,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        suffixIcon: IconButton(
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.calendar_month,
+                                              size: 15,
+                                              color: Colors.grey,
+                                            )),
+                                        hintText: "Select date",
+                                        hintStyle: TextStyle(fontSize: 11),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    255, 140, 79, 225)))),
+                                    style: TextStyle(fontSize: 11),
+                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 12),
+                                      child: RichText(
+                                          text: TextSpan(
+                                              text: "I ended up workin on",
+                                              style: TextStyle(
+                                                  color: Color.fromARGB(
+                                                      255, 153, 153, 153),
+                                                  fontSize: 12),
+                                              children: [
+                                            TextSpan(
+                                                text: "*",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 255, 19, 19)))
+                                          ])),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 346,
+                                  height: 29,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        suffixIcon: IconButton(
+                                            onPressed: () {
+                                              showDatePicker(
+                                                context: context,
+                                                initialDate: DateTime.now(),
+                                                firstDate: DateTime(
+                                                    DateTime.now().year),
+                                                lastDate: DateTime.now(),
+                                                initialDatePickerMode:
+                                                    DatePickerMode.day,
+                                                builder: (context, child) {
+                                                  return Container(
+                                                    height: 205,
+                                                    width: 245,
+                                                    child: child,
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            icon: Icon(
+                                              Icons.calendar_month,
+                                              size: 15,
+                                              color: Colors.grey,
+                                            )),
+                                        hintText: "Select date",
+                                        hintStyle: TextStyle(fontSize: 11),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    255, 140, 79, 225)))),
+                                    style: TextStyle(fontSize: 11),
+                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 12),
+                                      child: RichText(
+                                          text: TextSpan(
+                                              text: "Avatar",
+                                              style: TextStyle(
+                                                  color: Color.fromARGB(
+                                                      255, 153, 153, 153),
+                                                  fontSize: 12),
+                                              children: [
+                                            TextSpan(
+                                                text: "*",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 255, 19, 19)))
+                                          ])),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {},
+                                    child: Container(
+                                      width: 74,
+                                      height: 67.32,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          border:
+                                              Border.all(color: Colors.black),
+                                          color:
+                                              Color.fromARGB(1, 239, 239, 239)),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "+",
+                                            style: TextStyle(fontSize: 20),
+                                          ),
+                                          Text(
+                                            "Upload",
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 12),
+                                      child: RichText(
+                                          text: TextSpan(
+                                              text: "Description",
+                                              style: TextStyle(
+                                                  color: Color.fromARGB(
+                                                      255, 153, 153, 153),
+                                                  fontSize: 12),
+                                              children: [
+                                            TextSpan(
+                                                text: "*",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 255, 19, 19)))
+                                          ])),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 346,
+                                  height: 29,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        hintText: "Description",
+                                        hintStyle: TextStyle(fontSize: 11),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    255, 140, 79, 225)))),
+                                    style: TextStyle(fontSize: 11),
+                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 25),
+                                child: Divider(
+                                  color: Colors.black,
+                                  thickness: 1,
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 12),
+                                        child: GestureDetector(
+                                          onTap: () => Navigator.of(context,
+                                                  rootNavigator: true)
+                                              .pop(context),
+                                          child: Container(
+                                            width: 71,
+                                            height: 27,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "Cancel",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 131, 131, 131),
+                                                      fontSize: 13),
+                                                ),
+                                              ],
+                                            ),
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                border: Border.all(
+                                                    color: Color.fromARGB(
+                                                        255, 143, 143, 143)),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
+                                          ),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {},
+                                        child: Container(
+                                          width: 71,
+                                          height: 27,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                "Submit",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 13),
+                                              )
+                                            ],
+                                          ),
+                                          decoration: BoxDecoration(
+                                              color: Color.fromARGB(
+                                                  255, 177, 17, 255),
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
                               )
                             ],
                           ),
@@ -240,15 +515,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return LabeledCheckbox(
-      label: 'I Still Work Here',
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      value: _isSelected,
-      onChanged: (bool newValue) {
-        setState(() {
-          _isSelected = newValue;
+    return CheckboxListTile(
+        title: Text(
+          "I Still Work Here",
+          style: TextStyle(fontSize: 12, fontFamily: 'Roboto'),
+        ),
+        controlAffinity: ListTileControlAffinity.leading,
+        value: _isSelected,
+        onChanged: (newValue) {
+          setState(() {
+            _isSelected = newValue!;
+          });
         });
-      },
-    );
   }
 }
