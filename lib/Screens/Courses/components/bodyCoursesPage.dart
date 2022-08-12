@@ -35,7 +35,6 @@ addDynamic() {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
     final mediaQueryWidht = MediaQuery.of(context).size.width;
     return Scaffold(
-      
       body: Container(
         color: kBackGround,
         width: mediaQueryWidht * 1,

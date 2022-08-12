@@ -7,15 +7,14 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../../Utils/constants.dart';
 import '../HomePage/homePage.dart';
 import '../Spaces/spaceScreen.dart';
-import 'components/bodyDocsFiles.dart';
+
 import 'components/folderDynamic.dart';
-import 'components/googleDrive.dart';
 import 'components/textCard.dart';
 import 'components/textDynamic.dart';
-import 'components/uplodeFile.dart';
 
 String folderName = "";
 String fileName = "";
+String fileIsi = "";
 TextEditingController _folderName = TextEditingController();
 TextEditingController _fileName = TextEditingController();
 TextEditingController _isi = TextEditingController();
@@ -259,6 +258,14 @@ class _docsFiles extends State<docsFiles> {
                                       padding: const EdgeInsets.only(
                                           left: 8, right: 8),
                                       child: TextFormField(
+                                        onChanged: (String text) {
+                                          setState(() {});
+                                          fileIsi = text;
+                                        },
+                                        onFieldSubmitted: (String text) {
+                                          setState(() {});
+                                          fileIsi = text;
+                                        },
                                         controller: _isi,
                                         keyboardType: TextInputType.multiline,
                                         maxLines: 12,
@@ -339,7 +346,8 @@ class _docsFiles extends State<docsFiles> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.only(),
+                                                        const EdgeInsets.only(
+                                                            right: 4),
                                                     child: Text(
                                                       "Save & publish",
                                                       style: TextStyle(
@@ -1081,19 +1089,3 @@ class _docsFiles extends State<docsFiles> {
     );
   }
 }
-
-// class DynamicWidget extends StatelessWidget {
-//   const DynamicWidget({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: () {},
-//       child: textCard(
-//           textColor: Colors.black,
-//           backgroundColor: Color.fromRGBO(230, 230, 230, 1),
-//           text: "$fileName",
-//           spaceColor: Color.fromRGBO(230, 230, 230, 1)),
-//     );
-//   }
-// }
