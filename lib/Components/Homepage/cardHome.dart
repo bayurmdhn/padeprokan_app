@@ -4,6 +4,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../../Screens/HomePage/homePage.dart';
 
+String renameSpace = '';
+
 enum MenuItem { item1, item2 }
 
 class spaceCard extends StatefulWidget {
@@ -52,7 +54,7 @@ class _spaceCardState extends State<spaceCard> {
                                 showDialog(
                                     context: context,
                                     builder: (context) => AlertDialog(
-                                          content: Container(
+                                        content: Container(
                                             width: 380,
                                             height: 188,
                                             child: Column(children: [
@@ -143,18 +145,119 @@ class _spaceCardState extends State<spaceCard> {
                                                       TextStyle(fontSize: 11),
                                                   onChanged: (String text) {
                                                     setState(() {});
-                                                    spaceName = text;
+                                                    renameSpace = text;
                                                   },
                                                   onFieldSubmitted:
                                                       (String text) {
                                                     setState(() {});
-                                                    spaceName = text;
+                                                    renameSpace = text;
                                                   },
                                                 ),
                                               ),
-                                            ]),
-                                          ),
-                                        ));
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 27),
+                                                child: Divider(
+                                                  color: Color.fromARGB(
+                                                      255, 188, 188, 188),
+                                                  thickness: 1,
+                                                ),
+                                              ),
+                                              Column(children: [
+                                                Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 12),
+                                                        child: GestureDetector(
+                                                          onTap: () {
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Container(
+                                                            width: 71,
+                                                            height: 27,
+                                                            child: Column(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Text(
+                                                                  "Cancel",
+                                                                  style: TextStyle(
+                                                                      color: Color.fromARGB(
+                                                                          255,
+                                                                          131,
+                                                                          131,
+                                                                          131),
+                                                                      fontSize:
+                                                                          13),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            decoration: BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                border: Border.all(
+                                                                    color: Color
+                                                                        .fromARGB(
+                                                                            255,
+                                                                            143,
+                                                                            143,
+                                                                            143)),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8)),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      GestureDetector(
+                                                        onTap: () {
+                                                          spaceName ==
+                                                              renameSpace;
+                                                          setState(() {});
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        child: Container(
+                                                          width: 71,
+                                                          height: 27,
+                                                          child: Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Text(
+                                                                "Submit",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        13),
+                                                              )
+                                                            ],
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      177,
+                                                                      17,
+                                                                      255),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8)),
+                                                        ),
+                                                      ),
+                                                    ]),
+                                              ]),
+                                            ]))));
                               }
                               if (value == MenuItem.item2) {}
                             },
