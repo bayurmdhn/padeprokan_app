@@ -1,22 +1,35 @@
 import 'dart:html';
 
 import 'package:first_app_flutter/Components/appBarBack.dart';
+import 'package:first_app_flutter/Screens/Courses/components/coursesCard.dart';
 
 import 'package:first_app_flutter/Screens/Courses/components/speedDial.dart';
+import 'package:first_app_flutter/Screens/Courses/courseScreen.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/components/speedDial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../../../Utils/constants.dart';
+import '../../Courses/components/coursesCard.dart';
+import 'dart:math' as math;
 
-class bodyCoursesPage extends StatefulWidget {
+String Coursesname = "";
+
+
+  class bodyCoursesPage extends StatefulWidget {
   const bodyCoursesPage({Key? key}) : super(key: key);
 
   @override
-  State<bodyCoursesPage> createState() => _bodyCoursesPage();
+  State<bodyCoursesPage> createState() => _bodyCoursesPageState();
 }
 
-class _bodyCoursesPage extends State<bodyCoursesPage> {
+class _bodyCoursesPageState extends State<bodyCoursesPage> {
+    List<DynamicWidget> listDynamic = [];
+addDynamic() {
+    listDynamic.add(DynamicWidget());
+    setState(() {});
+  } 
+
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
@@ -55,7 +68,20 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
                   fillColor: Colors.white,
                 ),
               ))),
-          Positioned(
+              Expanded(child: Container(
+                                width: MediaQuery.of(context).size.width * 0.85,
+                                height: MediaQuery.of(context).size.width,
+                                child: Padding(padding: const EdgeInsets.only(top: 100),
+                                child: Column(
+                                  children: [
+                                    Flexible(child: ListView.builder(
+                                      itemCount: listDynamic.length,
+                                      itemBuilder: (_, index) =>
+                                      listDynamic[index]))
+                                  ],
+                                ),),
+                              )),
+         index==0?Positioned(
               top: 122,
               child: Center(
                 child: Column(
@@ -74,7 +100,7 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
                     )
                   ],
                 ),
-              )),
+              )):Center(),
           // Positioned(
           //   bottom: 59,
           //   right: 34,
@@ -100,7 +126,7 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10)),
                           width: 380,
-                          height: 250,
+                          height: 642,
                           child: ListView(
                             children: [
                               Row(
@@ -308,7 +334,9 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
                                       ),
                                       GestureDetector(
                                         onTap: () {
-                                          ;
+                                          addDynamic();
+                                          index++;
+                                          Navigator.pop(context);
                                         },
                                         child: Container(
                                           width: 71,
@@ -347,6 +375,26 @@ class _bodyCoursesPage extends State<bodyCoursesPage> {
           backgroundColor: Color.fromARGB(255, 255, 162, 2),
         ),
       ),
+    );
+  }
+}
+
+class DynamicWidget extends StatelessWidget {
+  const DynamicWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => const bodyCoursesPage()));
+      },
+      child: coursesCard(
+          textColor: Colors.black,
+          backgroundColor: Colors.white,
+          text: "$Coursesname",
+          spaceColor: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+              .withOpacity(1.0)),
     );
   }
 }
