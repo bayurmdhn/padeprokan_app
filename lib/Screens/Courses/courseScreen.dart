@@ -9,10 +9,19 @@ import 'package:flutter/material.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
 import '../../Utils/constants.dart';
 import 'components/bodyCoursesPage.dart';
+  int index = 0;
+class Courses extends StatefulWidget {
+  @override
+  State<Courses> createState() => _CoursesState();
+}
 
-class Courses extends StatelessWidget {
+class _CoursesState extends State<Courses> {
+
+
+   
   @override
   Widget build(BuildContext context) {
+    
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -69,6 +78,7 @@ class Courses extends StatelessWidget {
                                                 255, 140, 79, 225)),
                                       )),
                                 ),
+                                    
                               ],
                             ),
                           ),
