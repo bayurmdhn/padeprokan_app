@@ -7,12 +7,10 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../../Utils/constants.dart';
 import '../HomePage/homePage.dart';
 import '../Spaces/spaceScreen.dart';
-import 'components/bodyDocsFiles.dart';
+
 import 'components/folderDynamic.dart';
-import 'components/googleDrive.dart';
 import 'components/textCard.dart';
 import 'components/textDynamic.dart';
-import 'components/uplodeFile.dart';
 
 String folderName = "";
 String fileName = "";
@@ -44,13 +42,6 @@ class _docsFiles extends State<docsFiles> {
     folderDynamic.add(addFolerDynamic());
     setState(() {});
   }
-
-  // if (textFile == 10) {
-  //   return listDynamic;
-  // } else if (textFile == 15) {
-  //   return folderDynamic;
-  // }
-  // setState(() {});
 
   @override
   Widget build(BuildContext context) {
@@ -126,16 +117,6 @@ class _docsFiles extends State<docsFiles> {
                             mainAxisSpacing: 20,
                             childAspectRatio: 1 / 1),
                       ),
-                      // GridView.builder(
-                      //   itemBuilder: (_, index) => folderDynamic[index],
-                      //   itemCount: folderDynamic.length,
-                      //   gridDelegate:
-                      //       SliverGridDelegateWithFixedCrossAxisCount(
-                      //           crossAxisCount: 2,
-                      //           crossAxisSpacing: mediaQueryWidht * 0.07,
-                      //           mainAxisSpacing: 20,
-                      //           childAspectRatio: 1 / 1),
-                      // ),
                     ),
                   ],
                 ),
@@ -168,26 +149,6 @@ class _docsFiles extends State<docsFiles> {
                   : SizedBox(
                       height: 20,
                     )
-              // Positioned(
-              //     top: 122,
-              //     child: Center(
-              //       child: Column(
-              //         children: [
-              //           Image.asset(
-              //             "assets/images/emptyDocs.png",
-              //             height: 157,
-              //             width: 220,
-              //           ),
-              //           Padding(
-              //             padding: const EdgeInsets.only(top: 40),
-              //             child: Text(
-              //               kDontHaveFile,
-              //               style: dontHave,
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     )),
             ]),
           ),
           //Icon Add (tambah)
@@ -348,7 +309,8 @@ class _docsFiles extends State<docsFiles> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.only(),
+                                                        const EdgeInsets.only(
+                                                            right: 4),
                                                     child: Text(
                                                       "Save & publish",
                                                       style: TextStyle(
@@ -1090,19 +1052,3 @@ class _docsFiles extends State<docsFiles> {
     );
   }
 }
-
-// class DynamicWidget extends StatelessWidget {
-//   const DynamicWidget({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: () {},
-//       child: textCard(
-//           textColor: Colors.black,
-//           backgroundColor: Color.fromRGBO(230, 230, 230, 1),
-//           text: "$fileName",
-//           spaceColor: Color.fromRGBO(230, 230, 230, 1)),
-//     );
-//   }
-// }
