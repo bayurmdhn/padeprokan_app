@@ -50,6 +50,7 @@ dependencies:
   splash_screen_view: ^3.0.0
   flutter_profile_picture: ^2.0.0
   app_popup_menu: ^1.0.0
+  grouped_list: ^5.1.2
 
 
 
