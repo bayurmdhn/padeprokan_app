@@ -41,7 +41,6 @@ class _SignInFormState extends State<SignInForm> {
           buildEmail(),
           SizedBox(height: getProportionateScreenHeight(20)),
           buildPassword(),
-
           SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -64,20 +63,6 @@ class _SignInFormState extends State<SignInForm> {
           SizedBox(
             height: 41,
           ),
-          // Row(
-          //   children: [
-          // Checkbox(
-          //     value: remeber,
-          //     onChanged: (value) {
-          //       setState(() {
-          //         remeber = value;
-          //       });
-          //     }),
-          // Text('Remembering'),
-          // Spacer(),
-          //   ],
-          // ),
-
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -89,17 +74,6 @@ class _SignInFormState extends State<SignInForm> {
             ),
             style: elevated1,
           ),
-          // ElevatedButton(
-          //   onPressed: () {},
-          //   child: Text(
-          //     "Login",
-          //   ),
-          //   style: ElevatedButton.styleFrom(
-          //       primary: Color.fromRGBO(247, 183, 49, 1),
-          //       onPrimary: Colors.white,
-          //       minimumSize: Size(346, 40),
-          //       padding: EdgeInsets.only(top: 20, bottom: 20)),
-          // ),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -122,26 +96,6 @@ class _SignInFormState extends State<SignInForm> {
                   ))
             ],
           ),
-          // child: Text(
-          //   "Don't have account?",
-          //   style: TextStyle(decoration: TextDecoration.underline),
-          // ),
-
-          // SizedBox(height: 20),
-          // GestureDetector(
-          //     onTap: () {},
-          //     child: Container(
-          //       child: Row(children: <Widget>[
-          //         Text(
-          //           "Register here!",
-          //         )
-          //       ]),
-          //     )
-          //     // Text(
-          //     //   "Register here!",
-          //     //   style: TextStyle(decoration: TextDecoration.underline),
-          //     // ),
-          //     )
         ],
       ),
     );
@@ -166,15 +120,6 @@ class _SignInFormState extends State<SignInForm> {
           filled: true,
           fillColor: Colors.white,
         ),
-        // decoration: InputDecoration(
-        //     border:
-        //         new OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
-        //     labelText: 'Email',
-        //     hintText: 'Your Email',
-        //     labelStyle: TextStyle(
-        //         color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-        //     floatingLabelBehavior: FloatingLabelBehavior.always,
-        //     suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg")),
       ),
     );
   }
@@ -197,13 +142,6 @@ class _SignInFormState extends State<SignInForm> {
           filled: true,
           fillColor: Colors.white,
         ),
-        // decoration: InputDecoration(
-        //     labelText: 'Password',
-        //     hintText: 'Your Password',
-        //     labelStyle: TextStyle(
-        //         color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-        //     floatingLabelBehavior: FloatingLabelBehavior.always,
-        //     suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg")),
       ),
     );
   }

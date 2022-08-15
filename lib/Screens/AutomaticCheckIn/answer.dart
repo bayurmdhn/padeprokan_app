@@ -13,7 +13,7 @@ class Answer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 346,
-      height: 83,
+      height: 90,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(5)),
       child: ListView(
@@ -110,21 +110,24 @@ class Answer extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 35),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          'Comments',
-                          style: TextStyle(
-                              fontSize: 10,
-                              color: Color.fromARGB(255, 70, 100, 255)),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 35),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            'Comments',
+                            style: TextStyle(
+                                fontSize: 10,
+                                color: Color.fromARGB(255, 70, 100, 255)),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             ),
