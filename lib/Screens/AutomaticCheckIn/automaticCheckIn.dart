@@ -147,7 +147,8 @@ class _autoCheckState extends State<autoCheck> {
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(bottom: 12),
-                                        child: RichText(
+                                        child: 
+                                        RichText(
                                             text: TextSpan(
                                                 text: "Question",
                                                 style: TextStyle(
@@ -160,7 +161,8 @@ class _autoCheckState extends State<autoCheck> {
                                                   style: TextStyle(
                                                       color: Color.fromARGB(
                                                           255, 255, 19, 19)))
-                                            ])),
+                                            ])
+                                            ),
                                       ),
                                     ],
                                   ),
