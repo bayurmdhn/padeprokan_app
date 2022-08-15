@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/AutomaticCheckIn/automaticCheckIn.dart';
-import 'package:first_app_flutter/Screens/Courses/components/bodyCoursesPage.dart';
+import 'package:first_app_flutter/Screens/Courses/courseScreen.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -113,7 +113,7 @@ class _SpaceState extends State<Space> {
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                bodyCoursesPage()));
+                                Courses()));
                       },
                       splashColor: Colors.black,
                       child: Column(
