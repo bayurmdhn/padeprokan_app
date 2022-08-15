@@ -34,7 +34,14 @@ dependencies:
   popup_card: ^0.1.0
   flutter_speed_dial: ^6.0.0
   file_picker: ^5.0.0
+<<<<<<< HEAD
   intl: ^0.17.0
+=======
+  flutter_clean_calendar: ^1.1.0
+  syncfusion_flutter_calendar: ^20.2.43
+  intl: ^0.17.0
+  provider: ^6.0.3
+>>>>>>> d4ea9c7e80fea5a28749c378a580e15e23d6bfb4
 
 
 
