@@ -1,7 +1,7 @@
 import 'dart:html';
 
 import 'package:first_app_flutter/Components/appBarBack.dart';
-import 'package:first_app_flutter/Screens/Schedule/addEvent.dart';
+
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:flutter/material.dart';
 
@@ -152,12 +152,7 @@ class _SchedulePageState extends State<SchedulePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            showDialog(
-                context: context,
-                builder: (context) => addEvent(
-                      title: 'title',
-                      description: 'description',
-                    ));
+            showDialog(context: context, builder: (context) => AlertDialog());
           },
           child: Icon(Icons.add_rounded),
           backgroundColor: Color.fromARGB(255, 255, 162, 2),
