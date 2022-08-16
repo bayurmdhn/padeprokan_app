@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:intl/intl.dart';
@@ -144,7 +145,6 @@ class _grupChatState extends State<grupChat> {
             children: [
               Expanded(
                   child: GroupedListView<Message, DateTime>(
-                padding: EdgeInsets.all(18),
                 reverse: true,
                 order: GroupedListOrder.DESC,
                 useStickyGroupSeparators: false,
@@ -155,41 +155,221 @@ class _grupChatState extends State<grupChat> {
                   message.date.month,
                   message.date.day,
                 ),
-                groupHeaderBuilder: (Message message) => SizedBox(
-                  height: 15,
-                  child: Center(
-                    child: Text(
-                      DateFormat.yMMMd().format(message.date),
-                      style: TextStyle(color: kblack, fontSize: 11),
-                    ),
+                groupHeaderBuilder: (Message message) => Container(
+                  padding: EdgeInsets.all(15),
+                  width: lebar * 1,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                width: lebar * 0.2,
+                                child: Divider(
+                                  thickness: 1,
+                                  color: kblack,
+                                ),
+                              ),
+                            ],
+                          ),
+                          //Tanggal
+                          Container(
+                            width: lebar * 0.44,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  DateFormat.EEEE().format(message.date),
+                                  style: TextStyle(
+                                    color: kblack,
+                                    fontSize: 15,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  DateFormat.d().format(message.date),
+                                  style: TextStyle(
+                                    color: kblack,
+                                    fontSize: 15,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  DateFormat.yMMM().format(message.date),
+                                  style: TextStyle(
+                                    color: kblack,
+                                    fontSize: 15,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
+                          //Garis
+                          Column(
+                            children: [
+                              Container(
+                                width: lebar * 0.2,
+                                child: Divider(
+                                  thickness: 1,
+                                  color: kblack,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
                 itemBuilder: (context, Message message) => Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Align(
-                      alignment: message.isSentByMe
-                          ? Alignment.centerRight
-                          : Alignment.centerLeft,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: message.isSentByMe
-                                ? BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10))
-                                : BorderRadius.only(
-                                    bottomRight: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10)),
-                            color: kWhite,
-                            border: Border.all(color: kblack, width: 1)),
-                        child: Padding(
-                            padding: EdgeInsets.all(12),
-                            child: Text(
-                              message.text,
-                              style: TextStyle(fontSize: 15),
-                            )),
-                      )),
+                  padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
+                  child:
+                      //Jika pesan dikirim orang lain dan jika kita mengirim pesan(posisi pesan)
+                      Align(
+                          alignment: message.isSentByMe
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft,
+                          //Container Pesan (Desain Pesan)
+                          child: message.isSentByMe
+                              ? Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                          bottomLeft: Radius.circular(10)),
+                                      color: Color.fromRGBO(215, 204, 252, 1),
+                                      border:
+                                          Border.all(color: kblack, width: 1)),
+                                  child: Column(
+                                    children: [
+                                      PopupMenuButton(
+                                          iconSize: 13,
+                                          padding: EdgeInsets.zero,
+                                          icon: Icon(Icons.more_horiz),
+                                          itemBuilder: (context) => []),
+                                      Padding(
+                                          padding: EdgeInsets.all(10),
+                                          child: Container(
+                                            child: Text(
+                                              message.text,
+                                              style: TextStyle(fontSize: 15),
+                                            ),
+                                          )),
+                                    ],
+                                  ),
+                                )
+                              : Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                          bottomLeft: Radius.circular(10)),
+                                      color: kWhite,
+                                      border:
+                                          Border.all(color: kblack, width: 1)),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
+                                        child: CircleAvatar(
+                                          radius: 13,
+                                        ),
+                                      ),
+                                      Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 10, top: 10, bottom: 10),
+                                            child: Container(
+                                              width: lebar * 0.7,
+                                              child: Column(
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                        "My Name",
+                                                        style: TextStyle(
+                                                            color: kblack,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 11),
+                                                      ),
+                                                      SizedBox(
+                                                        width: 5,
+                                                      ),
+                                                      Icon(
+                                                        Icons.circle,
+                                                        size: 5,
+                                                        color: Color.fromRGBO(
+                                                            125, 125, 125, 1),
+                                                      ),
+                                                      SizedBox(
+                                                        width: 5,
+                                                      ),
+                                                      Text(
+                                                        DateFormat.Hm().format(
+                                                            DateTime.now()),
+                                                        style: TextStyle(
+                                                            color:
+                                                                Color.fromRGBO(
+                                                                    125,
+                                                                    125,
+                                                                    125,
+                                                                    1),
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 11),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Padding(
+                                                      padding:
+                                                          EdgeInsets.fromLTRB(
+                                                              0, 10, 0, 0),
+                                                      child: Container(
+                                                        width: lebar * 0.7,
+                                                        child: Text(
+                                                          message.text,
+                                                          style: TextStyle(
+                                                              fontSize: 11),
+                                                        ),
+                                                      )),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+
+                                      // Column(
+                                      //   children: [
+                                      //     Padding(
+                                      //         padding: EdgeInsets.fromLTRB(
+                                      //             10, 0, 10, 0),
+                                      //         child: Container(
+                                      //           color: kbin,
+                                      //           width: lebar * 0.7,
+                                      //           child: Text(
+                                      //             message.text,
+                                      //             style:
+                                      //                 TextStyle(fontSize: 15),
+                                      //           ),
+                                      //         )),
+                                      //   ],
+                                      // ),
+                                    ],
+                                  ),
+                                )),
                 ),
               )),
               // Padding(
@@ -254,11 +434,18 @@ class _grupChatState extends State<grupChat> {
 
               Row(
                 children: [
+                  SizedBox(
+                    width: lebar * 0.01,
+                  ),
                   Container(
                     width: lebar * 0.8,
                     color: kWhite,
-                    child: TextField(
+                    child: TextFormField(
                       decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 2,
+                                  color: Color.fromRGBO(140, 79, 225, 1))),
                           suffixIcon: IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -279,7 +466,7 @@ class _grupChatState extends State<grupChat> {
                           isSentByMe: true,
                         );
                       },
-                      onSubmitted: (text) {
+                      onFieldSubmitted: (text) {
                         setState(() {});
 
                         final message = Message(
@@ -291,7 +478,7 @@ class _grupChatState extends State<grupChat> {
                     ),
                   ),
                   SizedBox(
-                    width: lebar * 0.05,
+                    width: lebar * 0.04,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -306,11 +493,14 @@ class _grupChatState extends State<grupChat> {
                       child: Center(
                         child: Icon(
                           Icons.send_rounded,
-                          size: lebar * 0.055,
+                          size: lebar * 0.05,
                           color: kWhite,
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    width: lebar * 0.04,
                   ),
                 ],
               ),
