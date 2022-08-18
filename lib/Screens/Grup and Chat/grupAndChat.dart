@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/foundation.dart';
@@ -32,7 +33,7 @@ class _grupChatState extends State<grupChat> {
     Message(
       text: 'P',
       date: DateTime.now().subtract(Duration(days: 1, minutes: 1)),
-      isSentByMe: true,
+      isSentByMe: false,
     ),
     Message(
       text: 'Kenapa?',
@@ -156,81 +157,90 @@ class _grupChatState extends State<grupChat> {
                   message.date.day,
                 ),
                 groupHeaderBuilder: (Message message) => Container(
-                  padding: EdgeInsets.all(15),
                   width: lebar * 1,
+                  //Tanggal Pesan dikirim
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                width: lebar * 0.2,
-                                child: Divider(
-                                  thickness: 1,
-                                  color: kblack,
-                                ),
-                              ),
-                            ],
-                          ),
-                          //Tanggal
-                          Container(
-                            width: lebar * 0.44,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                      Padding(
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 15, top: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
                               children: [
-                                Text(
-                                  DateFormat.EEEE().format(message.date),
-                                  style: TextStyle(
+                                Container(
+                                  width: lebar * 0.2,
+                                  child: Divider(
+                                    thickness: 1,
                                     color: kblack,
-                                    fontSize: 15,
                                   ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  DateFormat.d().format(message.date),
-                                  style: TextStyle(
-                                    color: kblack,
-                                    fontSize: 15,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  DateFormat.yMMM().format(message.date),
-                                  style: TextStyle(
-                                    color: kblack,
-                                    fontSize: 15,
-                                  ),
-                                  textAlign: TextAlign.center,
                                 ),
                               ],
                             ),
-                          ),
-                          //Garis
-                          Column(
-                            children: [
-                              Container(
-                                width: lebar * 0.2,
-                                child: Divider(
-                                  thickness: 1,
-                                  color: kblack,
-                                ),
+                            //Tanggal
+                            Container(
+                              width: lebar * 0.45,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    DateFormat.EEEE().format(message.date),
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      color: kblack,
+                                      fontSize: lebar * 0.035,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  SizedBox(
+                                    width: lebar * 0.01,
+                                  ),
+                                  Text(
+                                    DateFormat.d().format(message.date),
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      color: kblack,
+                                      fontSize: lebar * 0.035,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  SizedBox(
+                                    width: lebar * 0.01,
+                                  ),
+                                  Text(
+                                    DateFormat.yMMM().format(message.date),
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      color: kblack,
+                                      fontSize: lebar * 0.035,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            //Garis
+                            Column(
+                              children: [
+                                Container(
+                                  width: lebar * 0.2,
+                                  child: Divider(
+                                    thickness: 1,
+                                    color: kblack,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-                itemBuilder: (context, Message message) => Padding(
+                itemBuilder: (context, Message message) =>
+                    //Pesan dan Desain nya
+                    Padding(
                   padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
                   child:
                       //Jika pesan dikirim orang lain dan jika kita mengirim pesan(posisi pesan)
@@ -249,21 +259,60 @@ class _grupChatState extends State<grupChat> {
                                       color: Color.fromRGBO(215, 204, 252, 1),
                                       border:
                                           Border.all(color: kblack, width: 1)),
-                                  child: Column(
+                                  child: Stack(
                                     children: [
-                                      PopupMenuButton(
-                                          iconSize: 13,
-                                          padding: EdgeInsets.zero,
-                                          icon: Icon(Icons.more_horiz),
-                                          itemBuilder: (context) => []),
-                                      Padding(
-                                          padding: EdgeInsets.all(10),
-                                          child: Container(
-                                            child: Text(
-                                              message.text,
-                                              style: TextStyle(fontSize: 15),
+                                      Positioned.fill(
+                                        child: Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 1),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  color: Color.fromRGBO(
+                                                      215, 204, 252, 1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              width: 24,
+                                              height: 15,
+                                              child: Center(
+                                                child: PopupMenuButton(
+                                                    shape: Border.all(
+                                                        color: Color.fromRGBO(
+                                                            216, 216, 216, 1),
+                                                        width: 1),
+                                                    padding: EdgeInsets.zero,
+                                                    iconSize: 15,
+                                                    icon: Icon(
+                                                      Icons.more_horiz,
+                                                      color: Color.fromRGBO(
+                                                          127, 126, 126, 1),
+                                                    ),
+                                                    itemBuilder: (context) =>
+                                                        []),
+                                              ),
                                             ),
-                                          )),
+                                          ),
+                                        ),
+                                      ),
+                                      Column(
+                                        children: [
+                                          Padding(
+                                              padding: EdgeInsets.fromLTRB(
+                                                  11, 11, 10, 10),
+                                              child: Container(
+                                                child: Text(
+                                                  message.text,
+                                                  style: TextStyle(
+                                                      fontSize: 13,
+                                                      fontFamily: 'Roboto',
+                                                      fontWeight:
+                                                          FontWeight.w400),
+                                                ),
+                                              )),
+                                        ],
+                                      )
                                     ],
                                   ),
                                 )
@@ -276,162 +325,112 @@ class _grupChatState extends State<grupChat> {
                                       color: kWhite,
                                       border:
                                           Border.all(color: kblack, width: 1)),
-                                  child: Row(
+                                  child: Stack(
                                     children: [
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 10),
-                                        child: CircleAvatar(
-                                          radius: 13,
+                                      Positioned.fill(
+                                        child: Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 14, left: 8),
+                                            child: Container(
+                                              width: 29,
+                                              height: 29,
+                                              child: Center(
+                                                child: CircleAvatar(
+                                                  radius: 13,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                      Column(
+                                      Stack(
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                left: 10, top: 10, bottom: 10),
+                                                left: 44, top: 14, right: 19),
                                             child: Container(
-                                              width: lebar * 0.7,
-                                              child: Column(
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        "My Name",
-                                                        style: TextStyle(
-                                                            color: kblack,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontSize: 11),
+                                                width: 150,
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      "My Name",
+                                                      maxLines: 1,
+                                                      style: TextStyle(
+                                                        fontSize: 11,
+                                                        fontFamily: 'Roboto',
+                                                        color: kblack,
+                                                        fontWeight:
+                                                            FontWeight.w600,
                                                       ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Icon(
+                                                    ),
+                                                    SizedBox(
+                                                      width: lebar * 0.02,
+                                                    ),
+                                                    Center(
+                                                      child: Icon(
                                                         Icons.circle,
                                                         size: 5,
                                                         color: Color.fromRGBO(
                                                             125, 125, 125, 1),
                                                       ),
-                                                      SizedBox(
-                                                        width: 5,
+                                                    ),
+                                                    SizedBox(
+                                                      width: lebar * 0.01,
+                                                    ),
+                                                    Text(
+                                                      DateFormat.Hm().format(
+                                                          DateTime.now()),
+                                                      maxLines: 1,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Roboto',
+                                                        color: Color.fromRGBO(
+                                                            125, 125, 125, 1),
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize: 11,
                                                       ),
-                                                      Text(
-                                                        DateFormat.Hm().format(
-                                                            DateTime.now()),
-                                                        style: TextStyle(
-                                                            color:
-                                                                Color.fromRGBO(
-                                                                    125,
-                                                                    125,
-                                                                    125,
-                                                                    1),
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontSize: 11),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Padding(
-                                                      padding:
-                                                          EdgeInsets.fromLTRB(
-                                                              0, 10, 0, 0),
-                                                      child: Container(
-                                                        width: lebar * 0.7,
-                                                        child: Text(
-                                                          message.text,
-                                                          style: TextStyle(
-                                                              fontSize: 11),
-                                                        ),
-                                                      )),
-                                                ],
+                                                    ),
+                                                    SizedBox(
+                                                      width: lebar * 0.01,
+                                                    ),
+                                                    // TextButton(
+                                                    //     onPressed: () {},
+                                                    //     child: Text(
+                                                    //       'Reply',
+                                                    //       style: TextStyle(
+                                                    //           fontFamily:
+                                                    //               'Roboto',
+                                                    //           color: kblack,
+                                                    //           fontSize: 9,
+                                                    //           fontWeight:
+                                                    //               FontWeight
+                                                    //                   .w400),
+                                                    //       maxLines: 1,
+                                                    //     ))
+                                                  ],
+                                                )),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                43, 36, 10, 10),
+                                            child: Text(
+                                              message.text,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 13,
+                                                fontFamily: 'Roboto',
                                               ),
                                             ),
                                           ),
                                         ],
-                                      ),
-
-                                      // Column(
-                                      //   children: [
-                                      //     Padding(
-                                      //         padding: EdgeInsets.fromLTRB(
-                                      //             10, 0, 10, 0),
-                                      //         child: Container(
-                                      //           color: kbin,
-                                      //           width: lebar * 0.7,
-                                      //           child: Text(
-                                      //             message.text,
-                                      //             style:
-                                      //                 TextStyle(fontSize: 15),
-                                      //           ),
-                                      //         )),
-                                      //   ],
-                                      // ),
+                                      )
                                     ],
                                   ),
                                 )),
                 ),
               )),
-              // Padding(
-              //     padding: const EdgeInsets.only(top: 10),
-              //     child: Row(
-              //       mainAxisAlignment: message.isSentByMe
-              //           ? MainAxisAlignment.end
-              //           : MainAxisAlignment.start,
-              //       children: [
-              //         Container(
-              //             decoration: BoxDecoration(
-              //                 border: Border.all(color: kblack, width: 1),
-              //                 color: kWhite,
-              //                 borderRadius: message.isSentByMe
-              //                     ? BorderRadius.only(
-              //                         topLeft: Radius.circular(10),
-              //                         bottomRight: Radius.circular(10),
-              //                         bottomLeft: Radius.circular(10))
-              //                     : BorderRadius.only(
-              //                         bottomRight: Radius.circular(10),
-              //                         bottomLeft: Radius.circular(10),
-              //                         topRight: Radius.circular(10))),
-              //             child: Padding(
-              //               padding: const EdgeInsets.all(8.0),
-              //               child: Row(
-              //                 children: [
-              //                   if (!message.isSentByMe) ...[
-              //                     CircleAvatar(
-              //                       radius: 12,
-              //                     )
-              //                   ],
-              //                   Text(
-              //                     message.text,
-              //                     style: TextStyle(fontSize: 11, color: kblack),
-              //                   ),
-              //                 ],
-              //               ),
-              //             )),
-
-              //         // Text(
-              //         //   message.text,
-              //         //   style: TextStyle(fontSize: 11, color: kWhite),
-              //         // )
-
-              //         // Align(
-              //         //   alignment: message.isSentByMe
-              //         //       ? Alignment.centerRight
-              //         //       : Alignment.centerLeft,
-              //         //   child: Card(
-              //         //     color: Colors.pink,
-              //         //     child: Padding(
-              //         //         padding: EdgeInsets.all(12),
-              //         //         child: Text(
-              //         //           message.text,
-              //         //           style: TextStyle(fontSize: 11),
-              //         //         )),
-              //         //   ),
-              //         // ),
-              //       ],
-              //     ),
-              //   ),
-
               Row(
                 children: [
                   SizedBox(
@@ -504,21 +503,6 @@ class _grupChatState extends State<grupChat> {
                   ),
                 ],
               ),
-
-              // Container(
-              //   height: tinggi * 0.1,
-              //   width: lebar * 0.1,
-              //   decoration: BoxDecoration(
-              //       shape: BoxShape.circle,
-              //       color: Color.fromRGBO(117, 17, 255, 1)),
-              //   child: Center(
-              //     child: Icon(
-              //       Icons.send_rounded,
-              //       size: lebar * 0.055,
-              //       color: kWhite,
-              //     ),
-              //   ),
-              // )
             ],
           ),
         ),
