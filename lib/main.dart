@@ -1,4 +1,5 @@
-import 'package:first_app_flutter/Screens/Login/loginScreen.dart';
+import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
+import 'package:first_app_flutter/Screens/Login/loginscreen.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
 import 'package:first_app_flutter/Reverensi/register.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
