@@ -99,55 +99,50 @@ class _docsFiles extends State<docsFiles> {
               SizedBox(
                 height: 50,
               ),
-              //GridView/Tempat File Dsn Folder
-              Expanded(
-                  child: Container(
-                width: mediaQueryWidht * 0.9,
-                height: mediaQueryHeight * 1,
-                child: Column(
-                  children: [
-                    Flexible(
-                      child: GridView.builder(
-                        itemBuilder: (context, index) => folderDynamic[index],
-                        itemCount: folderDynamic.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: mediaQueryWidht * 0.07,
-                            mainAxisSpacing: 20,
-                            childAspectRatio: 1 / 1),
-                      ),
-                    ),
-                  ],
-                ),
-              )),
+
               //Gambar Tidak Ada File dan Folder
               indexx == 0
-                  ? Container(
-                      width: mediaQueryWidht * 1,
-                      height: mediaQueryHeight * 0.75,
+                  ? Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/emptyDocs.png',
+                          width: 220,
+                          height: 157,
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Text(
+                          "You don't have any file!",
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 73, 73, 73)),
+                        ),
+                      ],
+                    )
+                  : Expanded(
+                      child: Container(
+                      width: mediaQueryWidht * 0.9,
+                      height: mediaQueryHeight * 1,
                       child: Column(
                         children: [
-                          Image.asset(
-                            'assets/images/emptyDocs.png',
-                            width: 220,
-                            height: 157,
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "You don't have any file!",
-                            style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(255, 73, 73, 73)),
+                          Flexible(
+                            child: GridView.builder(
+                              itemBuilder: (context, index) =>
+                                  folderDynamic[index],
+                              itemCount: folderDynamic.length,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      crossAxisSpacing: mediaQueryWidht * 0.07,
+                                      mainAxisSpacing: 20,
+                                      childAspectRatio: 1 / 1),
+                            ),
                           ),
                         ],
                       ),
-                    )
-                  : SizedBox(
-                      height: 20,
-                    )
+                    )),
             ]),
           ),
           //Icon Add (tambah)

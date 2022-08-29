@@ -81,46 +81,6 @@ class _grupChatState extends State<grupChat> {
       date: DateTime.now().subtract(Duration(days: 1, minutes: 10)),
       isSentByMe: false,
     ),
-    // Message(
-    //   text: 'Yes Sure!',
-    //   date: DateTime.now().subtract(Duration(days: 1, minutes: 1)),
-    //   isSentByMe: false,
-    // ),
-    // Message(
-    //   text: 'Yes Sure!',
-    //   date: DateTime.now().subtract(Duration(days: 1, minutes: 1)),
-    //   isSentByMe: false,
-    // ),
-    // Message(
-    //   text: 'Yes Sure!',
-    //   date: DateTime.now().subtract(Duration(days: 1, minutes: 1)),
-    //   isSentByMe: false,
-    // ),
-    // Message(
-    //   text: 'Yes Sure!',
-    //   date: DateTime.now().subtract(Duration(days: 1, minutes: 1)),
-    //   isSentByMe: false,
-    // ),
-    // Message(
-    //   text: 'Yes Sure!',
-    //   date: DateTime.now().subtract(Duration(days: 1, minutes: 2)),
-    //   isSentByMe: false,
-    // ),
-    // Message(
-    //   text: 'fsfese!',
-    //   date: DateTime.now().subtract(Duration(days: 2, minutes: 2)),
-    //   isSentByMe: true,
-    // ),
-    // Message(
-    //   text: 'fsfes!',
-    //   date: DateTime.now().subtract(Duration(days: 2, minutes: 3)),
-    //   isSentByMe: false,
-    // ),
-    // Message(
-    //   text: 'dfsefs!',
-    //   date: DateTime.now().subtract(Duration(days: 2, minutes: 4)),
-    //   isSentByMe: true,
-    // ),
   ].toList();
   @override
   Widget build(BuildContext context) {
