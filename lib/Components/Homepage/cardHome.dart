@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
-class spaceCard extends StatefulWidget {
-  const spaceCard({Key? key}) : super(key: key);
-=======
 import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
@@ -14,6 +6,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../../Screens/HomePage/homePage.dart';
 import '../../Utils/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
 String renameSpace = '';
 
@@ -32,7 +27,6 @@ class spaceCard extends StatefulWidget {
       required this.text,
       required this.spaceColor})
       : super(key: key);
->>>>>>> 2af5a4f7831fa15a950120ca5e610dd8c97eb2fb
 
   @override
   State<spaceCard> createState() => _spaceCardState();
@@ -41,14 +35,6 @@ class spaceCard extends StatefulWidget {
 class _spaceCardState extends State<spaceCard> {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return MaterialApp(
-        home: Container(
-      width: 380,
-      height: 188,
-      child: Row(children: [Text("Create new Space")]),
-    ));
-=======
     return Padding(
       padding: const EdgeInsets.only(top: 18),
       child: Container(
@@ -590,6 +576,5 @@ class _spaceCardState extends State<spaceCard> {
             ],
           )),
     );
->>>>>>> 2af5a4f7831fa15a950120ca5e610dd8c97eb2fb
   }
 }
