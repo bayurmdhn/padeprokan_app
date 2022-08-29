@@ -42,6 +42,36 @@ var signIn = TextStyle(
   fontFamily: 'Roboto',
 );
 
+var dontHave = TextStyle(
+  color: Color.fromRGBO(73, 73, 73, 1),
+  fontSize: 24.0,
+  fontFamily: 'Roboto',
+  fontWeight: FontWeight.bold,
+);
+
+var add = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 9,
+    color: Colors.white,
+    fontWeight: FontWeight.normal);
+
+var embedLink = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    color: kgrey,
+    fontWeight: FontWeight.normal);
+
+var embedLink2 = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    color: kbin,
+    fontWeight: FontWeight.normal);
+
+var searchFiles = TextStyle(
+    color: Color.fromARGB(255, 137, 137, 137),
+    fontSize: 10.0,
+    fontFamily: 'Roboto');
+
 //Elevated Button di Login Dan Register
 var elevated1 = ElevatedButton.styleFrom(
     primary: Color.fromRGBO(247, 183, 49, 1),
@@ -58,7 +88,18 @@ const String kValidEmail = "Please insert a valid email!";
 const String kPass6char = "Please insert at least 6 characters !";
 const String kConfirmPass = "Two passwords that you enter is inconsistent!";
 const String kForgotinput = "Please input your email";
+const String kDontHaveFile = "You don't have any file!";
+const String kDontHaveSpace = "You're space not have course now";
+
 //Warna
+const kfile = Color.fromRGBO(239, 239, 239, 1);
+const kgrey = Color.fromRGBO(91, 91, 91, 1);
+const kbin = Color.fromRGBO(255, 0, 0, 1);
+const kdivider = Color.fromRGBO(159, 159, 159, 1);
+const kblack = Color.fromARGB(255, 0, 0, 0);
+const kWhite = Color.fromARGB(255, 255, 255, 255);
+const kBackGround = Color.fromRGBO(219, 223, 247, 1);
+const kColorAdd = Color.fromRGBO(255, 165, 2, 1);
 const kPrimaryColor = Color(0xFFFFC654);
 const kSecondaryColor = Color(0xFF398AB9);
 const kThirdColor = Color(0xFFD8D2CB);

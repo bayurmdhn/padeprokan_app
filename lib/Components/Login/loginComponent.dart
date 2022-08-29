@@ -27,12 +27,12 @@ class _SignInComponentState extends State<SignInComponent> {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 97),
                   child: Image.asset("assets/images/logo.png",
-                      height: 128, width: 124),
+                      height: 131, width: 128),
                 ),
-                opacity: 0.5,
-                color: kSecondaryColor,
-                offset: Offset(5, 5),
-                sigma: 2,
+                // opacity: 0.5,
+                // color: kSecondaryColor,
+                // offset: Offset(5, 5),
+                // sigma: 2,
               ),
               Padding(
                 padding: EdgeInsets.only(left: 34, top: 28),

@@ -32,7 +32,17 @@ dependencies:
   email_validator: ^2.0.1
   set_state: ^1.0.0
   popup_card: ^0.1.0
-  
+  flutter_speed_dial: ^6.0.0
+  file_picker: ^5.0.0
+  intl: ^0.17.0
+  flutter_clean_calendar: ^1.1.0
+  syncfusion_flutter_calendar: ^20.2.43
+  provider: ^6.0.3
+  syncfusion_flutter_datepicker: ^20.2.43
+  table_calendar: ^3.0.6
+
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -44,6 +54,9 @@ dependencies:
   splash_screen_view: ^3.0.0
   flutter_profile_picture: ^2.0.0
   app_popup_menu: ^1.0.0
+  grouped_list: ^5.1.2
+  auto_size_text: ^3.0.0
+
 
 
 dev_dependencies:
@@ -75,7 +88,31 @@ flutter:
      - assets/images/SplashScreen.png
      - assets/images/Padeprokan.png
      - assets/images/
+     - assets/images/logoo.png
+     - assets/images/Not data.png
+     - assets/images/emptyDocs.png
+     - assets/images/addFolder.png
+     - assets/images/addFile.png
+     - assets/images/drive.png
+     - assets/images/clouddd.png
+     - assets/images/Not data.png
+     - assets/images/Group.png
+     - assets/images/Automatic check-in logo.png
+     - assets/images/Courses logo.png
+     - assets/images/Docs & files.png
+     - assets/images/Group chat logo.png
+     - assets/images/Info Board logo.png
+     - assets/images/Schedule logo.png
+     - assets/images/Tasks logo.png
+     - assets/images/Video Conference logo.png
+     - assets/images/Check in List is Empty.png
+     - assets/images/text.png
+     - assets/images/Add docs.png
+     - assets/images/LogoCP.png
+     - assets/images/fileTxt.png
 
+
+     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

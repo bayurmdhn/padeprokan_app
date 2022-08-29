@@ -1,10 +1,21 @@
 import 'dart:js';
+import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
+import 'package:first_app_flutter/Screens/Spaces/spaceScreen.dart';
+import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
+
 import 'package:popup_card/popup_card.dart';
 import '../../Components/appBar.dart';
 import '../../Components/Homepage/cardHome.dart';
+
+import 'package:set_state/set_state.dart';
+import 'dart:async';
+import '../../Components/appBar.dart';
+import 'dart:math' as math;
+
+String spaceName = "";
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +25,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<DynamicWidget> listDynamic = [];
+  int index = 0;
+  addDynamic() {
+    listDynamic.add(DynamicWidget());
+    setState(() {});
+  }
+
+  void noSpace() {
+    setState(() {
+      if (index == 0) {
+        print("no space");
+      } else {
+        print("there are space");
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,158 +49,16 @@ class _HomePageState extends State<HomePage> {
         home: Scaffold(
           //AppBar Padeprokan
           appBar: AppBar(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  new Image.asset('assets/images/Logo padeprokan.png'),
-                  new Text(
-                    "Spaces",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 18,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.bold),
-                  ),
-
-                  //Profile Picture button and Notification button
-                  Row(
-                    children: [
-                      Padding(
-                          padding: const EdgeInsets.only(right: 17),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.notifications,
-                              color: Color.fromARGB(255, 138, 138, 138),
-                            ),
-                            onPressed: () {
-                              showDialog(
-                                  context: context,
-                                  builder: (context) => Padding(
-                                        padding: const EdgeInsets.only(
-                                            right: 54, top: 30),
-                                        child: AlertDialog(
-                                          alignment: Alignment.topRight,
-                                          content: Container(
-                                            width: 227,
-                                            height: 256,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset(
-                                                    'assets/images/Vector.png'),
-                                                Text(
-                                                  "No Data",
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: Color.fromARGB(
-                                                          255, 138, 138, 138)),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ));
-                            },
-                          )),
-
-                      //Account Button
-                      IconButton(
-                          onPressed: () {
-                            showDialog(
-                                context: context,
-                                builder: (context) => Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          12, 23, 24, 34),
-                                      child: AlertDialog(
-                                        alignment: Alignment.topRight,
-                                        content: Container(
-                                          height: 100,
-                                          width: 200,
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Icon(
-                                                    Icons.circle_rounded,
-                                                    color: Color.fromARGB(
-                                                        255, 138, 138, 138),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            left: 13),
-                                                    child: Text(
-                                                      "My Account",
-                                                      style: TextStyle(
-                                                          fontSize: 14),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Divider(
-                                                color: Color.fromARGB(
-                                                    255, 138, 138, 138),
-                                                thickness: 1,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text("Change Password",
-                                                      style: TextStyle(
-                                                          fontSize: 14)),
-                                                ],
-                                              ),
-                                              Divider(
-                                                color: Color.fromARGB(
-                                                    255, 138, 138, 138),
-                                                thickness: 1,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text("Logout",
-                                                      style: TextStyle(
-                                                          fontSize: 14))
-                                                ],
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ));
-                          },
-                          icon: Icon(
-                            Icons.circle_rounded,
-                            color: Color.fromARGB(255, 138, 138, 138),
-                          ))
-                    ],
-                  ),
-                ],
+              title: appBarClass(
+                judul: 'Spaces',
               ),
-              // actions: [
-              //   Row(
-              //     children: [
-              //       PopupMenuButton(
-              //           icon: Icon(
-              //             Icons.circle_rounded,
-              //             color: Color.fromARGB(255, 138, 138, 138),
-              //           ),
-              //           itemBuilder: (context) => [
-              //                 PopupMenuItem(
-              //                   child: Text("First"),
-              //                   value: 1,
-              //                 )
-              //               ]),
-              //     ],
-              //   ),
-              // ],
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
               centerTitle: true),
           //MainBody
           body: ListView(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(0, 31, 0, 248),
+                padding: EdgeInsets.fromLTRB(0, 31, 0, 0),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -223,27 +109,58 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-                      //No Space Interface
-                      Container(
-                        padding: EdgeInsets.only(top: 73),
-                        child: Column(
-                          children: [
-                            Image.asset('assets/images/Logo copy.png'),
-                            Container(
-                              padding: EdgeInsets.only(top: 79),
-                              child: Text(
-                                "You Have No Space Here!",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 73, 73, 73),
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            )
-                          ],
+                      Expanded(
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.85,
+                          height: MediaQuery.of(context).size.height,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 19),
+                            child: Column(
+                              children: [
+                                Flexible(
+                                    child: ListView.builder(
+                                        itemCount: listDynamic.length,
+                                        itemBuilder: (_, index) =>
+                                            listDynamic[index])),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      //No Space Interface
+                      index == 0
+                          ? Container(
+                              padding: EdgeInsets.only(bottom: 100),
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 300),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/Logo copy.png',
+                                      width: 220,
+                                      height: 160,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 57),
+                                      child: Text(
+                                        "You have no Space!",
+                                        style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromARGB(
+                                                255, 73, 73, 73)),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
+                          : Center(),
                     ]),
+
                 //Screen size
                 decoration: new BoxDecoration(
                     color: Color.fromARGB(255, 219, 223, 247)),
@@ -253,15 +170,201 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           //Add Space Button
-          // floatingActionButton: Padding(
-          //   padding: const EdgeInsets.only(bottom: 78),
-          //   child: FloatingActionButton(
-          //     onPressed: () {},
-          //     tooltip: 'Create New Space',
-          //     child: const Icon(Icons.add),
-          //     backgroundColor: Color.fromARGB(255, 255, 162, 2),
-          //   ),
-          // ),
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(bottom: 79),
+            child: FloatingActionButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => Padding(
+                          padding: const EdgeInsets.only(top: 208),
+                          child: AlertDialog(
+                            alignment: Alignment.topCenter,
+                            content: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10)),
+                              width: 380,
+                              height: 175,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Create new space",
+                                        style: TextStyle(fontSize: 16),
+                                      )
+                                    ],
+                                  ),
+                                  Divider(
+                                    color: Color.fromARGB(255, 188, 188, 188),
+                                    thickness: 1,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 15),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 12),
+                                          child: RichText(
+                                              text: TextSpan(
+                                                  text: "Space name",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 153, 153, 153),
+                                                      fontSize: 12),
+                                                  children: [
+                                                TextSpan(
+                                                    text: "*",
+                                                    style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 255, 19, 19)))
+                                              ])),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 346,
+                                    height: 29,
+                                    child: TextFormField(
+                                      textAlignVertical:
+                                          TextAlignVertical.bottom,
+                                      decoration: InputDecoration(
+                                        hintText: "Your Space name",
+                                        hintStyle: TextStyle(fontSize: 11),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    255, 140, 79, 225))),
+                                      ),
+                                      style: TextStyle(fontSize: 11),
+                                      onChanged: (String text) {
+                                        setState(() {});
+                                        spaceName = text;
+                                      },
+                                      onFieldSubmitted: (String text) {
+                                        setState(() {});
+                                        spaceName = text;
+                                      },
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 27),
+                                    child: Divider(
+                                      color: Color.fromARGB(255, 188, 188, 188),
+                                      thickness: 1,
+                                    ),
+                                  ),
+                                  Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 12),
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: Container(
+                                                width: 71,
+                                                height: 27,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      "Cancel",
+                                                      style: TextStyle(
+                                                          color: Color.fromARGB(
+                                                              255,
+                                                              131,
+                                                              131,
+                                                              131),
+                                                          fontSize: 13),
+                                                    ),
+                                                  ],
+                                                ),
+                                                decoration: BoxDecoration(
+                                                    color: Colors.white,
+                                                    border: Border.all(
+                                                        color: Color.fromARGB(
+                                                            255,
+                                                            143,
+                                                            143,
+                                                            143)),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8)),
+                                              ),
+                                            ),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              addDynamic();
+                                              index++;
+                                              Navigator.pop(context);
+                                            },
+                                            child: Container(
+                                              width: 71,
+                                              height: 27,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    "Submit",
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 13),
+                                                  )
+                                                ],
+                                              ),
+                                              decoration: BoxDecoration(
+                                                  color: Color.fromARGB(
+                                                      255, 177, 17, 255),
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ));
+              },
+              tooltip: 'Create New Space',
+              child: const Icon(Icons.add_rounded),
+              backgroundColor: Color.fromARGB(255, 255, 162, 2),
+            ),
+          ),
         ));
+  }
+}
+
+class DynamicWidget extends StatelessWidget {
+  const DynamicWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => const Space()));
+      },
+      child: spaceCard(
+          textColor: Colors.black,
+          backgroundColor: Colors.white,
+          text: "$spaceName",
+          spaceColor: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+              .withOpacity(1.0)),
+    );
   }
 }
