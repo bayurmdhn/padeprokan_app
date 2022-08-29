@@ -5,6 +5,8 @@ import '../Screens/HomePage/homePage.dart';
 
 enum MenuItem { item1, item2, item3, item4 }
 
+int notification = 0;
+
 class appBarClass extends StatelessWidget {
   final String judul;
 
@@ -15,22 +17,17 @@ class appBarClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int notification = 0;
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
-        Widget>[
-      GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HomePage()),
-            );
-          },
-          child: new Image.asset('assets/images/Logo padeprokan.png')),
+    return AppBar(
+        title:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
+                Widget>[
+      new Image.asset('assets/images/Logo padeprokan.png',
+          width: 26, height: 26),
       new Text(
-        judul,
+        "Spaces",
         textAlign: TextAlign.center,
         style: TextStyle(
-            color: Colors.grey,
+            color: Color.fromARGB(255, 127, 126, 126),
             fontSize: 18,
             fontFamily: 'Roboto',
             fontWeight: FontWeight.bold),
@@ -354,6 +351,6 @@ class appBarClass extends StatelessWidget {
                               color: Color.fromARGB(255, 51, 51, 51))))
                 ])
       ])
-    ]);
+    ]));
   }
 }

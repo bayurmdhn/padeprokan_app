@@ -5,6 +5,11 @@ import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
+
+import 'package:popup_card/popup_card.dart';
+import '../../Components/appBar.dart';
+import '../../Components/Homepage/cardHome.dart';
+
 import 'package:set_state/set_state.dart';
 import 'dart:async';
 import '../../Components/appBar.dart';
