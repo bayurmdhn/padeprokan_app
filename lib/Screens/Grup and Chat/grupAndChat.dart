@@ -474,83 +474,105 @@ class _grupChatState extends State<grupChat> {
                                           ),
                                         ),
                                       ),
-                                      Stack(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 44, top: 14, right: 19),
-                                            child: Container(
-                                              width: 110,
-                                              child: Text(
-                                                "Nameeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-                                                overflow: TextOverflow.ellipsis,
-                                                maxLines: 1,
-                                                style: TextStyle(
-                                                  fontSize: 11,
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 44,
+                                          top: 14,
+                                        ),
+                                        child: Container(
+                                          width: 110,
+                                          child: Text(
+                                            "Nameeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 1,
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              fontFamily: 'Roboto',
+                                              color: kblack,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 130, top: 14, right: 19),
+                                        child: Container(
+                                          width: 50,
+                                        ),
+                                      ),
+                                      Positioned.fill(
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              right: 20, top: 15.5),
+                                          child:
+                                              // Icon(
+                                              //   Icons.circle,
+                                              //   size: 5,
+                                              //   color: Color.fromRGBO(
+                                              //       125, 125, 125, 1),
+                                              // ),
+                                              // SizedBox(
+                                              //   width: 5,
+                                              // ),
+                                              // Text(
+                                              //   DateFormat.Hm()
+                                              //       .format(DateTime.now()),
+                                              //   maxLines: 1,
+                                              //   style: TextStyle(
+                                              //     fontFamily: 'Roboto',
+                                              //     color: Color.fromRGBO(
+                                              //         125, 125, 125, 1),
+                                              //     fontWeight: FontWeight.w600,
+                                              //     fontSize: 11,
+                                              //   ),
+                                              // ),
+
+                                              Align(
+                                            alignment: Alignment.topRight,
+                                            child: Text(
+                                              "Reply",
+                                              style: TextStyle(
                                                   fontFamily: 'Roboto',
                                                   color: kblack,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
+                                                  fontSize: 9,
+                                                  fontWeight: FontWeight.w400),
                                             ),
                                           ),
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                                right: 20, top: 15.5),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: [
-                                                Icon(
-                                                  Icons.circle,
-                                                  size: 5,
-                                                  color: Color.fromRGBO(
-                                                      125, 125, 125, 1),
-                                                ),
-                                                SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Text(
-                                                  DateFormat.Hm()
-                                                      .format(DateTime.now()),
-                                                  maxLines: 1,
-                                                  style: TextStyle(
-                                                    fontFamily: 'Roboto',
-                                                    color: Color.fromRGBO(
-                                                        125, 125, 125, 1),
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 11,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Text(
-                                                  "Reply",
-                                                  style: TextStyle(
-                                                      fontFamily: 'Roboto',
-                                                      color: kblack,
-                                                      fontSize: 9,
-                                                      fontWeight:
-                                                          FontWeight.w400),
-                                                ),
-                                              ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(43, 35, 10, 25),
+                                        child: Text(
+                                          message.text,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 13,
+                                            fontFamily: 'Roboto',
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned.fill(
+                                          child: Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              right: 5, bottom: 5),
+                                          child: Text(
+                                            DateFormat.Hm()
+                                                .format(DateTime.now()),
+                                            maxLines: 1,
+                                            style: TextStyle(
+                                              fontFamily: 'Roboto',
+                                              color: Color.fromRGBO(
+                                                  125, 125, 125, 1),
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 11,
                                             ),
                                           ),
-                                          Padding(
-                                            padding: EdgeInsets.fromLTRB(
-                                                43, 36, 10, 10),
-                                            child: Text(
-                                              message.text,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 13,
-                                                fontFamily: 'Roboto',
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      )
+                                        ),
+                                      ))
                                     ],
                                   ),
                                 )),

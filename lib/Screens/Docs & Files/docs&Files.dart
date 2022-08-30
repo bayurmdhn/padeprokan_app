@@ -48,8 +48,10 @@ class _docsFiles extends State<docsFiles> {
     final mediaQueryWidht = MediaQuery.of(context).size.width;
     Size size = MediaQuery.of(context).size;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Roboto'),
       home: Scaffold(
+
           //AppBar
           appBar: AppBar(
               title: appBarBack(
@@ -130,8 +132,8 @@ class _docsFiles extends State<docsFiles> {
                           Flexible(
                             child: GridView.builder(
                               itemBuilder: (context, index) =>
-                                  folderDynamic[index],
-                              itemCount: folderDynamic.length,
+                                  listDynamic[index],
+                              itemCount: listDynamic.length,
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 2,
