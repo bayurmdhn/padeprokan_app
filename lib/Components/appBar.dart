@@ -17,14 +17,12 @@ class appBarClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-        title:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
-                Widget>[
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
+        Widget>[
       new Image.asset('assets/images/Logo padeprokan.png',
           width: 26, height: 26),
       new Text(
-        "Spaces",
+        judul,
         textAlign: TextAlign.center,
         style: TextStyle(
             color: Color.fromARGB(255, 127, 126, 126),
@@ -351,6 +349,6 @@ class appBarClass extends StatelessWidget {
                               color: Color.fromARGB(255, 51, 51, 51))))
                 ])
       ])
-    ]));
+    ]);
   }
 }

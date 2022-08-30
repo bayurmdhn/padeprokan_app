@@ -1,5 +1,6 @@
 import 'dart:js';
 import 'package:first_app_flutter/Components/Homepage/cardHome.dart';
+import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/Courses/components/cardCourses.dart';
 import 'package:first_app_flutter/Screens/Spaces/spaceScreen.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
@@ -42,15 +43,16 @@ class _CoursesState extends State<Courses> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Roboto'),
         home: Scaffold(
           //AppBar Padeprokan
           appBar: AppBar(
-              title: appBarClass(
-                judul: 'Courses',
-              ),
-              backgroundColor: Color.fromARGB(255, 255, 255, 255),
-              centerTitle: true),
+            backgroundColor: kWhite,
+            title: appBarClass(
+              judul: "Courses",
+            ),
+          ),
           //MainBody
           body: ListView(
             children: [
@@ -174,261 +176,299 @@ class _CoursesState extends State<Courses> {
                 showDialog(
                     context: context,
                     builder: (context) => Padding(
-                          padding: const EdgeInsets.only(top: 208),
-                          child: ListView(
-                            children: [
-                              AlertDialog(
-                                alignment: Alignment.topCenter,
-                                content: Container(
-                                  width: 386,
-                                  height: 800,
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text("Add Courses",
+                        padding: const EdgeInsets.only(top: 208),
+                        child: ListView(
+                          children: [
+                            AlertDialog(
+                              alignment: Alignment.topCenter,
+                              content: Container(
+                                width: 386,
+                                height: 800,
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "Add Courses",
                                           style: TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Roboto",
-                                          ),),
-                                        ],
-                                      ),
-                                      Divider(
-                                        color: Colors.black,
-                                        thickness: 1,
-                                      ),
-                                      Padding(padding: const EdgeInsets.only(top: 15),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Divider(
+                                      color: Colors.black,
+                                      thickness: 1,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 15),
                                       child: Row(
                                         children: [
-                                          Padding(padding: const EdgeInsets.only(bottom: 12),
-                                          child: RichText(text: TextSpan(
-                                            text: "Title",
-                                            style: TextStyle(
-                                              color: Color.fromARGB(255, 153, 153, 153),
-                                              fontSize: 12,
-                                            ),
-                                            children: [
-                                              TextSpan(
-                                                text: "*",
-                                                style: TextStyle(
-                                                  color: Color.fromARGB(255, 255, 19, 19),
-
-                                                )
-                                              )
-                                            ]
-                                          )),)
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 12),
+                                            child: RichText(
+                                                text: TextSpan(
+                                                    text: "Title",
+                                                    style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 153, 153, 153),
+                                                      fontSize: 12,
+                                                    ),
+                                                    children: [
+                                                  TextSpan(
+                                                      text: "*",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 255, 19, 19),
+                                                      ))
+                                                ])),
+                                          )
                                         ],
-                                      ),),
-                                      SizedBox(
-                                        width: 346,
-                                        height: 29,
-                                        child: TextField(
-                                          decoration: InputDecoration(
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 346,
+                                      height: 29,
+                                      child: TextField(
+                                        decoration: InputDecoration(
                                             hintText: "Insert courses title",
                                             hintStyle: TextStyle(fontSize: 11),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color.fromARGB(255, 140, 79, 255)
-                                              )
-                                            )
-                                          ),
-                                          style: TextStyle(fontSize: 11),
-                                        ),
+                                                borderSide: BorderSide(
+                                                    color: Color.fromARGB(
+                                                        255, 140, 79, 255)))),
+                                        style: TextStyle(fontSize: 11),
                                       ),
-                                      Padding(padding: const EdgeInsets.only(top: 15),
-                                      child: Row(
-                                        children: [
-                                          Padding(padding: const EdgeInsets.only(bottom: 12),
-                                          child: RichText(text: 
-                                          TextSpan(
-                                            text: "Categories",
-                                            style: TextStyle(
-                                              fontSize: 12,
-                                              color: Color.fromARGB(255, 153, 153, 153),
-                                              fontFamily: "Roboto",
-                                            ),
-                                            children: [
-                                              TextSpan(
-                                                text: "*",
-                                                style: TextStyle(
-                                                  color: Color.fromARGB(255, 255, 19, 19),
-                                                )
-
-                                              )
-                                            ]
-                                          )))
-
-                                        
-                                      
-                                        ],
-                                      )
-                                      ),
-                                      SizedBox(
-                                        width: 346,
-                                        height: 35,
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            hintText: "Please select categories",
+                                    ),
+                                    Padding(
+                                        padding: const EdgeInsets.only(top: 15),
+                                        child: Row(
+                                          children: [
+                                            Padding(
+                                                padding: const EdgeInsets.only(
+                                                    bottom: 12),
+                                                child: RichText(
+                                                    text: TextSpan(
+                                                        text: "Categories",
+                                                        style: TextStyle(
+                                                          fontSize: 12,
+                                                          color: Color.fromARGB(
+                                                              255,
+                                                              153,
+                                                              153,
+                                                              153),
+                                                          fontFamily: "Roboto",
+                                                        ),
+                                                        children: [
+                                                      TextSpan(
+                                                          text: "*",
+                                                          style: TextStyle(
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    255,
+                                                                    19,
+                                                                    19),
+                                                          ))
+                                                    ])))
+                                          ],
+                                        )),
+                                    SizedBox(
+                                      width: 346,
+                                      height: 35,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            hintText:
+                                                "Please select categories",
                                             hintStyle: TextStyle(fontSize: 11),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color.fromARGB(255, 140, 79, 255),
-
-                                              )
-                                            )),
-                                            style: TextStyle(fontSize: 11),
-
-                                        ),
+                                                borderSide: BorderSide(
+                                              color: Color.fromARGB(
+                                                  255, 140, 79, 255),
+                                            ))),
+                                        style: TextStyle(fontSize: 11),
                                       ),
-                                      Padding(padding: const EdgeInsets.only(top: 15),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 15),
                                       child: Row(
                                         children: [
-                                          Padding(padding: const EdgeInsets.only(bottom: 12),
-                                          child: RichText(text: 
-                                          TextSpan(
-                                            text: "Estimate finish time",
-                                            style: TextStyle(
-                                             fontSize: 12,
-                                             color: Color.fromARGB(255, 153, 153, 153),
-                                             fontFamily: "Roboto", 
-                                            ),
-                                            children: [
-                                              TextSpan(
-                                                text: "*",
-                                                style: TextStyle(
-                                                  color: Color.fromARGB(255, 255, 19, 19)
-                                                )
-                                              )
-                                            ]
-                                          )),),
-                                          
-                                        ],
-                                      ),),
-                                      SizedBox(
-                                            width: 346,
-                                            height: 29,
-                                            child: CupertinoTimerPicker(
-                                              backgroundColor: Colors.white,
-                                              onTimerDurationChanged: (value) {
-                                                print(value.toString());
-                                              }),
-                                          ),
-                                          Padding(padding: const EdgeInsets.only(top: 15),
-                                          child: Row(
-                                            children: [
-                                              Padding(padding: const EdgeInsets.only(bottom: 12),
-                                              child: RichText(text: 
-                                              TextSpan(
-                                                text: "Description",
-                                                style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: Color.fromARGB(255, 153, 153, 153),
-                                                  fontFamily: "Roboto",
-                                                ),
-                                                children: [
-                                                  TextSpan(
-                                                    text: "*",
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 12),
+                                            child: RichText(
+                                                text: TextSpan(
+                                                    text:
+                                                        "Estimate finish time",
                                                     style: TextStyle(
-                                                      color: Color.fromARGB(255, 255, 19, 19),
-                                                    )
-                                                  )
-                                                ]
-                                              )),)
-                                            ],
-                                          ),),
-                                          SizedBox(
-                                            width: 346,
-                                            height: 103,
-                                            child: TextField(
-                                              decoration: InputDecoration(
-                                                hintText: "Start year",
-                                                hintStyle: TextStyle(fontSize: 11),
-                                                focusedBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(color: Color.fromARGB(255, 140, 79, 255))
-                                                )
+                                                      fontSize: 12,
+                                                      color: Color.fromARGB(
+                                                          255, 153, 153, 153),
+                                                      fontFamily: "Roboto",
+                                                    ),
+                                                    children: [
+                                                  TextSpan(
+                                                      text: "*",
+                                                      style: TextStyle(
+                                                          color: Color.fromARGB(
+                                                              255,
+                                                              255,
+                                                              19,
+                                                              19)))
+                                                ])),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 346,
+                                      height: 29,
+                                      child: CupertinoTimerPicker(
+                                          backgroundColor: Colors.white,
+                                          onTimerDurationChanged: (value) {
+                                            print(value.toString());
+                                          }),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 15),
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 12),
+                                            child: RichText(
+                                                text: TextSpan(
+                                                    text: "Description",
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color.fromARGB(
+                                                          255, 153, 153, 153),
+                                                      fontFamily: "Roboto",
+                                                    ),
+                                                    children: [
+                                                  TextSpan(
+                                                      text: "*",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 255, 19, 19),
+                                                      ))
+                                                ])),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 346,
+                                      height: 103,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            hintText: "Start year",
+                                            hintStyle: TextStyle(fontSize: 11),
+                                            focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Color.fromARGB(
+                                                        255, 140, 79, 255)))),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 34),
+                                      child: Divider(
+                                        color: Colors.black,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 12),
+                                              child: GestureDetector(
+                                                onTap: () => Navigator.of(
+                                                        context,
+                                                        rootNavigator: true)
+                                                    .pop(context),
+                                                child: Container(
+                                                  width: 71,
+                                                  height: 27,
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        "Cancel",
+                                                        style: TextStyle(
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    131,
+                                                                    131,
+                                                                    131),
+                                                            fontSize: 13),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      border: Border.all(
+                                                        color: Color.fromARGB(
+                                                            255, 143, 143, 143),
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8)),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Padding(padding: const EdgeInsets.only(top: 34),
-                                          child: Divider(
-                                            color: Colors.black,
-                                            thickness: 1,
-                                          ),),
-                                          Column(
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment: MainAxisAlignment.end,
-                                                children: [
-                                                  Padding(padding: const EdgeInsets.only(right: 12),
-                                                  child: GestureDetector(
-                                                    onTap: () => Navigator.of(context,
-                                                    rootNavigator: true)
-                                                    .pop(context),
-                                                    child: Container(
-                                                      width: 71,
-                                                      height: 27,
-                                                      child: Column(
-                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                        children: [
-                                                          Text(
-                                                            "Cancel",
-                                                            style: TextStyle(
-                                                              color: Color.fromARGB(255, 131, 131, 131),
-                                                              fontSize: 13
-                                                            ),
-                                                          )
-                                                        ],
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        border: Border.all(
-                                                          color: Color.fromARGB(255, 143, 143, 143),                                                          
-                                                        ),
-                                                        borderRadius: BorderRadius.circular(8)
-                                                      ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                addDynamic();
+                                                index++;
+                                                Navigator.pop(context);
+                                              },
+                                              child: Container(
+                                                width: 71,
+                                                height: 27,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      "Submit",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 13),
+                                                    )
+                                                  ],
+                                                ),
+                                                decoration: BoxDecoration(
+                                                    color: Color.fromARGB(
+                                                        255, 117, 17, 255),
+                                                    border: Border.all(
+                                                      color: Color.fromARGB(
+                                                          255, 117, 17, 255),
                                                     ),
-                                                  ),),
-                                                   GestureDetector(
-                                                    onTap: () {
-                                                      addDynamic();
-                                                      index++;
-                                                      Navigator.pop(context);
-                                                    },                                                  
-                                                    child: Container(
-                                                      width: 71,
-                                                      height: 27,
-                                                      child: Column(
-                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                        children: [
-                                                          Text(
-                                                            "Submit",
-                                                            style: TextStyle(
-                                                              color: Colors.white,
-                                                              fontSize: 13
-                                                            ),
-                                                          )
-                                                        ],
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                        color: Color.fromARGB(255, 117, 17, 255),
-                                                        border: Border.all(
-                                                          color: Color.fromARGB(255, 117, 17, 255),                                                          
-                                                        ),
-                                                        borderRadius: BorderRadius.circular(8)
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          )
-                                    ],
-                                  ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8)),
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
                                 ),
-                              )
-                            ],
-                          )
-                        ));
+                              ),
+                            )
+                          ],
+                        )));
               },
               tooltip: 'Create New Space',
               child: const Icon(Icons.add_rounded),
