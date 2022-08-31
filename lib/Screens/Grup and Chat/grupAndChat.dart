@@ -8,7 +8,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:intl/intl.dart';
-
 import 'components/Message.dart';
 
 class grupChat extends StatefulWidget {
@@ -480,31 +479,27 @@ class _grupChatState extends State<grupChat> {
                                           top: 14,
                                         ),
                                         child: Container(
-                                          width: 110,
-                                          child: Text(
-                                            "Nameeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-                                            overflow: TextOverflow.ellipsis,
-                                            maxLines: 1,
-                                            style: TextStyle(
-                                              fontSize: 11,
-                                              fontFamily: 'Roboto',
-                                              color: kblack,
-                                              fontWeight: FontWeight.w600,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 55),
+                                            child: Text(
+                                              "Name",
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 1,
+                                              style: TextStyle(
+                                                fontSize: 11,
+                                                fontFamily: 'Roboto',
+                                                color: kblack,
+                                                fontWeight: FontWeight.w600,
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 130, top: 14, right: 19),
-                                        child: Container(
-                                          width: 50,
-                                        ),
-                                      ),
                                       Positioned.fill(
                                         child: Padding(
-                                          padding: EdgeInsets.only(
-                                              right: 20, top: 15.5),
+                                          padding:
+                                              EdgeInsets.only(right: 5, top: 5),
                                           child:
                                               // Icon(
                                               //   Icons.circle,
@@ -530,20 +525,24 @@ class _grupChatState extends State<grupChat> {
 
                                               Align(
                                             alignment: Alignment.topRight,
-                                            child: Text(
-                                              "Reply",
-                                              style: TextStyle(
-                                                  fontFamily: 'Roboto',
-                                                  color: kblack,
-                                                  fontSize: 9,
-                                                  fontWeight: FontWeight.w400),
+                                            child: GestureDetector(
+                                              onTap: () {},
+                                              child: Text(
+                                                "Reply",
+                                                style: TextStyle(
+                                                    fontFamily: 'Roboto',
+                                                    color: kblack,
+                                                    fontSize: 9,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsets.fromLTRB(43, 35, 10, 25),
+                                            EdgeInsets.fromLTRB(43, 30, 10, 20),
                                         child: Text(
                                           message.text,
                                           style: TextStyle(
@@ -568,7 +567,7 @@ class _grupChatState extends State<grupChat> {
                                               color: Color.fromRGBO(
                                                   125, 125, 125, 1),
                                               fontWeight: FontWeight.w600,
-                                              fontSize: 11,
+                                              fontSize: 10,
                                             ),
                                           ),
                                         ),

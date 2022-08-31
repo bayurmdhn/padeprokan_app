@@ -7,8 +7,12 @@ class forgotPass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: BodyForgot(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Roboto'),
+      home: Scaffold(
+        body: BodyForgot(),
+      ),
     );
   }
 }

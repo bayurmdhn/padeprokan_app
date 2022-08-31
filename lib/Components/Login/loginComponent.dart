@@ -23,53 +23,75 @@ class _SignInComponentState extends State<SignInComponent> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SimpleShadow(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 97),
-                  child: Image.asset("assets/images/logo.png",
-                      height: 131, width: 128),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: MediaQuery.of(context).size.width * 0.35,
+                height: MediaQuery.of(context).size.height * 0.16,
+
+                child: Image.asset(
+                  "assets/images/logoRil.png",
                 ),
+
                 // opacity: 0.5,
                 // color: kSecondaryColor,
                 // offset: Offset(5, 5),
                 // sigma: 2,
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 34, top: 28),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Login",
-                      style: new TextStyle(
-                          color: Colors.black,
-                          fontSize: 24.0,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold),
-                      // style: mTitleStyle,
-                    ),
-                  ],
-                ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 34, top: 8),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Login and Start Manage Your Learning \nProcess!",
-                      style: new TextStyle(
-                        color: Color.fromARGB(255, 137, 137, 137),
-                        fontSize: 14.0,
-                        fontFamily: 'Roboto',
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.15,
+                    child: FittedBox(
+                      child: Text(
+                        "Login",
+                        style: new TextStyle(
+                            color: Colors.black,
+                            fontSize: 24.0,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.bold),
+                        // style: mTitleStyle,
                       ),
-                      // style: mTitleStyle,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               SizedBox(
-                height: 38,
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: FittedBox(
+                      child: Text(
+                        "Login and Start Manage Your Learning \nProcess!",
+                        style: new TextStyle(
+                          color: Color.fromARGB(255, 137, 137, 137),
+                          fontSize: 14.0,
+                          fontFamily: 'Roboto',
+                        ),
+                        // style: mTitleStyle,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.04,
               ),
               SignInForm()
             ],

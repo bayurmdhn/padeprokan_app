@@ -74,10 +74,9 @@ var searchFiles = TextStyle(
 
 //Elevated Button di Login Dan Register
 var elevated1 = ElevatedButton.styleFrom(
-    primary: Color.fromRGBO(247, 183, 49, 1),
-    onPrimary: Colors.white,
-    minimumSize: Size(330, 1),
-    padding: EdgeInsets.only(top: 20, bottom: 20));
+  primary: Color.fromRGBO(247, 183, 49, 1),
+  onPrimary: Colors.white,
+);
 
 //Form Register Dan Login
 const String kNameRequ = "Your full name is required";

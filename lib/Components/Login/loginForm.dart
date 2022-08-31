@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:first_app_flutter/Components/custom_surfix_icons.dart';
 import 'package:first_app_flutter/Components/default_button_custome_color.dart';
 import 'package:first_app_flutter/Screens/ForgotPassword/forgotPass.dart';
@@ -39,61 +40,98 @@ class _SignInFormState extends State<SignInForm> {
       child: Column(
         children: [
           buildEmail(),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.02,
+          ),
           buildPassword(),
-          SizedBox(height: 5),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.01,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                padding: EdgeInsets.only(right: 34),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (BuildContext context) => forgotPass()));
-                  },
-                  child: Text(
-                    "Forgot Password?",
-                    style: forgotPassword,
+                width: MediaQuery.of(context).size.width * 0.29,
+                child: FittedBox(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (BuildContext context) => forgotPass()));
+                    },
+                    child: Text(
+                      "Forgot Password?",
+                      style: forgotPassword,
+                    ),
                   ),
                 ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.1,
               )
             ],
           ),
           SizedBox(
-            height: 41,
+            height: MediaQuery.of(context).size.height * 0.04,
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (BuildContext context) => HomePage()));
-            },
-            child: Text(
-              "Login",
-              style: text3,
+          Container(
+            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.height * 0.05,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (BuildContext context) => HomePage()));
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.1,
+                child: FittedBox(
+                  child: Text(
+                    "Login",
+                    style: text3,
+                  ),
+                ),
+              ),
+              style: elevated1,
             ),
-            style: elevated1,
           ),
-          SizedBox(height: 20),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.013,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "Don’t have an account yet?",
-                style: text4,
+              Container(
+                width: MediaQuery.of(context).size.width * 0.47,
+                child: FittedBox(
+                  child: Text(
+                    "Don’t have an account yet?",
+                    style: TextStyle(
+                      color: Color.fromRGBO(141, 126, 224, 1),
+                      fontFamily: 'Roboto',
+                    ),
+                  ),
+                ),
               ),
-              GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (BuildContext context) => regis()));
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 5),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.01,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.22,
+                child: FittedBox(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (BuildContext context) => regis()));
+                    },
                     child: Text(
                       "Register here",
-                      style: text5,
+                      style: TextStyle(
+                          color: Color.fromRGBO(84, 66, 187, 1),
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.bold),
                     ),
-                  ))
+                  ),
+                ),
+              ),
             ],
           ),
         ],
@@ -103,7 +141,8 @@ class _SignInFormState extends State<SignInForm> {
 
   Container buildEmail() {
     return Container(
-      padding: EdgeInsets.only(left: 34, right: 34),
+      width: MediaQuery.of(context).size.width * 0.8,
+      height: MediaQuery.of(context).size.height * 0.05,
       child: TextFormField(
         controller: txtEmail,
         keyboardType: TextInputType.text,
@@ -117,6 +156,11 @@ class _SignInFormState extends State<SignInForm> {
               borderSide:
                   BorderSide(width: 2, color: Color.fromRGBO(140, 79, 225, 1))),
           hintText: "Email",
+          hintStyle: TextStyle(
+              color: Color.fromRGBO(199, 196, 196, 1),
+              fontSize: 14,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w500),
           filled: true,
           fillColor: Colors.white,
         ),
@@ -126,7 +170,8 @@ class _SignInFormState extends State<SignInForm> {
 
   Container buildPassword() {
     return Container(
-      padding: EdgeInsets.only(left: 34, right: 34),
+      width: MediaQuery.of(context).size.width * 0.8,
+      height: MediaQuery.of(context).size.height * 0.05,
       child: TextFormField(
         controller: txtPassword,
         obscureText: true,
@@ -139,6 +184,11 @@ class _SignInFormState extends State<SignInForm> {
               borderSide:
                   BorderSide(width: 2, color: Color.fromRGBO(140, 79, 225, 1))),
           hintText: "Password",
+          hintStyle: TextStyle(
+              color: Color.fromRGBO(199, 196, 196, 1),
+              fontSize: 14,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w500),
           filled: true,
           fillColor: Colors.white,
         ),
