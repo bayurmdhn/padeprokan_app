@@ -100,7 +100,7 @@ class _SignInFormState extends State<SignInForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                width: MediaQuery.of(context).size.width * 0.47,
+                width: MediaQuery.of(context).size.width * 0.45,
                 child: FittedBox(
                   child: Text(
                     "Don’t have an account yet?",
@@ -115,7 +115,7 @@ class _SignInFormState extends State<SignInForm> {
                 width: MediaQuery.of(context).size.width * 0.01,
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.22,
+                width: MediaQuery.of(context).size.width * 0.2,
                 child: FittedBox(
                   child: GestureDetector(
                     onTap: () {

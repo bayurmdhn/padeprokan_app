@@ -16,6 +16,12 @@ var text2 = TextStyle(
     fontSize: 14.0,
     fontFamily: 'Roboto');
 
+var textform = TextStyle(
+    color: Color.fromRGBO(194, 194, 194, 1),
+    fontSize: 14.0,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Roboto');
+
 var text3 = TextStyle(fontSize: 14.0, fontFamily: 'Roboto');
 
 var text4 = TextStyle(

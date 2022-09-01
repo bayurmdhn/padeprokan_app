@@ -29,7 +29,7 @@ class _SignInComponentState extends State<SignInComponent> {
               Container(
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width * 0.35,
-                height: MediaQuery.of(context).size.height * 0.16,
+                height: MediaQuery.of(context).size.width * 0.35,
 
                 child: Image.asset(
                   "assets/images/logoRil.png",
@@ -75,7 +75,7 @@ class _SignInComponentState extends State<SignInComponent> {
                     width: MediaQuery.of(context).size.width * 0.1,
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.8,
+                    width: MediaQuery.of(context).size.width * 0.54,
                     child: FittedBox(
                       child: Text(
                         "Login and Start Manage Your Learning \nProcess!",

@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return SplashScreenView(
       navigateRoute: SchedulePage(),
       duration: 3000,
-      imageSize: 120,
+      imageSize: 100,
       imageSrc: "assets/images/logo.png",
       backgroundColor: Colors.white,
     );
