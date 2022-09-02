@@ -116,83 +116,79 @@ class _grupChatState extends State<grupChat> {
                   message.date.day,
                 ),
                 groupHeaderBuilder: (Message message) => Container(
-                  width: lebar * 1,
+                  padding: EdgeInsets.only(left: 10, right: 10, top: 10),
                   //Tanggal Pesan dikirim
                   child: Column(
                     children: [
-                      Padding(
-                        padding:
-                            const EdgeInsets.only(left: 15, right: 15, top: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: [
-                                Container(
-                                  width: lebar * 0.2,
-                                  child: Divider(
-                                    thickness: 1,
-                                    color: kblack,
-                                  ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                width: lebar * 0.3,
+                                child: Divider(
+                                  thickness: 1,
+                                  color: kblack,
                                 ),
-                              ],
-                            ),
-                            //Tanggal
-                            Container(
-                              width: lebar * 0.45,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    DateFormat.EEEE().format(message.date),
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      color: kblack,
-                                      fontSize: lebar * 0.035,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  SizedBox(
-                                    width: lebar * 0.01,
-                                  ),
-                                  Text(
-                                    DateFormat.d().format(message.date),
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      color: kblack,
-                                      fontSize: lebar * 0.035,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  SizedBox(
-                                    width: lebar * 0.01,
-                                  ),
-                                  Text(
-                                    DateFormat.yMMM().format(message.date),
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      color: kblack,
-                                      fontSize: lebar * 0.035,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
                               ),
-                            ),
-                            //Garis
-                            Column(
+                            ],
+                          ),
+                          //Tanggal
+                          Container(
+                            width: lebar * 0.3,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
-                                  width: lebar * 0.2,
-                                  child: Divider(
-                                    thickness: 1,
+                                Text(
+                                  DateFormat.EEEE().format(message.date),
+                                  style: TextStyle(
+                                    fontFamily: 'Roboto',
                                     color: kblack,
+                                    fontSize: 11,
                                   ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(
+                                  width: 3,
+                                ),
+                                Text(
+                                  DateFormat.d().format(message.date),
+                                  style: TextStyle(
+                                    fontFamily: 'Roboto',
+                                    color: kblack,
+                                    fontSize: 11,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(
+                                  width: 3,
+                                ),
+                                Text(
+                                  DateFormat.yMMM().format(message.date),
+                                  style: TextStyle(
+                                    fontFamily: 'Roboto',
+                                    color: kblack,
+                                    fontSize: 11,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                          //Garis
+                          Column(
+                            children: [
+                              Container(
+                                width: lebar * 0.3,
+                                child: Divider(
+                                  thickness: 1,
+                                  color: kblack,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -200,7 +196,7 @@ class _grupChatState extends State<grupChat> {
                 itemBuilder: (context, Message message) =>
                     //Pesan dan Desain nya
                     Padding(
-                  padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
+                  padding: const EdgeInsets.only(right: 10, left: 10, top: 10),
                   child:
                       //Jika pesan dikirim orang lain dan jika kita mengirim pesan(posisi pesan)
                       Align(
@@ -460,7 +456,7 @@ class _grupChatState extends State<grupChat> {
                                           alignment: Alignment.topLeft,
                                           child: Padding(
                                             padding: const EdgeInsets.only(
-                                                top: 14, left: 8),
+                                                top: 20, left: 8),
                                             child: Container(
                                               width: 29,
                                               height: 29,
@@ -475,24 +471,16 @@ class _grupChatState extends State<grupChat> {
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          left: 44,
-                                          top: 14,
-                                        ),
-                                        child: Container(
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 55),
-                                            child: Text(
-                                              "Name",
-                                              overflow: TextOverflow.ellipsis,
-                                              maxLines: 1,
-                                              style: TextStyle(
-                                                fontSize: 11,
-                                                fontFamily: 'Roboto',
-                                                color: kblack,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                            ),
+                                            left: 44, top: 20, right: 10),
+                                        child: Text(
+                                          "name",
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontFamily: 'Roboto',
+                                            color: kblack,
+                                            fontWeight: FontWeight.w600,
                                           ),
                                         ),
                                       ),
@@ -542,7 +530,7 @@ class _grupChatState extends State<grupChat> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsets.fromLTRB(43, 30, 10, 20),
+                                            EdgeInsets.fromLTRB(43, 35, 10, 20),
                                         child: Text(
                                           message.text,
                                           style: TextStyle(
@@ -580,14 +568,15 @@ class _grupChatState extends State<grupChat> {
               Row(
                 children: [
                   SizedBox(
-                    width: lebar * 0.01,
+                    width: lebar * 0.04,
                   ),
                   Container(
+                    height: tinggi * 0.05,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(3),
                       color: kWhite,
                     ),
-                    width: lebar * 0.8,
+                    width: lebar * 0.75,
                     child: TextFormField(
                       style: TextStyle(
                           color: kblack,
@@ -630,14 +619,14 @@ class _grupChatState extends State<grupChat> {
                     ),
                   ),
                   SizedBox(
-                    width: lebar * 0.04,
+                    width: lebar * 0.05,
                   ),
                   GestureDetector(
                     onTap: () {
                       addDynamic();
                     },
                     child: Container(
-                      height: tinggi * 0.1,
+                      height: lebar * 0.15,
                       width: lebar * 0.1,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -652,7 +641,7 @@ class _grupChatState extends State<grupChat> {
                     ),
                   ),
                   SizedBox(
-                    width: lebar * 0.04,
+                    width: lebar * 0.05,
                   ),
                 ],
               ),
