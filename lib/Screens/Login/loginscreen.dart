@@ -1,4 +1,4 @@
-import 'package:first_app_flutter/Components/Login/loginComponent.dart';
+import 'package:first_app_flutter/Screens/Login/loginComponent.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
