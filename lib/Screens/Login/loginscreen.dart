@@ -1,4 +1,4 @@
-import 'package:first_app_flutter/Screens/Login/loginComponent.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,11 +6,22 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import '../../size_config.dart';
+import 'SignInComponent.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static String routeName = "/sign_in";
 
   const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  Future<FirebaseApp> _initializeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +32,17 @@ class LoginScreen extends StatelessWidget {
       //   backgroundColor: Color.fromRGBO(219, 223, 247, 1),
       //   automaticallyImplyLeading: false,
       // ),
-      body: SignInComponent(),
+      body: FutureBuilder(
+        future: _initializeFirebase(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return SignInComponent();
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
     );
   }
 }

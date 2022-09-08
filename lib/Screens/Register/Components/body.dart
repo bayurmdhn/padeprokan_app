@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:first_app_flutter/Screens/Login/loginForm.dart';
+import 'package:first_app_flutter/Screens/Login/SignInForm.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:first_app_flutter/size_config.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:simple_shadow/simple_shadow.dart';
+
+final _formKey = GlobalKey<FormState>();
+String? email;
+String? password;
+bool? remeber = false;
+
+TextEditingController txtEmail = TextEditingController(),
+    txtPassword = TextEditingController();
+
+FocusNode focusNode = new FocusNode();
 
 class SignInComponent extends StatefulWidget {
   const SignInComponent({Key? key}) : super(key: key);

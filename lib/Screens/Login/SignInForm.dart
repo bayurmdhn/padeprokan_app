@@ -1,10 +1,14 @@
 import 'dart:html';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:first_app_flutter/Components/custom_surfix_icons.dart';
 import 'package:first_app_flutter/Components/default_button_custome_color.dart';
+import 'package:first_app_flutter/Reverensi/login.dart';
 import 'package:first_app_flutter/Screens/ForgotPassword/forgotPass.dart';
 import 'package:first_app_flutter/Screens/HomePage/homePage.dart';
+import 'package:first_app_flutter/Screens/Login/SignInComponent.dart';
 import 'package:first_app_flutter/Screens/Register/registerr.dart';
 import 'package:first_app_flutter/Utils/constants.dart';
 import 'package:first_app_flutter/size_config.dart';
@@ -24,15 +28,25 @@ class SignInForm extends StatefulWidget {
 }
 
 class _SignInFormState extends State<SignInForm> {
-  final _formKey = GlobalKey<FormState>();
-  String? email;
-  String? password;
-  bool? remeber = false;
-
-  TextEditingController txtEmail = TextEditingController(),
-      txtPassword = TextEditingController();
-
-  FocusNode focusNode = new FocusNode();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  static Future<User?> loginUsingEmailPassword(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      user = userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("No User found for that email");
+      }
+    }
+    return user;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +91,16 @@ class _SignInFormState extends State<SignInForm> {
             width: MediaQuery.of(context).size.width * 0.8,
             height: MediaQuery.of(context).size.height * 0.05,
             child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (BuildContext context) => HomePage()));
+              onPressed: () async {
+                User? user = await loginUsingEmailPassword(
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                    context: context);
+                print(user);
+                if (user != null) {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                }
               },
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.1,
@@ -144,8 +165,8 @@ class _SignInFormState extends State<SignInForm> {
       width: MediaQuery.of(context).size.width * 0.8,
       height: MediaQuery.of(context).size.height * 0.05,
       child: TextFormField(
-        controller: txtEmail,
-        keyboardType: TextInputType.text,
+        controller: _emailController,
+        keyboardType: TextInputType.emailAddress,
         // style: mTitleStyle,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
@@ -173,7 +194,7 @@ class _SignInFormState extends State<SignInForm> {
       width: MediaQuery.of(context).size.width * 0.8,
       height: MediaQuery.of(context).size.height * 0.05,
       child: TextFormField(
-        controller: txtPassword,
+        controller: _passwordController,
         obscureText: true,
         // style: mTitleStyle,
         decoration: InputDecoration(
