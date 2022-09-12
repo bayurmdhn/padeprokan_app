@@ -72,7 +72,7 @@ class _docsFiles extends State<docsFiles> {
               //Search Files (blom ada fitur nya)
               Container(
                 width: mediaQueryWidht * 0.9,
-                height: 34,
+                height: mediaQueryHeight * 0.05,
                 child: Form(
                     child: TextFormField(
                   textAlignVertical: TextAlignVertical.bottom,
@@ -99,27 +99,37 @@ class _docsFiles extends State<docsFiles> {
                 )),
               ),
               SizedBox(
-                height: 50,
+                height: mediaQueryHeight * 0.05,
               ),
 
               //Gambar Tidak Ada File dan Folder
               indexx == 0
                   ? Column(
                       children: [
-                        Image.asset(
-                          'assets/images/emptyDocs.png',
-                          width: 220,
-                          height: 157,
+                        Container(
+                          width: mediaQueryWidht * 0.5,
+                          height: mediaQueryWidht * 0.35,
+                          child: FittedBox(
+                            child: Image.asset(
+                              'assets/images/emptyDocs.png',
+                            ),
+                          ),
                         ),
                         SizedBox(
-                          height: 40,
+                          height: mediaQueryHeight * 0.03,
                         ),
-                        Text(
-                          "You don't have any file!",
-                          style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 73, 73, 73)),
+                        Container(
+                          width: mediaQueryWidht * 0.6,
+                          height: mediaQueryWidht * 0.07,
+                          child: FittedBox(
+                            child: Text(
+                              "You don't have any file!",
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 73, 73, 73)),
+                            ),
+                          ),
                         ),
                       ],
                     )
@@ -138,7 +148,7 @@ class _docsFiles extends State<docsFiles> {
                                   SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 2,
                                       crossAxisSpacing: mediaQueryWidht * 0.07,
-                                      mainAxisSpacing: 20,
+                                      mainAxisSpacing: mediaQueryHeight * 0.025,
                                       childAspectRatio: 1 / 1),
                             ),
                           ),
