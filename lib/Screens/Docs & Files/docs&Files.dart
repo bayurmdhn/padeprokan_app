@@ -159,25 +159,33 @@ class _docsFiles extends State<docsFiles> {
           ),
           //Icon Add (tambah)
           floatingActionButton: SpeedDial(
+              childrenButtonSize:
+                  Size(mediaQueryWidht * 0.125, mediaQueryWidht * 0.125),
               icon: Icons.add,
+              buttonSize:
+                  Size(mediaQueryWidht * 0.130, mediaQueryWidht * 0.130),
               backgroundColor: kColorAdd,
               overlayColor: kBackGround,
               overlayOpacity: 0.2,
-              spacing: 5,
-              spaceBetweenChildren: 5,
+              spacing: mediaQueryHeight * 0.01,
+              spaceBetweenChildren: mediaQueryHeight * 0.01,
               children: [
                 //Fitur Text File
                 SpeedDialChild(
                     child: Image.asset(
                       "assets/images/addFile.png",
                       color: kWhite,
-                      height: 26,
-                      width: 26,
+                      height: mediaQueryWidht * 0.065,
+                      width: mediaQueryWidht * 0.065,
                     ),
                     backgroundColor: kColorAdd,
                     label: "New File TXT",
                     labelBackgroundColor: kblack,
-                    labelStyle: add,
+                    labelStyle: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: mediaQueryWidht * 0.0225,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal),
                     onTap: () {
                       showDialog(
                           context: context,
@@ -350,13 +358,17 @@ class _docsFiles extends State<docsFiles> {
                     child: Image.asset(
                       "assets/images/addFolder.png",
                       color: kWhite,
-                      height: 26,
-                      width: 26,
+                      height: mediaQueryWidht * 0.065,
+                      width: mediaQueryWidht * 0.065,
                     ),
                     backgroundColor: kColorAdd,
                     label: "Add Folder",
                     labelBackgroundColor: kblack,
-                    labelStyle: add,
+                    labelStyle: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: mediaQueryWidht * 0.0225,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal),
                     onTap: () {
                       showDialog(
                           context: context,
@@ -573,13 +585,17 @@ class _docsFiles extends State<docsFiles> {
                     child: Image.asset(
                       "assets/images/clouddd.png",
                       color: kWhite,
-                      height: 26,
-                      width: 26,
+                      height: mediaQueryWidht * 0.065,
+                      width: mediaQueryWidht * 0.065,
                     ),
                     backgroundColor: kColorAdd,
                     label: "Upload File",
                     labelBackgroundColor: kblack,
-                    labelStyle: add,
+                    labelStyle: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: mediaQueryWidht * 0.0225,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal),
                     onTap: () {
                       showDialog(
                           context: context,
@@ -771,13 +787,17 @@ class _docsFiles extends State<docsFiles> {
                     child: Image.asset(
                       "assets/images/drive.png",
                       color: kWhite,
-                      height: 26,
-                      width: 29.69,
+                      height: mediaQueryWidht * 0.065,
+                      width: mediaQueryWidht * 0.065,
                     ),
                     backgroundColor: kColorAdd,
                     label: "Google Drive",
                     labelBackgroundColor: kblack,
-                    labelStyle: add,
+                    labelStyle: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: mediaQueryWidht * 0.0225,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal),
                     onTap: () {
                       showDialog(
                           context: context,
