@@ -3,6 +3,7 @@ import 'package:first_app_flutter/Components/appBar.dart';
 import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app_flutter/Screens/Register/Components/body.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../../Utils/constants.dart';
 import '../HomePage/homePage.dart';
@@ -193,6 +194,8 @@ class _docsFiles extends State<docsFiles> {
                                   height: mediaQueryHeight * 0.1,
                                 ),
                                 Container(
+                                  width: mediaQueryWidht * 0.9,
+                                  height: mediaQueryHeight * 0.3,
                                   decoration: BoxDecoration(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(8)),
@@ -201,140 +204,145 @@ class _docsFiles extends State<docsFiles> {
                                   //text form field nama file dan isinya
                                   child: Column(children: [
                                     Form(
-                                      key: nameKey,
+                                        key: nameKey,
+                                        child: SizedBox(
+                                          width: mediaQueryWidht * 0.85,
+                                          child: TextFormField(
+                                            cursorColor:
+                                                Color.fromRGBO(117, 17, 255, 1),
+                                            maxLines: 1,
+                                            cursorWidth: 1,
+                                            decoration: InputDecoration(
+                                              border: InputBorder.none,
+                                              hintText: "File Name",
+                                              hintStyle: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontFamily: 'Roboto',
+                                                  color: Color.fromRGBO(
+                                                      53, 53, 53, 1)),
+                                            ),
+                                            onChanged: (String text) {
+                                              setState(() {});
+                                              fileName = text;
+                                            },
+                                            onFieldSubmitted: (String text) {
+                                              setState(() {});
+                                              fileName = text;
+                                            },
+                                          ),
+                                        )),
+                                    SizedBox(
+                                      width: mediaQueryWidht * 0.85,
+                                      child: Divider(
+                                        color: Color.fromRGBO(159, 159, 159, 1),
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: mediaQueryWidht * 0.85,
                                       child: TextFormField(
-                                        maxLines: 1,
-                                        cursorColor: kblack,
-                                        cursorWidth: 1,
-                                        maxLength: 16,
-                                        style: TextStyle(
-                                            color: kblack, fontSize: 20),
                                         onChanged: (String text) {
                                           setState(() {});
-                                          fileName = text;
+                                          fileIsi = text;
                                         },
                                         onFieldSubmitted: (String text) {
                                           setState(() {});
-                                          fileName = text;
+                                          fileIsi = text;
                                         },
+                                        maxLines: 7,
                                         decoration: InputDecoration(
-                                            hintText: 'File Name',
+                                            border: InputBorder.none,
+                                            hintText:
+                                                "Write your document here",
                                             hintStyle: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
                                                 fontFamily: 'Roboto',
-                                                fontSize: 20,
-                                                color: kblack)),
+                                                color: Color.fromRGBO(
+                                                    91, 91, 91, 1))),
                                       ),
                                     ),
-
-                                    TextFormField(
-                                      onChanged: (String text) {
-                                        setState(() {});
-                                        fileIsi = text;
-                                      },
-                                      onFieldSubmitted: (String text) {
-                                        setState(() {});
-                                        fileIsi = text;
-                                      },
-                                      controller: _isi,
-                                      keyboardType: TextInputType.multiline,
-                                      maxLines: 12,
-                                      cursorColor: kblack,
-                                      cursorWidth: 1,
-                                      style: TextStyle(
-                                          color: kblack, fontSize: 12),
-                                      decoration: InputDecoration(
-                                          hintText: 'Write your document here',
-                                          hintStyle: TextStyle(
-                                              fontSize: 12,
-                                              fontFamily: 'Roboto'),
-                                          border: InputBorder.none),
-                                    ),
-
-                                    //Tombol/Button
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 22),
-                                          //tombol cancel
-                                          child: GestureDetector(
-                                            onTap: () => Navigator.of(context,
-                                                    rootNavigator: true)
-                                                .pop(context),
-                                            child: Container(
-                                              width: 71,
-                                              height: 28,
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    "Cancel",
-                                                    style: TextStyle(
-                                                        color: Color.fromARGB(
-                                                            255, 131, 131, 131),
-                                                        fontSize: 13),
-                                                  ),
-                                                ],
-                                              ),
-                                              decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  border: Border.all(
+                                        GestureDetector(
+                                          onTap: () => Navigator.of(context,
+                                                  rootNavigator: true)
+                                              .pop(context),
+                                          child: Container(
+                                            width: mediaQueryWidht * 0.15,
+                                            height: mediaQueryHeight * 0.035,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "Cancel",
+                                                  style: TextStyle(
                                                       color: Color.fromARGB(
-                                                          255, 143, 143, 143)),
-                                                  borderRadius:
-                                                      BorderRadius.circular(8)),
+                                                          255, 131, 131, 131),
+                                                      fontSize: 13),
+                                                ),
+                                              ],
                                             ),
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                border: Border.all(
+                                                    color: Color.fromARGB(
+                                                        255, 143, 143, 143)),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
                                           ),
                                         ),
-                                        //tombol Save and Publish
+                                        SizedBox(
+                                          width: mediaQueryWidht * 0.025,
+                                        ),
                                         GestureDetector(
                                           onTap: () {
                                             addDynamic();
                                             indexx++;
                                             Navigator.pop(context);
                                           },
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 21),
-                                            child: Container(
-                                              width: 117,
-                                              height: 28,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(6),
-                                                    child: Icon(
-                                                      Icons.save,
-                                                      size: 16,
-                                                      color: kWhite,
-                                                    ),
+                                          child: Container(
+                                            width: mediaQueryWidht * 0.325,
+                                            height: mediaQueryHeight * 0.035,
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(6),
+                                                  child: Icon(
+                                                    Icons.save,
+                                                    size: 16,
+                                                    color: Colors.white,
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            right: 4),
-                                                    child: Text(
-                                                      "Save & publish",
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 13),
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                              decoration: BoxDecoration(
-                                                  color: Color.fromRGBO(
-                                                      44, 187, 32, 1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(8)),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 4),
+                                                  child: Text(
+                                                    "Save & publish",
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 13),
+                                                  ),
+                                                )
+                                              ],
                                             ),
+                                            decoration: BoxDecoration(
+                                                color: Color.fromRGBO(
+                                                    44, 187, 32, 1),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
                                           ),
                                         ),
+                                        SizedBox(
+                                          width: mediaQueryWidht * 0.05,
+                                        )
                                       ],
                                     )
                                   ]),
