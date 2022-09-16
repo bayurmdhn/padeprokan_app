@@ -609,22 +609,10 @@ class _textCardState extends State<textCard> {
                       ),
                     ),
                   ))),
-          Column(
-            children: [
-              Container(
-                width: mediaQueryWidht * 1,
-                height: mediaQueryHeight * 0.156,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 30, bottom: 24),
-                  child: Image.asset(
-                    "assets/images/fileTxt.png",
-                    width: 78,
-                    height: 78,
-                  ),
-                ),
-              ),
-              //container nama file a
-              Container(
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(2),
@@ -632,23 +620,34 @@ class _textCardState extends State<textCard> {
                   color: kWhite,
                 ),
                 width: mediaQueryWidht * 1,
-                height: mediaQueryHeight * 0.033,
+                height: 28,
+                // row agar tulisan berada di tengah vertikal
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 6),
-                  // row agar tulisan berada di tengah vertikal
-                  child: Row(
-                    children: [
-                      Text(
-                        "${widget.text}",
-                        style: TextStyle(
-                            fontSize: 12, color: kblack, fontFamily: 'Roboto'),
-                      ),
-                    ],
+                  padding: const EdgeInsets.all(7),
+                  child: Text(
+                    "${widget.text}",
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontSize: 12, color: kblack, fontFamily: 'Roboto'),
                   ),
                 ),
               ),
-            ],
+            ),
           ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: mediaQueryWidht * 0.135,
+                height: mediaQueryHeight * 0.085,
+                child: FittedBox(
+                  child: Image.asset(
+                    "assets/images/fileTxt.png",
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

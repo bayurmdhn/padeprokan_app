@@ -44,7 +44,6 @@ class _textDynamicState extends State<textDynamic> {
                           bottomLeft: Radius.circular(5),
                           bottomRight: Radius.circular(5),
                         ),
-                        color: kWhite,
                       ),
                       child: Column(
                         children: <Widget>[
@@ -61,9 +60,11 @@ class _textDynamicState extends State<textDynamic> {
                               children: <Widget>[
                                 Align(
                                   alignment: Alignment.topLeft,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 14, top: 12),
+                                  child: Container(
+                                    padding: EdgeInsets.only(left: 10),
+                                    alignment: Alignment.centerLeft,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.625,
                                     child: Text(
                                       "$fileName",
                                       style: TextStyle(
@@ -72,6 +73,7 @@ class _textDynamicState extends State<textDynamic> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Roboto',
                                       ),
+                                      overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
                                 ),

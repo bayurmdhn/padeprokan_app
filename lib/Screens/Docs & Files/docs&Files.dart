@@ -73,7 +73,7 @@ class _docsFiles extends State<docsFiles> {
               height: mediaQueryHeight * 0.05,
               child: Form(
                   child: TextFormField(
-                textAlignVertical: TextAlignVertical.bottom,
+                textAlignVertical: TextAlignVertical.center,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(9)),
@@ -157,9 +157,10 @@ class _docsFiles extends State<docsFiles> {
         //Icon Add (tambah)
         floatingActionButton: SpeedDial(
             childrenButtonSize:
-                Size(mediaQueryWidht * 0.125, mediaQueryWidht * 0.125),
+                Size(mediaQueryHeight * 0.0575, mediaQueryHeight * 0.0575),
             icon: Icons.add,
-            buttonSize: Size(mediaQueryWidht * 0.130, mediaQueryWidht * 0.130),
+            buttonSize:
+                Size(mediaQueryHeight * 0.055, mediaQueryHeight * 0.055),
             backgroundColor: kColorAdd,
             overlayColor: kBackGround,
             overlayOpacity: 0.2,
@@ -171,15 +172,15 @@ class _docsFiles extends State<docsFiles> {
                   child: Image.asset(
                     "assets/images/addFile.png",
                     color: kWhite,
-                    height: mediaQueryWidht * 0.065,
-                    width: mediaQueryWidht * 0.065,
+                    height: mediaQueryHeight * 0.03,
+                    width: mediaQueryHeight * 0.03,
                   ),
                   backgroundColor: kColorAdd,
                   label: "New File TXT",
                   labelBackgroundColor: kblack,
                   labelStyle: TextStyle(
                       fontFamily: 'Roboto',
-                      fontSize: mediaQueryWidht * 0.0225,
+                      fontSize: mediaQueryHeight * 0.01,
                       color: Colors.white,
                       fontWeight: FontWeight.normal),
                   onTap: () {
@@ -195,7 +196,7 @@ class _docsFiles extends State<docsFiles> {
                                 ),
                                 Container(
                                   width: mediaQueryWidht * 0.9,
-                                  height: mediaQueryHeight * 0.3,
+                                  height: 285,
                                   decoration: BoxDecoration(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(8)),
@@ -203,20 +204,28 @@ class _docsFiles extends State<docsFiles> {
                                   ),
                                   //text form field nama file dan isinya
                                   child: Column(children: [
+                                    SizedBox(
+                                      height: mediaQueryHeight * 0.005,
+                                    ),
                                     Form(
                                         key: nameKey,
                                         child: SizedBox(
                                           width: mediaQueryWidht * 0.85,
                                           child: TextFormField(
+                                            textAlignVertical:
+                                                TextAlignVertical.center,
                                             cursorColor:
                                                 Color.fromRGBO(117, 17, 255, 1),
                                             maxLines: 1,
+                                            cursorHeight:
+                                                mediaQueryHeight * 0.025,
                                             cursorWidth: 1,
                                             decoration: InputDecoration(
                                               border: InputBorder.none,
                                               hintText: "File Name",
                                               hintStyle: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize:
+                                                      mediaQueryHeight * 0.023,
                                                   fontWeight: FontWeight.w400,
                                                   fontFamily: 'Roboto',
                                                   color: Color.fromRGBO(
@@ -235,6 +244,7 @@ class _docsFiles extends State<docsFiles> {
                                     SizedBox(
                                       width: mediaQueryWidht * 0.85,
                                       child: Divider(
+                                        height: 0,
                                         color: Color.fromRGBO(159, 159, 159, 1),
                                         thickness: 1,
                                       ),
@@ -242,6 +252,8 @@ class _docsFiles extends State<docsFiles> {
                                     SizedBox(
                                       width: mediaQueryWidht * 0.85,
                                       child: TextFormField(
+                                        cursorColor:
+                                            Color.fromRGBO(117, 17, 255, 1),
                                         onChanged: (String text) {
                                           setState(() {});
                                           fileIsi = text;
@@ -250,13 +262,14 @@ class _docsFiles extends State<docsFiles> {
                                           setState(() {});
                                           fileIsi = text;
                                         },
-                                        maxLines: 7,
+                                        maxLines: 10,
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText:
                                                 "Write your document here",
                                             hintStyle: TextStyle(
-                                                fontSize: 12,
+                                                fontSize:
+                                                    mediaQueryHeight * 0.015,
                                                 fontWeight: FontWeight.w400,
                                                 fontFamily: 'Roboto',
                                                 color: Color.fromRGBO(
@@ -271,8 +284,9 @@ class _docsFiles extends State<docsFiles> {
                                                   rootNavigator: true)
                                               .pop(context),
                                           child: Container(
-                                            width: mediaQueryWidht * 0.15,
-                                            height: mediaQueryHeight * 0.035,
+                                            width: 71, //mediaQueryWidht * 0.15
+                                            height:
+                                                28, //mediaQueryHeight * 0.035
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -305,32 +319,29 @@ class _docsFiles extends State<docsFiles> {
                                             Navigator.pop(context);
                                           },
                                           child: Container(
-                                            width: mediaQueryWidht * 0.325,
-                                            height: mediaQueryHeight * 0.035,
+                                            width:
+                                                117, // mediaQueryWidht * 0.325
+                                            height:
+                                                28, //mediaQueryHeight * 0.035
                                             child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(6),
-                                                  child: Icon(
-                                                    Icons.save,
-                                                    size: 16,
-                                                    color: Colors.white,
-                                                  ),
+                                                Icon(
+                                                  Icons.save,
+                                                  size: 16,
+                                                  color: Colors.white,
                                                 ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          right: 4),
-                                                  child: Text(
-                                                    "Save & publish",
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 13),
-                                                  ),
-                                                )
+                                                SizedBox(
+                                                  width: 5,
+                                                ),
+                                                Text(
+                                                  "Save & publish",
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      color: Colors.white,
+                                                      fontSize: 13),
+                                                ),
                                               ],
                                             ),
                                             decoration: BoxDecoration(
@@ -357,15 +368,15 @@ class _docsFiles extends State<docsFiles> {
                   child: Image.asset(
                     "assets/images/addFolder.png",
                     color: kWhite,
-                    height: mediaQueryWidht * 0.065,
-                    width: mediaQueryWidht * 0.065,
+                    height: mediaQueryHeight * 0.03,
+                    width: mediaQueryHeight * 0.03,
                   ),
                   backgroundColor: kColorAdd,
                   label: "Add Folder",
                   labelBackgroundColor: kblack,
                   labelStyle: TextStyle(
                       fontFamily: 'Roboto',
-                      fontSize: mediaQueryWidht * 0.0225,
+                      fontSize: mediaQueryHeight * 0.01,
                       color: Colors.white,
                       fontWeight: FontWeight.normal),
                   onTap: () {
@@ -574,15 +585,15 @@ class _docsFiles extends State<docsFiles> {
                   child: Image.asset(
                     "assets/images/clouddd.png",
                     color: kWhite,
-                    height: mediaQueryWidht * 0.065,
-                    width: mediaQueryWidht * 0.065,
+                    height: mediaQueryHeight * 0.03,
+                    width: mediaQueryHeight * 0.03,
                   ),
                   backgroundColor: kColorAdd,
                   label: "Upload File",
                   labelBackgroundColor: kblack,
                   labelStyle: TextStyle(
                       fontFamily: 'Roboto',
-                      fontSize: mediaQueryWidht * 0.0225,
+                      fontSize: mediaQueryHeight * 0.01,
                       color: Colors.white,
                       fontWeight: FontWeight.normal),
                   onTap: () {
@@ -775,15 +786,15 @@ class _docsFiles extends State<docsFiles> {
                   child: Image.asset(
                     "assets/images/drive.png",
                     color: kWhite,
-                    height: mediaQueryWidht * 0.065,
-                    width: mediaQueryWidht * 0.065,
+                    height: mediaQueryHeight * 0.03,
+                    width: mediaQueryHeight * 0.03,
                   ),
                   backgroundColor: kColorAdd,
                   label: "Google Drive",
                   labelBackgroundColor: kblack,
                   labelStyle: TextStyle(
                       fontFamily: 'Roboto',
-                      fontSize: mediaQueryWidht * 0.0225,
+                      fontSize: mediaQueryHeight * 0.01,
                       color: Colors.white,
                       fontWeight: FontWeight.normal),
                   onTap: () {
