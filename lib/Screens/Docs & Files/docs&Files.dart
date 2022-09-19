@@ -196,7 +196,7 @@ class _docsFiles extends State<docsFiles> {
                                 ),
                                 Container(
                                   width: mediaQueryWidht * 0.9,
-                                  height: 285,
+                                  height: mediaQueryHeight * 0.41,
                                   decoration: BoxDecoration(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(8)),
@@ -355,7 +355,58 @@ class _docsFiles extends State<docsFiles> {
                                           width: mediaQueryWidht * 0.05,
                                         )
                                       ],
-                                    )
+                                    ),
+
+                                    // Row(
+                                    //   children: [
+
+                                    //     SizedBox(
+                                    //       width: mediaQueryWidht * 0.025,
+                                    //     ),
+                                    //     GestureDetector(
+                                    //       onTap: () {
+                                    //         addDynamic();
+                                    //         indexx++;
+                                    //         Navigator.pop(context);
+                                    //       },
+                                    //       // child: Container(
+                                    //       //   width:
+                                    //       //       117, // mediaQueryWidht * 0.325
+                                    //       //   height:
+                                    //       //       28, //mediaQueryHeight * 0.035
+                                    //       //   child: Row(
+                                    //       //     mainAxisAlignment:
+                                    //       //         MainAxisAlignment.center,
+                                    //       //     children: [
+                                    //       //       Icon(
+                                    //       //         Icons.save,
+                                    //       //         size: 16,
+                                    //       //         color: Colors.white,
+                                    //       //       ),
+                                    //       //       SizedBox(
+                                    //       //         width: 5,
+                                    //       //       ),
+                                    //       //       Text(
+                                    //       //         "Save & publish",
+                                    //       //         style: TextStyle(
+                                    //       //             fontFamily: 'Roboto',
+                                    //       //             color: Colors.white,
+                                    //       //             fontSize: 13),
+                                    //       //       ),
+                                    //       //     ],
+                                    //       //   ),
+                                    //       //   decoration: BoxDecoration(
+                                    //       //       color: Color.fromRGBO(
+                                    //       //           44, 187, 32, 1),
+                                    //       //       borderRadius:
+                                    //       //           BorderRadius.circular(8)),
+                                    //       // ),
+                                    //     ),
+                                    //     SizedBox(
+                                    //       width: mediaQueryWidht * 0.05,
+                                    //     )
+                                    //   ],
+                                    // )
                                   ]),
                                 ),
                               ],
