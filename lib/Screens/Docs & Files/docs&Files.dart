@@ -196,7 +196,7 @@ class _docsFiles extends State<docsFiles> {
                                 ),
                                 Container(
                                   width: mediaQueryWidht * 0.9,
-                                  height: mediaQueryHeight * 0.41,
+                                  height: mediaQueryHeight * 0.37,
                                   decoration: BoxDecoration(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(8)),
@@ -205,12 +205,13 @@ class _docsFiles extends State<docsFiles> {
                                   //text form field nama file dan isinya
                                   child: Column(children: [
                                     SizedBox(
-                                      height: mediaQueryHeight * 0.005,
+                                      height: mediaQueryHeight * 0.01,
                                     ),
                                     Form(
                                         key: nameKey,
                                         child: SizedBox(
                                           width: mediaQueryWidht * 0.85,
+                                          height: mediaQueryHeight * 0.035,
                                           child: TextFormField(
                                             textAlignVertical:
                                                 TextAlignVertical.center,
@@ -242,6 +243,9 @@ class _docsFiles extends State<docsFiles> {
                                           ),
                                         )),
                                     SizedBox(
+                                      height: mediaQueryHeight * 0.01,
+                                    ),
+                                    SizedBox(
                                       width: mediaQueryWidht * 0.85,
                                       child: Divider(
                                         height: 0,
@@ -250,7 +254,11 @@ class _docsFiles extends State<docsFiles> {
                                       ),
                                     ),
                                     SizedBox(
+                                      height: mediaQueryHeight * 0.01,
+                                    ),
+                                    Container(
                                       width: mediaQueryWidht * 0.85,
+                                      height: mediaQueryHeight * 0.24,
                                       child: TextFormField(
                                         cursorColor:
                                             Color.fromRGBO(117, 17, 255, 1),
@@ -276,6 +284,9 @@ class _docsFiles extends State<docsFiles> {
                                                     91, 91, 91, 1))),
                                       ),
                                     ),
+                                    SizedBox(
+                                      height: mediaQueryHeight * 0.015,
+                                    ),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
@@ -284,19 +295,30 @@ class _docsFiles extends State<docsFiles> {
                                                   rootNavigator: true)
                                               .pop(context),
                                           child: Container(
-                                            width: 71, //mediaQueryWidht * 0.15
+                                            width: mediaQueryWidht * 0.145, //71
                                             height:
-                                                28, //mediaQueryHeight * 0.035
+                                                mediaQueryHeight * 0.03, //28
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Text(
-                                                  "Cancel",
-                                                  style: TextStyle(
-                                                      color: Color.fromARGB(
-                                                          255, 131, 131, 131),
-                                                      fontSize: 13),
+                                                Container(
+                                                  width:
+                                                      mediaQueryWidht * 0.115,
+                                                  height:
+                                                      mediaQueryHeight * 0.018,
+                                                  child: FittedBox(
+                                                    child: Text(
+                                                      "Cancel",
+                                                      style: TextStyle(
+                                                          color: Color.fromARGB(
+                                                              255,
+                                                              131,
+                                                              131,
+                                                              131),
+                                                          fontSize: 13),
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -320,27 +342,43 @@ class _docsFiles extends State<docsFiles> {
                                           },
                                           child: Container(
                                             width:
-                                                117, // mediaQueryWidht * 0.325
+                                                mediaQueryWidht * 0.325, // 117
                                             height:
-                                                28, //mediaQueryHeight * 0.035
+                                                mediaQueryHeight * 0.03, //28
                                             child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Icon(
-                                                  Icons.save,
-                                                  size: 16,
-                                                  color: Colors.white,
+                                                Container(
+                                                  width:
+                                                      mediaQueryWidht * 0.045,
+                                                  height:
+                                                      mediaQueryHeight * 0.02,
+                                                  child: FittedBox(
+                                                    child: Icon(
+                                                      Icons.save,
+                                                      size: 16,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
                                                 ),
                                                 SizedBox(
-                                                  width: 5,
+                                                  width:
+                                                      mediaQueryWidht * 0.015,
                                                 ),
-                                                Text(
-                                                  "Save & publish",
-                                                  style: TextStyle(
-                                                      fontFamily: 'Roboto',
-                                                      color: Colors.white,
-                                                      fontSize: 13),
+                                                Container(
+                                                  width: mediaQueryWidht * 0.21,
+                                                  height:
+                                                      mediaQueryHeight * 0.02,
+                                                  child: FittedBox(
+                                                    child: Text(
+                                                      "Save & publish",
+                                                      style: TextStyle(
+                                                          fontFamily: 'Roboto',
+                                                          color: Colors.white,
+                                                          fontSize: 13),
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -407,6 +445,9 @@ class _docsFiles extends State<docsFiles> {
                                     //     )
                                     //   ],
                                     // )
+                                    SizedBox(
+                                      height: mediaQueryHeight * 0.01,
+                                    ),
                                   ]),
                                 ),
                               ],
