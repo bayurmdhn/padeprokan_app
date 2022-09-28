@@ -3,6 +3,7 @@ import 'package:first_app_flutter/Components/appBarBack.dart';
 import 'package:first_app_flutter/Screens/AutomaticCheckIn/automaticCheckIn.dart';
 import 'package:first_app_flutter/Screens/Courses/courseScreen.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
+import 'package:first_app_flutter/Screens/Grup%20and%20Chat/grupAndChat.dart';
 import 'package:first_app_flutter/Screens/Schedule/schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -113,8 +114,7 @@ class _SpaceState extends State<Space> {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                Courses()));
+                            builder: (BuildContext context) => Courses()));
                       },
                       splashColor: Colors.black,
                       child: Column(
@@ -279,7 +279,10 @@ class _SpaceState extends State<Space> {
                   ),
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => grupChat()));
+                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
