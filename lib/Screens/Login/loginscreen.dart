@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:http/http.dart';
 
 import '../../size_config.dart';
 import 'SignInComponent.dart';
@@ -27,22 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: Color.fromRGBO(219, 223, 247, 1),
-      // appBar: AppBar(
-      //   backgroundColor: Color.fromRGBO(219, 223, 247, 1),
-      //   automaticallyImplyLeading: false,
-      // ),
-      body: FutureBuilder(
-        future: _initializeFirebase(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return SignInComponent();
-          }
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        },
-      ),
-    );
+        backgroundColor: Color.fromRGBO(219, 223, 247, 1),
+        // appBar: AppBar(
+        //   backgroundColor: Color.fromRGBO(219, 223, 247, 1),
+        //   automaticallyImplyLeading: false,
+        // ),
+        body: SignInComponent());
   }
 }
