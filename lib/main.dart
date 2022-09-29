@@ -10,6 +10,7 @@ import 'package:first_app_flutter/Screens/Register/registerr.dart';
 import 'package:first_app_flutter/Reverensi/register.dart';
 import 'package:first_app_flutter/Screens/Schedule/schedule.dart';
 import 'package:first_app_flutter/Screens/Spaces/spaceScreen.dart';
+import 'package:first_app_flutter/Screens/VideoConference/videoConference.dart';
 import 'package:flutter/foundation.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:first_app_flutter/routes.dart';
@@ -42,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-      navigateRoute: docsFiles(),
+      navigateRoute: videoConference(),
       duration: 3000,
       imageSize: 100,
       imageSrc: "assets/images/logo.png",

@@ -4,12 +4,14 @@ import 'package:first_app_flutter/Screens/AutomaticCheckIn/automaticCheckIn.dart
 import 'package:first_app_flutter/Screens/Courses/courseScreen.dart';
 import 'package:first_app_flutter/Screens/Docs%20&%20Files/docs&Files.dart';
 import 'package:first_app_flutter/Screens/Schedule/schedule.dart';
+import 'package:first_app_flutter/Screens/VideoConference/videoConference.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../../Components/appBar.dart';
 import '../../Components/appBarBack.dart';
 import '../Courses/courseScreen.dart';
+import '../VideoConference/StreamPage.dart';
 
 class Space extends StatefulWidget {
   const Space({Key? key}) : super(key: key);
@@ -72,7 +74,17 @@ class _SpaceState extends State<Space> {
                 children: <Widget>[
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        stream == false
+                            ? Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        videoConference()))
+                            : Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        streamPage()));
+                      },
                       splashColor: Colors.black,
                       child: Column(
                         children: [
@@ -113,8 +125,7 @@ class _SpaceState extends State<Space> {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                Courses()));
+                            builder: (BuildContext context) => Courses()));
                       },
                       splashColor: Colors.black,
                       child: Column(
