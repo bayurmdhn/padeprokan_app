@@ -43,11 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-<<<<<<< HEAD
       navigateRoute: videoConference(),
-=======
-      navigateRoute: LoginScreen(),
->>>>>>> c8882589ffbca5638cb9180e12684bed8af3e4a3
       duration: 3000,
       imageSize: 100,
       imageSrc: "assets/images/logo.png",

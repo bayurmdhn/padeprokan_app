@@ -15,6 +15,8 @@ import 'dart:async';
 import '../../Components/appBar.dart';
 import 'dart:math' as math;
 
+import '../../size_config.dart';
+
 String spaceName = "";
 
 class HomePage extends StatefulWidget {
