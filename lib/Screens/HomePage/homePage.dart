@@ -15,6 +15,8 @@ import 'dart:async';
 import '../../Components/appBar.dart';
 import 'dart:math' as math;
 
+import '../../size_config.dart';
+
 String spaceName = "";
 
 class HomePage extends StatefulWidget {
@@ -230,7 +232,7 @@ class _HomePageState extends State<HomePage> {
                                     height: 29,
                                     child: TextFormField(
                                       textAlignVertical:
-                                          TextAlignVertical.bottom,
+                                          TextAlignVertical.center,
                                       decoration: InputDecoration(
                                         hintText: "Your Space name",
                                         hintStyle: TextStyle(fontSize: 11),
