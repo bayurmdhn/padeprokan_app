@@ -212,231 +212,231 @@ class _grupChatState extends State<grupChat> {
                                       color: Color.fromRGBO(215, 204, 252, 1),
                                       border:
                                           Border.all(color: kblack, width: 1)),
-                                  child: Stack(
-                                    children: [
-                                      Positioned.fill(
-                                        child: Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsets.only(left: 1),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                  color: Color.fromRGBO(
-                                                      215, 204, 252, 1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10)),
-                                              width: 24,
-                                              height: 15,
-                                              child: PopupMenuButton(
-                                                  constraints: BoxConstraints(
-                                                    maxWidth: 47,
-                                                  ),
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2)),
-                                                  color: kWhite,
-                                                  padding: EdgeInsets.zero,
-                                                  iconSize: 15,
-                                                  icon: Icon(
-                                                    Icons.more_horiz,
-                                                    color: Color.fromRGBO(
-                                                        127, 126, 126, 1),
-                                                  ),
-                                                  itemBuilder: (context) => [
-                                                        //Fitur Delete Pesan
-                                                        PopupMenuItem(
-                                                          padding:
-                                                              EdgeInsets.only(
-                                                            left: 5,
-                                                          ),
-                                                          height: 23,
-                                                          child: Column(
-                                                            children: <Widget>[
-                                                              //Text
-                                                              Text(
-                                                                "Delete",
-                                                                style: TextStyle(
-                                                                    fontSize: 9,
-                                                                    color: Color
-                                                                        .fromRGBO(
-                                                                            89,
-                                                                            89,
-                                                                            89,
-                                                                            1),
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400),
-                                                              )
-                                                            ],
-                                                          ),
-                                                          onTap: () {
-                                                            showDialog(
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (BuildContext) {
-                                                                  return Material(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            0,
-                                                                            255,
-                                                                            255,
-                                                                            255),
-                                                                    child:
-                                                                        Column(
-                                                                      children: [
-                                                                        SizedBox(
-                                                                          height:
-                                                                              221,
-                                                                        ),
-                                                                        //Jarak dan Lebar Container Delete pesan
-                                                                        Row(
-                                                                          children: [
-                                                                            SizedBox(
-                                                                              width: lebar * 0.05,
-                                                                            ),
-                                                                            //Container Utama
-                                                                            Container(
-                                                                              width: lebar * 0.9,
-                                                                              decoration: BoxDecoration(
-                                                                                border: Border.all(color: Color.fromRGBO(148, 148, 148, 1), width: 1),
-                                                                                borderRadius: BorderRadius.circular(8),
-                                                                                color: kWhite,
-                                                                              ),
-                                                                              child: Stack(children: [
-                                                                                //Icon Tanda Tanya
-                                                                                Padding(
-                                                                                  padding: const EdgeInsets.only(top: 18, left: 18),
-                                                                                  child: Align(
-                                                                                      alignment: Alignment.topLeft,
-                                                                                      child: Icon(
-                                                                                        Icons.help_outline,
-                                                                                        color: Color.fromRGBO(255, 165, 2, 1),
-                                                                                        size: 24,
-                                                                                      )),
-                                                                                ),
-                                                                                //Text
-                                                                                Padding(
-                                                                                    padding: const EdgeInsets.only(left: 54, top: 18),
-                                                                                    child: Text(
-                                                                                      "Delete Confirmation",
-                                                                                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color.fromRGBO(82, 82, 82, 1)),
-                                                                                    )),
-                                                                                //Text
-                                                                                Padding(
-                                                                                    padding: const EdgeInsets.only(left: 54, top: 42),
-                                                                                    child: Text(
-                                                                                      "Are you sure to delete this massage?",
-                                                                                      style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: Color.fromRGBO(174, 174, 174, 1)),
-                                                                                    )),
-                                                                                //Tombol Cancel
-                                                                                Padding(
-                                                                                  padding: const EdgeInsets.only(top: 70, right: 95, bottom: 10),
-                                                                                  child: Align(
-                                                                                      alignment: Alignment.topRight,
-                                                                                      child: GestureDetector(
-                                                                                        onTap: () => Navigator.of(context, rootNavigator: true).pop(context),
-                                                                                        child: Container(
-                                                                                          decoration: BoxDecoration(
-                                                                                            borderRadius: BorderRadius.circular(8),
-                                                                                            color: Color.fromRGBO(245, 245, 245, 1),
-                                                                                          ),
-                                                                                          width: 71,
-                                                                                          height: 28,
-                                                                                          child: Center(
-                                                                                              child: Text(
-                                                                                            "Cancel",
-                                                                                            style: TextStyle(color: Color.fromRGBO(131, 131, 131, 1), fontWeight: FontWeight.w500, fontSize: 13, fontFamily: 'Roboto'),
-                                                                                          )),
-                                                                                        ),
-                                                                                      )),
-                                                                                ),
-                                                                                //Tombol OK
-                                                                                Padding(
-                                                                                  padding: const EdgeInsets.only(top: 70, right: 18, bottom: 10),
-                                                                                  child: Align(
-                                                                                      alignment: Alignment.topRight,
-                                                                                      child: Container(
-                                                                                        decoration: BoxDecoration(
-                                                                                          borderRadius: BorderRadius.circular(8),
-                                                                                          color: Color.fromRGBO(255, 0, 0, 1),
-                                                                                        ),
-                                                                                        width: 71,
-                                                                                        height: 28,
-                                                                                        child: Center(
-                                                                                            child: Text(
-                                                                                          "OK",
-                                                                                          style: TextStyle(color: kWhite, fontWeight: FontWeight.w500, fontSize: 13, fontFamily: 'Roboto'),
-                                                                                        )),
-                                                                                      )),
-                                                                                )
-                                                                              ]),
-                                                                            ),
-                                                                            //Jarak container utama dengan bagian kanan
-                                                                            SizedBox(
-                                                                              width: lebar * 0.05,
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  );
-                                                                });
-                                                          },
-                                                        ),
-                                                        //Fitur Reply Pesan
-                                                        PopupMenuItem(
-                                                            padding:
-                                                                EdgeInsets.only(
-                                                                    left: 5),
-                                                            height: 23,
-                                                            child: Column(
-                                                              children: <
-                                                                  Widget>[
-                                                                Text(
-                                                                  "Reply",
-                                                                  style: TextStyle(
-                                                                      fontSize:
-                                                                          9,
-                                                                      color: Color
-                                                                          .fromRGBO(
-                                                                              89,
-                                                                              89,
-                                                                              89,
-                                                                              1),
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400),
-                                                                )
-                                                              ],
-                                                            )),
-                                                      ]),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Column(
-                                        children: [
-                                          Padding(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  11, 11, 10, 10),
-                                              child: Container(
-                                                child: Text(
-                                                  message.text,
-                                                  style: TextStyle(
-                                                      fontSize: 13,
-                                                      fontFamily: 'Roboto',
-                                                      fontWeight:
-                                                          FontWeight.w400),
-                                                ),
-                                              )),
-                                        ],
-                                      )
-                                    ],
-                                  ),
+                                  // child: Stack(
+                                  //   children: [
+                                  //     Positioned.fill(
+                                  //       child: Align(
+                                  //         alignment: Alignment.topLeft,
+                                  //         child: Padding(
+                                  //           padding:
+                                  //               const EdgeInsets.only(left: 1),
+                                  //           child: Container(
+                                  //             decoration: BoxDecoration(
+                                  //                 color: Color.fromRGBO(
+                                  //                     215, 204, 252, 1),
+                                  //                 borderRadius:
+                                  //                     BorderRadius.circular(
+                                  //                         10)),
+                                  //             width: 24,
+                                  //             height: 15,
+                                  //             // child: PopupMenuButton(
+                                  //             //     constraints: BoxConstraints(
+                                  //             //       maxWidth: 47,
+                                  //             //     ),
+                                  //             //     shape: RoundedRectangleBorder(
+                                  //             //         borderRadius:
+                                  //             //             BorderRadius.circular(
+                                  //             //                 2)),
+                                  //             //     color: kWhite,
+                                  //             //     padding: EdgeInsets.zero,
+                                  //             //     iconSize: 15,
+                                  //             //     icon: Icon(
+                                  //             //       Icons.more_horiz,
+                                  //             //       color: Color.fromRGBO(
+                                  //             //           127, 126, 126, 1),
+                                  //             //     ),
+                                  //             //     itemBuilder: (context) => [
+                                  //             //           //Fitur Delete Pesan
+                                  //             //           PopupMenuItem(
+                                  //             //             padding:
+                                  //             //                 EdgeInsets.only(
+                                  //             //               left: 5,
+                                  //             //             ),
+                                  //             //             height: 23,
+                                  //             //             child: Column(
+                                  //             //               children: <Widget>[
+                                  //             //                 //Text
+                                  //             //                 Text(
+                                  //             //                   "Delete",
+                                  //             //                   style: TextStyle(
+                                  //             //                       fontSize: 9,
+                                  //             //                       color: Color
+                                  //             //                           .fromRGBO(
+                                  //             //                               89,
+                                  //             //                               89,
+                                  //             //                               89,
+                                  //             //                               1),
+                                  //             //                       fontWeight:
+                                  //             //                           FontWeight
+                                  //             //                               .w400),
+                                  //             //                 )
+                                  //             //               ],
+                                  //             //             ),
+                                  //             //             onTap: () {
+                                  //             //               showDialog(
+                                  //             //                   context:
+                                  //             //                       context,
+                                  //             //                   builder:
+                                  //             //                       (BuildContext) {
+                                  //             //                     return Material(
+                                  //             //                       color: Color
+                                  //             //                           .fromARGB(
+                                  //             //                               0,
+                                  //             //                               255,
+                                  //             //                               255,
+                                  //             //                               255),
+                                  //             //                       child:
+                                  //             //                           Column(
+                                  //             //                         children: [
+                                  //             //                           SizedBox(
+                                  //             //                             height:
+                                  //             //                                 221,
+                                  //             //                           ),
+                                  //             //                           //Jarak dan Lebar Container Delete pesan
+                                  //             //                           Row(
+                                  //             //                             children: [
+                                  //             //                               SizedBox(
+                                  //             //                                 width: lebar * 0.05,
+                                  //             //                               ),
+                                  //             //                               //Container Utama
+                                  //             //                               Container(
+                                  //             //                                 width: lebar * 0.9,
+                                  //             //                                 decoration: BoxDecoration(
+                                  //             //                                   border: Border.all(color: Color.fromRGBO(148, 148, 148, 1), width: 1),
+                                  //             //                                   borderRadius: BorderRadius.circular(8),
+                                  //             //                                   color: kWhite,
+                                  //             //                                 ),
+                                  //             //                                 child: Stack(children: [
+                                  //             //                                   //Icon Tanda Tanya
+                                  //             //                                   Padding(
+                                  //             //                                     padding: const EdgeInsets.only(top: 18, left: 18),
+                                  //             //                                     child: Align(
+                                  //             //                                         alignment: Alignment.topLeft,
+                                  //             //                                         child: Icon(
+                                  //             //                                           Icons.help_outline,
+                                  //             //                                           color: Color.fromRGBO(255, 165, 2, 1),
+                                  //             //                                           size: 24,
+                                  //             //                                         )),
+                                  //             //                                   ),
+                                  //             //                                   //Text
+                                  //             //                                   Padding(
+                                  //             //                                       padding: const EdgeInsets.only(left: 54, top: 18),
+                                  //             //                                       child: Text(
+                                  //             //                                         "Delete Confirmation",
+                                  //             //                                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color.fromRGBO(82, 82, 82, 1)),
+                                  //             //                                       )),
+                                  //             //                                   //Text
+                                  //             //                                   Padding(
+                                  //             //                                       padding: const EdgeInsets.only(left: 54, top: 42),
+                                  //             //                                       child: Text(
+                                  //             //                                         "Are you sure to delete this massage?",
+                                  //             //                                         style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: Color.fromRGBO(174, 174, 174, 1)),
+                                  //             //                                       )),
+                                  //             //                                   //Tombol Cancel
+                                  //             //                                   Padding(
+                                  //             //                                     padding: const EdgeInsets.only(top: 70, right: 95, bottom: 10),
+                                  //             //                                     child: Align(
+                                  //             //                                         alignment: Alignment.topRight,
+                                  //             //                                         child: GestureDetector(
+                                  //             //                                           onTap: () => Navigator.of(context, rootNavigator: true).pop(context),
+                                  //             //                                           child: Container(
+                                  //             //                                             decoration: BoxDecoration(
+                                  //             //                                               borderRadius: BorderRadius.circular(8),
+                                  //             //                                               color: Color.fromRGBO(245, 245, 245, 1),
+                                  //             //                                             ),
+                                  //             //                                             width: 71,
+                                  //             //                                             height: 28,
+                                  //             //                                             child: Center(
+                                  //             //                                                 child: Text(
+                                  //             //                                               "Cancel",
+                                  //             //                                               style: TextStyle(color: Color.fromRGBO(131, 131, 131, 1), fontWeight: FontWeight.w500, fontSize: 13, fontFamily: 'Roboto'),
+                                  //             //                                             )),
+                                  //             //                                           ),
+                                  //             //                                         )),
+                                  //             //                                   ),
+                                  //             //                                   //Tombol OK
+                                  //             //                                   Padding(
+                                  //             //                                     padding: const EdgeInsets.only(top: 70, right: 18, bottom: 10),
+                                  //             //                                     child: Align(
+                                  //             //                                         alignment: Alignment.topRight,
+                                  //             //                                         child: Container(
+                                  //             //                                           decoration: BoxDecoration(
+                                  //             //                                             borderRadius: BorderRadius.circular(8),
+                                  //             //                                             color: Color.fromRGBO(255, 0, 0, 1),
+                                  //             //                                           ),
+                                  //             //                                           width: 71,
+                                  //             //                                           height: 28,
+                                  //             //                                           child: Center(
+                                  //             //                                               child: Text(
+                                  //             //                                             "OK",
+                                  //             //                                             style: TextStyle(color: kWhite, fontWeight: FontWeight.w500, fontSize: 13, fontFamily: 'Roboto'),
+                                  //             //                                           )),
+                                  //             //                                         )),
+                                  //             //                                   )
+                                  //             //                                 ]),
+                                  //             //                               ),
+                                  //             //                               //Jarak container utama dengan bagian kanan
+                                  //             //                               SizedBox(
+                                  //             //                                 width: lebar * 0.05,
+                                  //             //                               ),
+                                  //             //                             ],
+                                  //             //                           ),
+                                  //             //                         ],
+                                  //             //                       ),
+                                  //             //                     );
+                                  //             //                   });
+                                  //             //             },
+                                  //             //           ),
+                                  //             //           //Fitur Reply Pesan
+                                  //             //           // PopupMenuItem(
+                                  //             //           //     padding:
+                                  //             //           //         EdgeInsets.only(
+                                  //             //           //             left: 5),
+                                  //             //           //     height: 23,
+                                  //             //           //     child: Column(
+                                  //             //           //       children: <
+                                  //             //           //           Widget>[
+                                  //             //           //         Text(
+                                  //             //           //           "Reply",
+                                  //             //           //           style: TextStyle(
+                                  //             //           //               fontSize:
+                                  //             //           //                   9,
+                                  //             //           //               color: Color
+                                  //             //           //                   .fromRGBO(
+                                  //             //           //                       89,
+                                  //             //           //                       89,
+                                  //             //           //                       89,
+                                  //             //           //                       1),
+                                  //             //           //               fontWeight:
+                                  //             //           //                   FontWeight
+                                  //             //           //                       .w400),
+                                  //             //           //         )
+                                  //             //           //       ],
+                                  //             //           //     )),
+                                  //             //         ]),
+                                  //           ),
+                                  //         ),
+                                  //       ),
+                                  //     ),
+                                  //     Column(
+                                  //       children: [
+                                  //         Padding(
+                                  //             padding: EdgeInsets.fromLTRB(
+                                  //                 11, 11, 10, 10),
+                                  //             child: Container(
+                                  //               child: Text(
+                                  //                 message.text,
+                                  //                 style: TextStyle(
+                                  //                     fontSize: 13,
+                                  //                     fontFamily: 'Roboto',
+                                  //                     fontWeight:
+                                  //                         FontWeight.w400),
+                                  //               ),
+                                  //             )),
+                                  //       ],
+                                  //     )
+                                  //   ],
+                                  // ),
                                 )
                               : Container(
                                   decoration: BoxDecoration(
@@ -482,50 +482,50 @@ class _grupChatState extends State<grupChat> {
                                           ),
                                         ),
                                       ),
-                                      Positioned.fill(
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsets.only(right: 5, top: 5),
-                                          child:
-                                              // Icon(
-                                              //   Icons.circle,
-                                              //   size: 5,
-                                              //   color: Color.fromRGBO(
-                                              //       125, 125, 125, 1),
-                                              // ),
-                                              // SizedBox(
-                                              //   width: 5,
-                                              // ),
-                                              // Text(
-                                              //   DateFormat.Hm()
-                                              //       .format(DateTime.now()),
-                                              //   maxLines: 1,
-                                              //   style: TextStyle(
-                                              //     fontFamily: 'Roboto',
-                                              //     color: Color.fromRGBO(
-                                              //         125, 125, 125, 1),
-                                              //     fontWeight: FontWeight.w600,
-                                              //     fontSize: 11,
-                                              //   ),
-                                              // ),
+                                      // Positioned.fill(
+                                      //   child: Padding(
+                                      //     padding:
+                                      //         EdgeInsets.only(right: 5, top: 5),
+                                      //     child:
+                                      //         // Icon(
+                                      //         //   Icons.circle,
+                                      //         //   size: 5,
+                                      //         //   color: Color.fromRGBO(
+                                      //         //       125, 125, 125, 1),
+                                      //         // ),
+                                      //         // SizedBox(
+                                      //         //   width: 5,
+                                      //         // ),
+                                      //         // Text(
+                                      //         //   DateFormat.Hm()
+                                      //         //       .format(DateTime.now()),
+                                      //         //   maxLines: 1,
+                                      //         //   style: TextStyle(
+                                      //         //     fontFamily: 'Roboto',
+                                      //         //     color: Color.fromRGBO(
+                                      //         //         125, 125, 125, 1),
+                                      //         //     fontWeight: FontWeight.w600,
+                                      //         //     fontSize: 11,
+                                      //         //   ),
+                                      //         // ),
 
-                                              Align(
-                                            alignment: Alignment.topRight,
-                                            child: GestureDetector(
-                                              onTap: () {},
-                                              child: Text(
-                                                "Reply",
-                                                style: TextStyle(
-                                                    fontFamily: 'Roboto',
-                                                    color: kblack,
-                                                    fontSize: 9,
-                                                    fontWeight:
-                                                        FontWeight.w400),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
+                                      //     //     Align(
+                                      //     //   alignment: Alignment.topRight,
+                                      //     //   child: GestureDetector(
+                                      //     //     onTap: () {},
+                                      //     //     child: Text(
+                                      //     //       "Reply",
+                                      //     //       style: TextStyle(
+                                      //     //           fontFamily: 'Roboto',
+                                      //     //           color: kblack,
+                                      //     //           fontSize: 9,
+                                      //     //           fontWeight:
+                                      //     //               FontWeight.w400),
+                                      //     //     ),
+                                      //     //   ),
+                                      //     // ),
+                                      //   ),
+                                      // ),
                                       Padding(
                                         padding:
                                             EdgeInsets.fromLTRB(43, 35, 10, 20),
