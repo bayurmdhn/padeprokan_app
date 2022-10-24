@@ -1,10 +1,7 @@
 import 'dart:html';
 import 'dart:ui';
-
 import 'package:first_app_flutter/Components/appBarBack.dart';
-
 import 'package:first_app_flutter/Screens/Schedule/eventCard.dart';
-
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -62,47 +59,6 @@ class _SchedulePageState extends State<SchedulePage> {
                       height: 699,
                       child: Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                ElevatedButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Day',
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                  style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                              Colors.white)),
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Month',
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                  style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                              Colors.white)),
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Week',
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                  style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                              Colors.white)),
-                                ),
-                              ],
-                            ),
-                          ),
                           Padding(
                               padding: const EdgeInsets.only(top: 20),
                               child: Container(
@@ -230,7 +186,7 @@ class _SchedulePageState extends State<SchedulePage> {
                               width: 346,
                               height: 29,
                               child: TextFormField(
-                                textAlignVertical: TextAlignVertical.bottom,
+                                textAlignVertical: TextAlignVertical.center,
                                 decoration: InputDecoration(
                                   hintText: "Insert title here",
                                   hintStyle: TextStyle(fontSize: 11),
@@ -467,29 +423,41 @@ class _SchedulePageState extends State<SchedulePage> {
                                 },
                               ),
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                addDynamic();
-                                index++;
-                                Navigator.pop(context);
-                              },
-                              child: Container(
-                                width: 71,
-                                height: 27,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Submit",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 13),
-                                    )
-                                  ],
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 15),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      addDynamic();
+                                      index++;
+                                      Navigator.pop(context);
+                                    },
+                                    child: Container(
+                                      width: 71,
+                                      height: 27,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "Submit",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 13),
+                                          )
+                                        ],
+                                      ),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Color.fromARGB(255, 177, 17, 255),
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                    ),
+                                  ),
                                 ),
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 177, 17, 255),
-                                    borderRadius: BorderRadius.circular(8)),
-                              ),
+                              ],
                             ),
                           ]),
                         ),
